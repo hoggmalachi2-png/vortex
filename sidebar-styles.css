@@ -1,0 +1,156 @@
+/* VorteX Sidebar Styles - Include this on all game pages */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 5%;
+  height: 100vh;
+  background: rgb(28, 27, 27);
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.sidebar-header {
+  padding: 0 20px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.xbox-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 200%;
+  height: auto;
+}
+
+.nav-section {
+  padding: 20px 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-left-color: #fff;
+  font-weight: 600;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variation-settings: "FILL" 1;
+  font-size: 22px;
+  color: orange;
+}
+
+.material-symbols-outlined {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.nav-item:hover .material-symbols-rounded {
+  transform: scale(1.15);
+  transition: 0.2s ease;
+}
+
+.nav-item:hover .nav-icon {
+  transform: scale(1.15);
+}
+
+/* Recently Played Section */
+#recently-played-container {
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.recent-game-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 8px 10px;
+}
+
+.recent-game-tile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.recent-game-tile:hover img {
+  border: 2px solid orange;
+  transform: scale(1.2);
+  transition: transform 0.1s ease;
+}
+
+/* Content area */
+.content {
+  position: fixed;
+  left: 5%;
+  top: 0;
+  width: calc(100% - 5%);
+  height: 100vh;
+  background: #000;
+}
+
+.content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
