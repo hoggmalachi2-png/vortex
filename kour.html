@@ -792,7 +792,7 @@ body {
     <div id="unity-container" style="position: absolute; width: 100%; height: 100%">
         <canvas id="unity-canvas" width=1920 height=1080 style="width: 100%; height: 100%; user-select: none; -webkit-user-select: none;"></canvas>
     </div>
-    <div id="loading-cover" style="display: block;" data-bg="TemplateData/background.webp">
+    <div id="loading-cover" style="display: block;">
         <div id="loading-cover-2"></div>
         <img class="kourTitle" data-src="kour-title.webp" />
         <p id="loadingTxt">Loading Kour Essentials...</p>
@@ -812,7 +812,7 @@ body {
                 document.querySelectorAll("[data-src]").forEach(el => {
                     el.src = getAssetUrl(el.dataset.src);
                 });
-                document.getElementById("loading-cover").style.backgroundImage = `url('${getAssetUrl(document.getElementById("loading-cover").dataset.bg)}')`;
+                document.getElementById("loading-cover").style.backgroundImage = `url('${getAssetUrl("TemplateData/background.webp")}')`;
                 onWindowResize();
                 const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 if (isiOS) {
@@ -2012,3 +2012,32 @@ history.pushState=history.replaceState=()=>{}; location.assign=location.replace=
 
 </body>
 </html>
+<!-- VTX_TOPLEVEL_SIDEBAR -->
+<script>
+(function(){
+  function bootSidebar() {
+    var mount = document.head || document.documentElement;
+    if (!mount) return;
+
+    var path = window.location.pathname || "";
+    var base = path.slice(0, path.lastIndexOf("/") + 1);
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = base + "page-sidebar.css";
+    mount.appendChild(css);
+
+    var script = document.createElement("script");
+    script.src = base + "page-sidebar.js";
+    script.onload = function () {
+      if (window.initPageSidebar) window.initPageSidebar("games");
+    };
+    mount.appendChild(script);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootSidebar, { once: true });
+  } else {
+    bootSidebar();
+  }
+})();
+</script>

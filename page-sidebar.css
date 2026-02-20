@@ -1,0 +1,76 @@
+.vtx-page-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100vh;
+  background: #050505;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: grid;
+  grid-auto-rows: min-content;
+  align-content: start;
+  justify-items: center;
+  gap: 14px;
+  padding: 16px 8px;
+  z-index: 2147483647;
+}
+
+.vtx-sidebar-logo-link {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vtx-sidebar-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.vtx-sidebar-link {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(211, 211, 211, 0.95);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.vtx-sidebar-link .material-symbols-outlined {
+  font-size: 30px;
+  line-height: 1;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.vtx-sidebar-link:hover {
+  background: rgba(211, 211, 211, 0.18);
+  border-color: rgba(211, 211, 211, 0.4);
+}
+
+.vtx-sidebar-link.active {
+  background: rgba(211, 211, 211, 0.28);
+  border-color: rgba(211, 211, 211, 0.5);
+  color: #ffffff;
+}
+
+body.vtx-has-page-sidebar {
+  padding-left: 72px;
+}
+
+@media (max-width: 700px) {
+  .vtx-page-sidebar {
+    width: 56px;
+  }
+
+  body.vtx-has-page-sidebar {
+    padding-left: 56px;
+  }
+}

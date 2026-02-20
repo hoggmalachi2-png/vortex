@@ -99,4 +99,32 @@
                 script.src = "https://cdn.jsdelivr.net/gh/a456pur/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/storage/js/cloak.js";
                 document.body.appendChild(script);
             }
-	</script>
+	</script><!-- VTX_TOPLEVEL_SIDEBAR -->
+<script>
+(function(){
+  function bootSidebar() {
+    var mount = document.head || document.documentElement;
+    if (!mount) return;
+
+    var path = window.location.pathname || "";
+    var base = path.slice(0, path.lastIndexOf("/") + 1);
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = base + "page-sidebar.css";
+    mount.appendChild(css);
+
+    var script = document.createElement("script");
+    script.src = base + "page-sidebar.js";
+    script.onload = function () {
+      if (window.initPageSidebar) window.initPageSidebar("games");
+    };
+    mount.appendChild(script);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootSidebar, { once: true });
+  } else {
+    bootSidebar();
+  }
+})();
+</script>

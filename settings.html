@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VorteX Settings</title>
+  <style>
+    :root {
+      --card-bg: #1f1f1f;
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #f2f2f2;
+      --muted: rgba(242, 242, 242, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #2f2f2f;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .settings-card {
+      width: min(560px, 96vw);
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    #gamesBgColor,
+    #accentColor {
+      width: 56px;
+      height: 40px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .hex-value {
+      min-width: 100px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button,
+    a {
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      padding: 8px 12px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button:hover,
+    a:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+  </style>
+  <link rel="stylesheet" href="page-sidebar.css">
+</head>
+<body>
+  <main class="settings-card">
+    <h1>Settings</h1>
+    <p class="hint">Set the games-area background and accent color (hovers + icons).</p>
+
+    <div class="row">
+      <label for="gamesBgColor">Games Background</label>
+      <input id="gamesBgColor" type="color" value="#3f3f3f">
+      <span id="gamesBgHex" class="hex-value">#3f3f3f</span>
+    </div>
+
+    <div class="row">
+      <label for="accentColor">Accent Color</label>
+      <input id="accentColor" type="color" value="#d3d3d3">
+      <span id="accentHex" class="hex-value">#d3d3d3</span>
+    </div>
+
+    <div class="actions">
+      <button id="saveColor" type="button">Save</button>
+      <button id="resetColor" type="button">Reset Default</button>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </main>
+
+  <script>
+    const gamesBgKey = 'vortexGamesBackgroundColor';
+    const accentKey = 'vortexAccentColor';
+    const gamesBgPicker = document.getElementById('gamesBgColor');
+    const accentPicker = document.getElementById('accentColor');
+    const gamesBgHex = document.getElementById('gamesBgHex');
+    const accentHex = document.getElementById('accentHex');
+    const saveBtn = document.getElementById('saveColor');
+    const resetBtn = document.getElementById('resetColor');
+
+    function setHexLabel(element, value) {
+      element.textContent = value;
+    }
+
+    function isHexColor(value) {
+      return /^#[0-9a-f]{6}$/i.test(value || '');
+    }
+
+    const savedBg = localStorage.getItem(gamesBgKey);
+    if (isHexColor(savedBg)) {
+      gamesBgPicker.value = savedBg;
+    }
+
+    const savedAccent = localStorage.getItem(accentKey);
+    if (isHexColor(savedAccent)) {
+      accentPicker.value = savedAccent;
+    }
+
+    setHexLabel(gamesBgHex, gamesBgPicker.value);
+    setHexLabel(accentHex, accentPicker.value);
+
+    gamesBgPicker.addEventListener('input', () => {
+      setHexLabel(gamesBgHex, gamesBgPicker.value);
+    });
+
+    accentPicker.addEventListener('input', () => {
+      setHexLabel(accentHex, accentPicker.value);
+    });
+
+    saveBtn.addEventListener('click', () => {
+      localStorage.setItem(gamesBgKey, gamesBgPicker.value);
+      localStorage.setItem(accentKey, accentPicker.value);
+      setHexLabel(gamesBgHex, gamesBgPicker.value);
+      setHexLabel(accentHex, accentPicker.value);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      localStorage.removeItem(gamesBgKey);
+      localStorage.removeItem(accentKey);
+      localStorage.removeItem('vortexBackgroundColor');
+      gamesBgPicker.value = '#3f3f3f';
+      accentPicker.value = '#d3d3d3';
+      setHexLabel(gamesBgHex, gamesBgPicker.value);
+      setHexLabel(accentHex, accentPicker.value);
+    });
+  </script>
+  <script src="page-sidebar.js"></script>
+  <script>window.addEventListener("DOMContentLoaded", function () { initPageSidebar("settings"); });</script>
+</body>
+</html>

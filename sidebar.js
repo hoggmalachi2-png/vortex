@@ -554,24 +554,37 @@ const GAME_DATA = {
   }
 };
 
+const RECENT_STORAGE_PRIMARY_KEY = 'lastPlayed_v3';
+const RECENT_STORAGE_LEGACY_KEY = 'lastPlayed';
+const GAME_ID_ALIASES = {
+  madden06: 'madden',
+  mine: 'eagle',
+  college: 'rbc'
+};
+
 // Main initialization function
 function initSidebar(currentGameId, iframeSrc) {
   // Create sidebar HTML
   const sidebarHTML = `
     <div class="sidebar">
       <div class="sidebar-header">
-        <div class="xbox-logo">
+        <a class="xbox-logo" href="index.html" title="Home" aria-label="Home">
           <img src="logo1.png" alt="VorteX" class="logo-img">
-        </div>
+        </a>
       </div>
 
       <nav class="nav-section">
-        <a href="index.html" class="nav-item">
+        <a href="index.html" class="nav-item" title="Home" aria-label="Home">
           <span class="material-symbols-rounded nav-icon">home</span>
         </a>
-
-        <a onclick="refreshPage()" style="cursor: pointer;" class="nav-item">
-          <span class="material-symbols-rounded nav-icon">refresh</span>
+        <a href="games.html" class="nav-item active" title="Games" aria-label="Games">
+          <span class="material-symbols-rounded nav-icon">newsstand</span>
+        </a>
+        <a href="notifications.html" class="nav-item" title="Notifications" aria-label="Notifications">
+          <span class="material-symbols-rounded nav-icon">notifications</span>
+        </a>
+        <a href="settings.html" class="nav-item" title="Settings" aria-label="Settings">
+          <span class="material-symbols-rounded nav-icon">settings</span>
         </a>
       </nav>
 
@@ -586,23 +599,100 @@ function initSidebar(currentGameId, iframeSrc) {
   // Insert sidebar into body
   document.body.insertAdjacentHTML('afterbegin', sidebarHTML);
 
-  // Add refresh function to global scope
-  window.refreshPage = function() {
-    location.reload();
-  };
-
   // Initialize recently played
   const recentContainer = document.getElementById('recently-played-container');
-  let lastPlayed = JSON.parse(localStorage.getItem('lastPlayed')) || [];
+  const normalizeId = value => String(value || '').trim().toLowerCase();
+
+  function normalizeHrefPath(href) {
+    if (!href) return '';
+    try {
+      const resolved = new URL(href, window.location.href);
+      return resolved.pathname.split('/').pop().toLowerCase();
+    } catch {
+      return String(href)
+        .split('?')[0]
+        .split('#')[0]
+        .split('/')
+        .pop()
+        .toLowerCase();
+    }
+  }
+
+  function findGameIdByHref(href) {
+    const target = normalizeHrefPath(href);
+    if (!target) return null;
+    for (const [id, game] of Object.entries(GAME_DATA)) {
+      if (normalizeHrefPath(game.href) === target) return id;
+    }
+    return null;
+  }
+
+  function canonicalGameId(gameId, hrefHint) {
+    const normalized = normalizeId(gameId);
+    if (!normalized) return '';
+    if (GAME_DATA[normalized]) return normalized;
+
+    const aliased = GAME_ID_ALIASES[normalized];
+    if (aliased && GAME_DATA[aliased]) return aliased;
+
+    const byHint = findGameIdByHref(hrefHint);
+    if (byHint) return byHint;
+
+    const byHtm = findGameIdByHref(`${normalized}.htm`);
+    if (byHtm) return byHtm;
+
+    const byHtml = findGameIdByHref(`${normalized}.html`);
+    if (byHtml) return byHtml;
+
+    return normalized;
+  }
+
+  function parseRecentList(key) {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(key) || '[]');
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function readRecent() {
+    const primary = parseRecentList(RECENT_STORAGE_PRIMARY_KEY);
+    const legacy = parseRecentList(RECENT_STORAGE_LEGACY_KEY);
+    return [...legacy, ...primary];
+  }
+
+  function writeRecent(list) {
+    const trimmed = list.slice(-10);
+    localStorage.setItem(RECENT_STORAGE_PRIMARY_KEY, JSON.stringify(trimmed));
+    localStorage.setItem(RECENT_STORAGE_LEGACY_KEY, JSON.stringify(trimmed));
+  }
+
+  function getGameRecord(gameId) {
+    const canonicalId = canonicalGameId(gameId);
+    const known = GAME_DATA[canonicalId];
+    if (known) return { gameId: canonicalId, game: known };
+    return {
+      gameId: canonicalId,
+      game: {
+        img: 'logo.png',
+        href: canonicalId ? `${canonicalId}.htm` : 'index.html',
+        name: canonicalId || 'Game'
+      }
+    };
+  }
+
+  let lastPlayed = readRecent();
+  const currentCanonicalGameId = canonicalGameId(currentGameId, iframeSrc);
 
   function dedupeRecent(list) {
     const seen = new Set();
     const unique = [];
     for (let i = list.length - 1; i >= 0; i--) {
-      const id = list[i];
-      if (!id || seen.has(id)) continue;
-      seen.add(id);
-      unique.push(id);
+      const normalizedId = canonicalGameId(list[i]);
+      if (!normalizedId || seen.has(normalizedId)) continue;
+      seen.add(normalizedId);
+      unique.push(normalizedId);
     }
     return unique.reverse();
   }
@@ -612,26 +702,26 @@ function initSidebar(currentGameId, iframeSrc) {
     
     // Filter out the current game and get last 5
     lastPlayed = dedupeRecent(lastPlayed);
-    localStorage.setItem('lastPlayed', JSON.stringify(lastPlayed));
+    writeRecent(lastPlayed);
 
     const recentGames = lastPlayed
       .slice()
       .reverse()
-      .filter(gameId => gameId !== currentGameId)  // Exclude current game
+      .filter(gameId => gameId !== currentCanonicalGameId)  // Exclude current game
       .slice(0, 5);
 
     const seen = new Set();
     recentGames.forEach(gameId => {
-      const game = GAME_DATA[gameId];
-      if (game && !seen.has(gameId)) {
-        seen.add(gameId);
+      const { gameId: normalizedId, game } = getGameRecord(gameId);
+      if (game && !seen.has(normalizedId)) {
+        seen.add(normalizedId);
         const tile = document.createElement('a');
         tile.className = 'recent-game-tile';
         tile.href = game.href;
         tile.innerHTML = `<img src="${game.img}" alt="${game.name}">`;
         
         tile.addEventListener('click', () => {
-          trackGamePlay(gameId);
+          trackGamePlay(normalizedId);
         });
 
         recentContainer.appendChild(tile);
@@ -640,15 +730,17 @@ function initSidebar(currentGameId, iframeSrc) {
   }
 
   function trackGamePlay(gameId) {
-    lastPlayed = dedupeRecent(lastPlayed).filter(id => id !== gameId);
-    lastPlayed.push(gameId);
+    const normalizedId = canonicalGameId(gameId, iframeSrc);
+    if (!normalizedId) return;
+    lastPlayed = dedupeRecent(lastPlayed).filter(id => id !== normalizedId);
+    lastPlayed.push(normalizedId);
     lastPlayed = lastPlayed.slice(-10);
-    localStorage.setItem('lastPlayed', JSON.stringify(lastPlayed));
+    writeRecent(lastPlayed);
     setTimeout(renderRecentlyPlayed, 100);
   }
 
   // Track current game
-  trackGamePlay(currentGameId);
+  trackGamePlay(currentCanonicalGameId);
   renderRecentlyPlayed();
 }
 

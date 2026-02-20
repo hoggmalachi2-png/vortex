@@ -15,16 +15,9 @@
   <meta charset="UTF-8">
   <title>VorteX</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" />
 </head>
 <body>
-<header class="top-nav">
-  <a href="#home" class="active nav-link">Home</a>
-  <a href="#games" class="nav-link">Games</a>
-  <a href="#social" class="nav-link">Links</a>
-  <a href="#links" class="nav-link">News</a>
-   </header>
-  <div class="clock" id="clock"> </div> 
-       </div>
 <!-- BACKGROUND -->
 <div id="background"></div>
 
@@ -33,7 +26,7 @@
     <div class="first-visit-left">
       <div class="first-visit-kicker">VorteX App</div>
       <h2>Install the app</h2>
-      <p>Add VorteX to your device for faster launches and a full-screen app feel.</p> Huh, I bet Math Play Zone can't do this, can it? </p>
+      <p>Add VorteX to your device for faster launches and a full-screen app feel. Huh, I bet Math Play Zone can't do this, can it?</p>
       <strong><a href="help.html"> Help Add More Games</a></strong>
       <div class="first-visit-actions">
         <button type="button" id="firstVisitDismiss">Got it</button>
@@ -52,94 +45,61 @@
   </div>
 </div>
 
-<main class="viewport">
-  <div class="panel-track">
-
-    <!-- HOME PANEL -->
-    <section id="home" class="panel">
-
-      <!-- HIDDEN PLACEHOLDERS -->
-      <div id="placeholders" style="display:none">
-<div class="flex">
-    
-        <!-- 5 placeholder tiles -->
-         <a href="geo.htm"
-            class="image-link-border"
-           data-id="game-1"
-           data-bg="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/Retro%20Bowl%20(2).png">
-          <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/image-removebg-preview%20(1).png" class="enlarge-image-border">
-        </a>
-
-        <a href="level.htm" class="image-link-border"
-           data-id="game-2"
-           data-bg="https://i.postimg.cc/85gvJCNZ/23.png">
-          <img src="https://i.postimg.cc/B6dmvFvD/image.png" class="enlarge-image-border">
-        </a>
-
-        <a href="bit.htm" class="image-link-border"
-           data-id="game-3"
-           data-bg="https://i.postimg.cc/vBLS8G96/19.png">
-          <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/bite.png" class="enlarge-image-border">
-        </a>
-
-        <a href="blast.htm" class="image-link-border"
-           data-id="game-4"
-           data-bg="https://i.postimg.cc/jjKHMr8p/40.png">
-          <img src="https://i.postimg.cc/Gtq3nvrD/bb.jpg" class="enlarge-image-border">
-        </a>
-
-        <a href="retro.htm" class="image-link-border"
-           data-id="game-5"
-           data-bg="https://i.postimg.cc/FKSBqyHM/1.png">
-          <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/retro.png" class="enlarge-image-border">
-        </a>
-
-
-
-
-     
-</div>
-      </div>
-      <!-- RECENTLY PLAYED -->
-      <div class="container-3"> </div>
-
-
-    </section>
-
-
-
-
-
-
-
-
-
-
+<main class="single-page">
 <!-- GAMES PANNEL-->
     <!-- OTHER PANELS -->
-    <section id="games" class="panel" data-bg="linear-gradient(135deg, #2a1300 0%, #7a2f00 45%, #fb7522 100%)"> 
+    <section id="games"> 
   <div class="games-shell">
-  <div class="search-container">
-    <br>
-    <input type="text" id="gameSearch" placeholder="Search games..." />
-    <div id="gameCount" class="game-count">Showing 50 Free No-Ad Games</div>
-  </div>
-  <div class="games-layout">
-    <aside class="games-sidebar" aria-label="Game filters">
-      <div class="sidebar-title">Sort By</div>
-      <button type="button" class="game-filter-btn active" data-filter="all">All</button>
-      <button type="button" class="game-filter-btn" data-filter="new">New</button>
-      <button type="button" class="game-filter-btn" data-filter="games">Games</button>
-      <div class="games-subpanel" aria-label="Games subfilters">
-        <button type="button" class="game-filter-btn sub-filter-btn" data-filter="shooter">Shooter</button>
-        <button type="button" class="game-filter-btn sub-filter-btn" data-filter="car">Car</button>
-        <button type="button" class="game-filter-btn sub-filter-btn" data-filter="sports">Sports</button>
-        <button type="button" class="game-filter-btn sub-filter-btn" data-filter="horror">Horror</button>
+  <div class="full-layout">
+    <div class="content-panel">
+      <div class="dashboard-layout">
+        <aside class="icon-sidebar" aria-label="Quick links">
+          <a class="sidebar-profile-card" href="profile.htm" title="Profile">
+            <img class="sidebar-logo" src="logo.png" alt="VorteX logo">
+          </a>
+          <a class="sidebar-menu-link active" href="index.html" title="App 1"><span class="material-symbols-outlined">home</span></a>
+          <a class="sidebar-menu-link" href="games.html" title="App 3"><span class="material-symbols-outlined">newsstand</span></a>
+          <a class="sidebar-menu-link" href="notifications.html" title="App 4"><span class="material-symbols-outlined">notifications</span></a>
+          <a class="sidebar-menu-link" href="settings.html" title="App 5"><span class="material-symbols-outlined">settings</span></a>
+        </aside>
+        <div class="dashboard-main">
+      <div class="search-container">
+        <input type="text" id="gameSearch" placeholder="Search for people, games, and more" />
+        <div id="searchResults" class="search-results" aria-label="Search results"></div>
       </div>
-      <button type="button" class="game-filter-btn" data-filter="apps">Apps</button>
-    </aside>
-  <div class="games-scroll">
-    <div class="container-3">
+      <section class="recently-played" aria-label="Recently played games">
+        <div class="recently-played-header">
+          <h2>Jump back in</h2>
+          <div class="recent-nav" aria-label="Recently played carousel controls">
+            <button type="button" id="recentPrev" class="recent-nav-btn" aria-label="Previous games">chevron_left</button>
+            <button type="button" id="recentNext" class="recent-nav-btn" aria-label="Next games">chevron_right</button>
+          </div>
+        </div>
+        <div class="recent-carousel">
+          <div id="recentlyPlayed" class="recent-row"></div>
+        </div>
+      </section>
+  
+      <section class="placeholder-panel" aria-label="Featured placeholders">
+                <h2>Featured</h2>
+
+        <div class="rect-grid">
+          <a class="promo-card" href="feature-1.htm" title="Feature 1">
+            <img class="promo-image" src="3.png" alt="Feature 1 placeholder">
+          </a>
+          <a class="promo-card" href="feature-2.htm" title="Feature 2">
+            <img class="promo-image" src="4.png" alt="Feature 2 placeholder">
+          </a>
+          <a class="promo-card" href="feature-3.htm" title="Feature 3">
+            <img class="promo-image" src="5.png" alt="Feature 3 placeholder">
+          </a>
+          <a class="promo-card" href="feature-4.htm" title="Feature 4">
+            <img class="promo-image" src="6.png" alt="Feature 4 placeholder">
+          </a>
+        </div>
+      </section>
+      <div id="allGamesSource" class="hidden-source" aria-hidden="true">
+        <div class="container-3">
  <!-- gran turismo -->
 <a href="gran.htm" class="image-link-border" data-id="gran" data-search="gran turismo racing">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/turismo.jpeg" class="enlarge-image-border">
@@ -148,7 +108,7 @@
    <a href="mine.htm" class="image-link-border"
            data-id="eagle"
            data-search="eagle minecraft remastered eaglercraft"
-           data-bg="https://i.postimg.cc/pT6FKsK6/Retro-Bowl-(13).png">
+          >
           <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/REMASTERD.png" class="enlarge-image-border">
         </a>
 
@@ -157,7 +117,7 @@
   <a href="mlb.htm" class="image-link-border"
            data-id="mlb"
            data-search="mlb baseball ken griffey"
-           data-bg="https://uploads.onecompiler.io/4427p9zfv/4484h8c6z/Retro%20Bowl%20(8).png">
+          >
           <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/Griffey-jr-mlb-cover.jpg" class="enlarge-image-border">
         </a>
 
@@ -165,77 +125,66 @@
  <a href="1v1.htm" class="image-link-border"
            data-id="1v1"
            data-search="1v1 lol shooter multiplayer"
-           data-bg="https://uploads.onecompiler.io/4427p9zfv/4484h8c6z/Retro%20Bowl%20(6).png">
+          >
           <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/1v1.png" class="enlarge-image-border">
         </a>
 <!-- madden06 -->
    <a href="escape.htm" class="image-link-border"
-data-id="escape"
-data-bg="https://i.postimg.cc/RZgyS5Bb/rh_(1).png">
+data-id="escape">
   <img src="https://i.postimg.cc/hjcDWjk1/image.png" class="enlarge-image-border">
 </a>
 
 <a href="madden06.htm" class="image-link-border"
 data-id="madden"
-data-search="madden 06 football nfl"
-data-bg="https://i.postimg.cc/QM7yPQMX/6.png">
+data-search="madden 06 football nfl">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/madden06.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="doom.htm" class="image-link-border"
 data-id="doom"
-data-search="doom shooter fps"
-data-bg="https://i.postimg.cc/cLF2xySP/doom.png">
+data-search="doom shooter fps">
   <img src="https://i.postimg.cc/fWYP30s6/doom.jpg" class="enlarge-image-border">
 </a>
 <a href="chess.htm" class="image-link-border"
 data-id="chess"
-data-search="chess chess.com charlie kirk"
-data-bg="https://i.postimg.cc/MT4rpryB/rh-(15).png">
+data-search="chess chess.com charlie kirk">
   <img src="https://i.postimg.cc/8PkTv7WJ/image.png" class="enlarge-image-border">
 </a>
 <a href="yard.htm" class="image-link-border"
 data-id="yard"
-data-search="backyard baseball sports"
-data-bg="https://i.postimg.cc/vBYfhNdx/rh-(2).png">
+data-search="backyard baseball sports">
   <img src="https://i.postimg.cc/N09jc87S/image.png" class="enlarge-image-border">
 </a>
 <a href="footyard.htm" class="image-link-border"
 data-id="footyard"
-data-search="backyard football sports"
-data-bg="https://i.postimg.cc/Ss4FvcZv/rh-(6).png">
+data-search="backyard football sports">
   <img src="https://i.postimg.cc/GtMWtVby/image.png" class="enlarge-image-border">
 </a>
 <a href="balatro.htm" class="image-link-border"
 data-id="balatro"
-data-search="balatro card poker"
-data-bg="https://i.postimg.cc/gjvKB6Tt/rh-(8).png">
+data-search="balatro card poker">
   <img src="https://i.postimg.cc/qBnQ79vc/image.png" class="enlarge-image-border">
 </a>
 
 
 <a href="day.htm" class="image-link-border"
 data-id="day"
-data-search="day shift at freddys fnaf"
-data-bg="https://i.postimg.cc/9fnwPFJm/rh-(3).png">
+data-search="day shift at freddys fnaf">
   <img src="https://i.postimg.cc/QCLBP424/8XPsrw.jpg" class="enlarge-image-border">
 </a>
 <a href="bullet.htm" class="image-link-border"
 data-id="bullet"
-data-search="bullet force shooter fps"
-data-bg="https://i.postimg.cc/NjdSsqtv/Bullet_force.png">
+data-search="bullet force shooter fps">
   <img src="https://i.postimg.cc/Jhy6RsKp/bullet.png" class="enlarge-image-border">
-</a>
+</a>zf
 <a href="brainrot.htm" class="image-link-border"
 data-id="brainrot"
-data-search="brain rot skibidi"
-data-bg="https://i.postimg.cc/pLs4WbHw/brainrot.png">
+data-search="brain rot skibidi">
   <img src="https://i.postimg.cc/wjr246Hq/brainrot.jpg" class="enlarge-image-border">
 </a>
 <a href="rh.htm" class="image-link-border"
 data-id="rh"
-data-search="retro bowl football nfl"
-data-bg="https://i.postimg.cc/bwmWych5/rh.png">
+data-search="retro bowl football nfl">
   <img src="https://i.postimg.cc/76hxHMdR/retrohiu.png" class="enlarge-image-border">
 </a>
 
@@ -243,14 +192,13 @@ data-bg="https://i.postimg.cc/bwmWych5/rh.png">
 <a href="http://agartha.surge.sh/retro.htm" class="image-link-border"
       data-id="retro"
       data-search="retro bowl football nfl"
-      data-bg="https://i.postimg.cc/FKSBqyHM/1.png">
+     >
          <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/retro.png" class="enlarge-image-border">
 </a>
       <!-- mario-->
 <a href="super.htm" class="image-link-border"
 data-id="super"
-data-search="super mario platformer"
-data-bg="https://i.postimg.cc/1zyFhPmy/Retro-Bowl-(11).png">
+data-search="super mario platformer">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/super.png" class="enlarge-image-border">
 </a>
 <!--geeomtry dash-->
@@ -258,21 +206,19 @@ data-bg="https://i.postimg.cc/1zyFhPmy/Retro-Bowl-(11).png">
             class="image-link-border"
            data-id="geo"
            data-search="geometry dash platformer"
-           data-bg="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/Retro%20Bowl%20(2).png">
+          >
           <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/image-removebg-preview%20(1).png" class="enlarge-image-border">
         </a>
 
 <a href="cod4.htm" class="image-link-border"
 data-id="cod4"
-data-search="call of duty cod4 shooter fps"
-data-bg="https://i.postimg.cc/hvDZfNbw/33.png">
+data-search="call of duty cod4 shooter fps">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/cod4.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="rocket.htm" class="image-link-border"
 data-id="rocket"
-data-search="rocket league racing"
-data-bg="https://i.postimg.cc/QMT5d7Gr/1.png">
+data-search="rocket league racing">
   <img src="https://i.postimg.cc/YSY3yZSy/image.png" class="enlarge-image-border">
 </a>
 
@@ -280,8 +226,7 @@ data-bg="https://i.postimg.cc/QMT5d7Gr/1.png">
 
 <a href="indian.htm" class="image-link-border"
 data-id="indian"
-data-search="indian game truck indian truck simulator"
-data-bg="https://i.postimg.cc/FKLcHStM/3.png">
+data-search="indian game truck indian truck simulator">
   <img src="https://i.postimg.cc/hG1mmBvK/image.png" class="enlarge-image-border">
 </a>
 
@@ -289,50 +234,43 @@ data-bg="https://i.postimg.cc/FKLcHStM/3.png">
 
 <a href="russian.htm" class="image-link-border"
 data-id="russian"
-data-search="russian game car russian car driver"
-data-bg="https://i.postimg.cc/QMT5d7GL/4.png">
+data-search="russian game car russian car driver">
   <img src="https://i.postimg.cc/tJKJfSJN/image.png" class="enlarge-image-border">
 </a>
 
 <a href="slow.htm" class="image-link-border"
 data-id="slow"
-data-search="slow roads io"
-data-bg="https://i.postimg.cc/XvCFY5S3/5.png">
+data-search="slow roads io">
   <img src="https://i.postimg.cc/w3YxF1b8/image.png" class="enlarge-image-border">
 </a>
 
 <a href="slope.htm" class="image-link-border"
 data-id="slope"
-data-search="slope 3 slope"
-data-bg="https://i.postimg.cc/QMT5d7GX/6.png">
+data-search="slope 3 slope">
   <img src="https://i.postimg.cc/wBqcxVc2/image.png" class="enlarge-image-border">
 </a>
 
 <a href="solar.htm" class="image-link-border"
 data-id="solar"
-data-search="solar smash"
-data-bg="https://i.postimg.cc/KYML8TSx/7.png">
+data-search="solar smash">
   <img src="https://i.postimg.cc/CLbjjtcH/image.png" class="enlarge-image-border">
 </a>
 
 <a href="top.htm" class="image-link-border"
 data-id="top"
-data-search="top speed racing racing top"
-data-bg="https://i.postimg.cc/0NwmySRz/8.png">
+data-search="top speed racing racing top">
   <img src="https://i.postimg.cc/B68Ftw8N/image.png" class="enlarge-image-border">
 </a>
 
 <a href="yellow.htm" class="image-link-border"
 data-id="yellow"
-data-search="undertale yellow"
-data-bg="https://i.postimg.cc/mrHMg9fF/10.png">
+data-search="undertale yellow">
   <img src="https://i.postimg.cc/Qd0Kmr1C/image.png" class="enlarge-image-border">
 </a>
 
 <a href="tunnel.htm" class="image-link-border"
 data-id="tunnel"
-data-search="tunnel rush"
-data-bg="https://i.postimg.cc/MGQRpB2c/9.png">
+data-search="tunnel rush">
   <img src="https://i.postimg.cc/bv5DXH6t/image.png" class="enlarge-image-border">
 </a>
 
@@ -340,92 +278,79 @@ data-bg="https://i.postimg.cc/MGQRpB2c/9.png">
 
 <a href="uno.htm" class="image-link-border"
 data-id="uno"
-data-search="uno card game"
-data-bg="https://i.postimg.cc/nLD7hmbm/11.png">
+data-search="uno card game">
   <img src="https://i.postimg.cc/tRW1f6Wf/image.png" class="enlarge-image-border">
 </a>
 
 <a href="mortal.htm" class="image-link-border"
 data-id="mortal"
-data-search="mortal kombat fighting game"
-data-bg="https://i.postimg.cc/q73nvKVs/13.png">
+data-search="mortal kombat fighting game">
   <img src="https://i.postimg.cc/fTWwKSCQ/image.png" class="enlarge-image-border">
 </a>
 
 <a href="house.htm" class="image-link-border"
 data-id="house"
-data-search="house of hazards game"
-data-bg="https://i.postimg.cc/XvCFY5Sw/14.png">
+data-search="house of hazards game">
   <img src="https://i.postimg.cc/3wG7RX8J/image.png" class="enlarge-image-border">
 </a>
 
 <a href="fnaf2.htm" class="image-link-border"
 data-id="fnaf2"
-data-search="fnaf 2 horror five nights at freddys"
-data-bg="https://i.postimg.cc/vBwngmbD/15.png">
+data-search="fnaf 2 horror five nights at freddys">
   <img src="https://i.postimg.cc/fTghf2ky/image.png" class="enlarge-image-border">
 </a>
 
 <a href="soinc.htm" class="image-link-border"
 data-id="soinc"
-data-search="soinc  revert"
-data-bg="https://i.postimg.cc/NMvX90Bm/16.png">
+data-search="soinc  revert">
   <img src="https://i.postimg.cc/WzWxSzNS/image.png" class="enlarge-image-border">
 </a>
 
 <a href="tower.htm" class="image-link-border"
 data-id="tower"
-data-search="tower blocks "
-data-bg="https://i.postimg.cc/tTG6ZgpP/17.png">
+data-search="tower blocks ">
   <img src="https://i.postimg.cc/cHdjSwrJ/image.png" class="enlarge-image-border">
 </a>
 
 <a href="fork.htm" class="image-link-border"
 data-id="fork"
-data-search="fork and sausage "
-data-bg="https://i.postimg.cc/V6PtrNmX/18.png">
+data-search="fork and sausage ">
   <img src="https://i.postimg.cc/tgjv3Wds/image.png" class="enlarge-image-border">
 </a>
 
 <a href="subway.htm" class="image-link-border"
 data-id="subway"
-data-search="subway surfers"
-data-bg="https://i.postimg.cc/C1p8BKSj/19.png">
+data-search="subway surfers">
   <img src="https://i.postimg.cc/kGzfBbXS/image.png" class="enlarge-image-border">
 </a>
 
 <a href="miner.htm" class="image-link-border"
 data-id="miner"
-data-search="idle miner clicker"
-data-bg="https://i.postimg.cc/tTG6Zgp5/20.png">
+data-search="idle miner clicker">
   <img src="https://i.postimg.cc/q74Qh00g/image.png" class="enlarge-image-border">
 </a>
 
 <a href="wordle.htm" class="image-link-border"
 data-id="wordle"
-data-search="wordle word game"
-data-bg="https://i.postimg.cc/4dRc73sb/21.png">
+data-search="wordle word game">
   <img src="https://i.postimg.cc/dQpb77f5/image.png" class="enlarge-image-border">
 </a>
 
 <a href="fnafe.htm" class="image-link-border"
 data-id="fnafe"
-data-search="fnaf epstien five nights at epstein "
-data-bg="https://i.postimg.cc/sXCWQ2sn/22.png">
+data-search="fnaf epstien five nights at epstein ">
   <img src="https://i.postimg.cc/0NyWXx3x/image.png" class="enlarge-image-border">
 </a>
 
 <a href="level.htm" class="image-link-border"
 data-id="level"
-data-search="level devil platformer"
-data-bg="https://i.postimg.cc/85gvJCNZ/23.png">
+data-search="level devil platformer">
   <img src="https://i.postimg.cc/B6dmvFvD/image.png" class="enlarge-image-border">
 </a>
 
 <a href="little.htm" class="image-link-border"
 data-id="little"
-data-search="little alchemy 2 "
-data-bg="https://i.postimg.cc/26NWb5rM/24.png">
+data-search="little alchemy 2 ">
   <img src="https://i.postimg.cc/B61CRvBr/image.png" class="enlarge-image-border">
 </a>
 
@@ -433,197 +358,170 @@ data-bg="https://i.postimg.cc/26NWb5rM/24.png">
 
 <a href="ragdoll.htm" class="image-link-border"
 data-id="ragdoll"
-data-search="ragdoll hit"
-data-bg="https://i.postimg.cc/G2Pyk1m5/26.png">
+data-search="ragdoll hit">
   <img src="https://i.postimg.cc/BbB2GPLz/image.png" class="enlarge-image-border">
 </a>
 
 <a href="smashbros.htm" class="image-link-border"
 data-id="smashbros"
-data-search="smash bros"
-data-bg="https://i.postimg.cc/1zPGvZWn/27.png">
+data-search="smash bros">
   <img src="https://i.postimg.cc/C5mMpbYq/2.jpg" class="enlarge-image-border">
 </a>
 
 <a href="south.htm" class="image-link-border"
 data-id="south"
-data-search="south park"
-data-bg="https://i.postimg.cc/pLKQQdB2/28.png">
+data-search="south park">
   <img src="https://i.postimg.cc/1535c7cr/southpark.jpg" class="enlarge-image-border">
 </a>
 
 <a href="ssf.htm" class="image-link-border"
 data-id="ssf"
-data-search="super street fighter"
-data-bg="https://i.postimg.cc/dVGRR09s/29.png">
+data-search="super street fighter">
   <img src="https://i.postimg.cc/YqCqfDff/street.jpg" class="enlarge-image-border">
 </a>
 
 <a href="mk3.htm" class="image-link-border"
 data-id="mk3"
-data-search="mortal kombat 3"
-data-bg="https://i.postimg.cc/fbZc8hH8/30.png">
+data-search="mortal kombat 3">
   <img src="https://i.postimg.cc/SQrx9b8j/mk2.jpg" class="enlarge-image-border">
 </a>
 
 <a href="pac.htm" class="image-link-border"
 data-id="pac"
-data-search="pac man"
-data-bg="https://i.postimg.cc/PqhWSk6M/31.png">
+data-search="pac man">
   <img src="https://i.postimg.cc/kXgXFYF7/pac.jpg" class="enlarge-image-border">
 </a>
 
 <a href="mario2.htm" class="image-link-border"
 data-id="mario2"
-data-search="super mario 2"
-data-bg="https://i.postimg.cc/0NxYVqtD/32.png">
+data-search="super mario 2">
   <img src="https://i.postimg.cc/C5mMpbYq/2.jpg" class="enlarge-image-border">
 </a>
 
     <a href="chat.htm" class="image-link-border"
 data-id="chat"
-data-search="chat chat room"
-data-bg="https://i.postimg.cc/dtDMXVdW/Retro_Bowl_(20).png">
+data-search="chat chat room">
   <img src="https://i.postimg.cc/MHWsSvgd/chat.png" class="enlarge-image-border">
 </a>
 
 <a href="https://forms.gle/Aj4CVGuVqTAo5VB79" class="image-link-border"
 data-id="form"
-data-search="appstore gamestore store "
-data-bg="https://i.postimg.cc/hPhFwtx3/Retro_Bowl_(21).png">
+data-search="appstore gamestore store ">
   <img src="https://i.postimg.cc/rFjBKLJF/store.png" class="enlarge-image-border">
 </a>
 
 
 <a href="silk.htm" class="image-link-border"
 data-id="silk"
-data-search="silk draw"
-data-bg="https://i.postimg.cc/vZrd7S5W/silk.png">
+data-search="silk draw">
   <img src="https://i.postimg.cc/CLjFJ1gV/silk2.png" class="enlarge-image-border">
+</a>
 
 <a href="tetris.htm" class="image-link-border"
 data-id="tetris"
-data-search="tetris atack puzzle"
-data-bg="https://i.postimg.cc/cJZRFND3/33.png">
+data-search="tetris atack puzzle">
   <img src="https://i.postimg.cc/sfcgWCSf/etetris.webp" class="enlarge-image-border">
 </a>
 
 <a href="sonic.htm" class="image-link-border"
 data-id="sonic"
-data-search="sonic the hedgehog"
-data-bg="https://i.postimg.cc/nhqKKL14/34.png">
+data-search="sonic the hedgehog">
   <img src="https://i.postimg.cc/1535c7cp/sonic.webp" class="enlarge-image-border">
 </a>
 
 <a href="lego.htm" class="image-link-border"
 data-id="lego"
-data-search="lego star wars"
-data-bg="https://i.postimg.cc/bw100vRD/35.png">
+data-search="lego star wars">
   <img src="https://i.postimg.cc/Hsks4v4Y/lego.jpg" class="enlarge-image-border">
 </a>
 
 <a href="ultamite.htm" class="image-link-border"
 data-id="ultamite"
-data-search="ultamite assasin "
-data-bg="https://i.postimg.cc/XY9KKvgc/36.png">
+data-search="ultamite assasin ">
   <img src="https://i.postimg.cc/m2g2NpNj/ua.jpg" class="enlarge-image-border">
 </a>
 
 <a href="fire.htm" class="image-link-border"
 data-id="fire"
-data-search="fire boy and ice girl"
-data-bg="https://i.postimg.cc/s2yYTRnM/37.png">
+data-search="fire boy and ice girl">
   <img src="https://i.postimg.cc/tR546GP4/irebo.jpg" class="enlarge-image-border">
 </a>
 
 <a href="egg.htm" class="image-link-border"
 data-id="egg"
-data-search="eggy car"
-data-bg="https://i.postimg.cc/SxcLLKGn/38.png">
+data-search="eggy car">
   <img src="https://i.postimg.cc/KcN8ThTV/eggcar.jpg" class="enlarge-image-border">
 </a>
 
 <a href="block.htm" class="image-link-border"
 data-id="block"
-data-search="block post"
-data-bg="https://i.postimg.cc/Z56PPqL9/39.png">
+data-search="block post">
   <img src="https://i.postimg.cc/cCX1GfZK/bp.jpg" class="enlarge-image-border">
 </a>
 
 <a href="blast.htm" class="image-link-border"
 data-id="blast"
-data-search="block blast tetris"
-data-bg="https://i.postimg.cc/jjKHMr8p/40.png">
+data-search="block blast tetris">
   <img src="https://i.postimg.cc/Gtq3nvrD/bb.jpg" class="enlarge-image-border">
 </a>
 
 <a href="solitare.htm" class="image-link-border"
 data-id="solitare"
-data-search="solitare cardgames"
-data-bg="https://i.postimg.cc/25mQ0fHK/41.png">
+data-search="solitare cardgames">
   <img src="https://i.postimg.cc/m2g2NpNF/solitaert.png" class="enlarge-image-border">
 </a>
 
 <a href="baldi.htm" class="image-link-border"
 data-id="baldi"
-data-search="baldi horror basics"
-data-bg="https://i.postimg.cc/xdYv6Ssx/42.png">
+data-search="baldi horror basics">
   <img src="https://i.postimg.cc/2y2jNnmB/baldi.webp" class="enlarge-image-border">
 </a>
 
 <a href="bubble.htm" class="image-link-border"
 data-id="bubble"
-data-search="bubble shooter"
-data-bg="https://i.postimg.cc/s2yYTRn0/43.png">
+data-search="bubble shooter">
   <img src="https://i.postimg.cc/QC0NZcsk/bs.png" class="enlarge-image-border">
 </a>
 
 <a href="baby.htm" class="image-link-border"
 data-id="baby"
-data-search="baby shooter vietnam"
-data-bg="https://i.postimg.cc/bvTQMFMm/44.png">
+data-search="baby shooter vietnam">
   <img src="https://i.postimg.cc/gjNcb3dV/bss.webp" class="enlarge-image-border">
 </a>
 
 <a href="tennis.htm" class="image-link-border"
 data-id="tennis"
-data-search="tennis "
-data-bg="https://i.postimg.cc/9fpGSNSS/45.png">
+data-search="tennis ">
   <img src="https://i.postimg.cc/kMcgSPSj/cntt.webp" class="enlarge-image-border">
 </a>
 
 <a href="plane.htm" class="image-link-border"
 data-id="plane"
-data-search="plane landing flight"
-data-bg="https://i.postimg.cc/vmzWjSkR/46.png">
+data-search="plane landing flight">
   <img src="https://i.postimg.cc/T293bvbF/cpn.png" class="enlarge-image-border">
 </a>
 
 <a href="csgo.htm" class="image-link-border"
 data-id="csgo"
-data-search="csgo counter strike clicker"
-data-bg="https://i.postimg.cc/7LVgcQcF/47.png">
+data-search="csgo counter strike clicker">
   <img src="https://i.postimg.cc/CMNx8pDy/csgo.png" class="enlarge-image-border">
 </a>
 
 <a href="cattle.htm" class="image-link-border"
 data-id="cattle"
-data-search="crazy cattle"
-data-bg="https://i.postimg.cc/t4FddgzC/48.png">
+data-search="crazy cattle">
   <img src="https://i.postimg.cc/RhXCxw91/cc3.jpg" class="enlarge-image-border">
 </a>
 
 <a href="dragon.htm" class="image-link-border"
 data-id="dragon"
-data-search=" dungeons and dragon gamble casino"
-data-bg="https://i.postimg.cc/kgWNN5yg/49.png">
+data-search=" dungeons and dragon gamble casino">
   <img src="https://i.postimg.cc/NG4jXvTv/ddg.jpg" class="enlarge-image-border">
 </a>
 
 <a href="es2.htm" class="image-link-border"
 data-id="es2"
-data-search="escape road 2"
-data-bg="https://i.postimg.cc/7LVgcQcB/50.png">
+data-search="escape road 2">
   <img src="https://i.postimg.cc/5932zWvJ/es2.jpg" class="enlarge-image-border">
 </a>
 
@@ -631,100 +529,85 @@ data-bg="https://i.postimg.cc/7LVgcQcB/50.png">
 
 <a href="hill.htm" class="image-link-border"
 data-id="hill"
-data-search="hill climb racing"
-data-bg="https://i.postimg.cc/d0B8XSpP/52.png">
+data-search="hill climb racing">
   <img src="https://i.postimg.cc/Lsc3jZcq/image.png" class="enlarge-image-border">
 </a>
 
 <a href="poker.htm" class="image-link-border"
 data-id="poker"
-data-search="poker cardgames nigger nigga"
-data-bg="https://i.postimg.cc/GpD1yF5h/rh-(10).png">
+data-search="poker cardgames nigger nigga">
   <img src="https://i.postimg.cc/MZ5JVKdh/image.png" class="enlarge-image-border">
 </a>
 <a href="fallout.htm" class="image-link-border"
 data-id="fallout"
-data-search="fallout rpg"
-data-bg="https://i.postimg.cc/TwX4XKKZ/8.png">
+data-search="fallout rpg">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/fallout.jpeg" class="enlarge-image-border">
 </a>
 
 
 <a href="zelda.htm" class="image-link-border"
 data-id="zelda"
-data-search="zelda legend adventure"
-data-bg="https://i.postimg.cc/fLhrhV3R/10.png">
+data-search="zelda legend adventure">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/elda.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="mike.htm" class="image-link-border"
 data-id="mike"
-data-search="mike tyson punch out boxing"
-data-bg="https://i.postimg.cc/50MRMXHt/11.png">
+data-search="mike tyson punch out boxing">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/mtpu.jpeg" class="enlarge-image-border">
 </a> 
 <a href="https://eaglercraft.surge.sh" class="image-link-border"
 data-id="minecraft"
-data-search="minecraft 1.6 minecraft classic eaglercraft"
-data-bg="https://i.postimg.cc/pT6FKsK6/Retro-Bowl-(13).png">
+data-search="minecraft 1.6 minecraft classic eaglercraft">
   <img src="https://i.postimg.cc/pTjCZQhp/image.png" class="enlarge-image-border">
 </a> 
 <a href="g1.htm" class="image-link-border"
 data-id="g1"
-data-search="granny horror"
-data-bg="https://i.postimg.cc/g0N8zrbw/Retro-Bowl-(14).png">
+data-search="granny horror">
   <img src="https://i.postimg.cc/1RgwS9WL/granny.png" class="enlarge-image-border">
 </a> 
 <a href="g2.htm" class="image-link-border"
 data-id="g2"
-data-search="granny 2 horror"
-data-bg="https://i.postimg.cc/MTHRvxz9/Retro-Bowl-(15).png">
+data-search="granny 2 horror">
   <img src="https://i.postimg.cc/SxGzdjsz/granny2.jpg" class="enlarge-image-border">
 </a> 
 <a href="g3.htm" class="image-link-border"
 data-id="g3"
-data-search="granny 3 horror"
-data-bg="https://i.postimg.cc/4d0ccM3j/Retro_Bowl_(16).png">
+data-search="granny 3 horror">
   <img src="https://i.postimg.cc/zDRbMxvg/gran3.jpg" class="enlarge-image-border">
 </a> 
 <a href="space.htm" class="image-link-border"
 data-id="space"
-data-search="space waves geometry"
-data-bg="https://i.postimg.cc/KjgMDNky/Retro-Bowl-(17).png">
+data-search="space waves geometry">
   <img src="https://i.postimg.cc/NjNjLXLY/space-waves-1x1-cover.png" class="enlarge-image-border">
 </a> 
 <a href="poly.htm" class="image-link-border"
 data-id="poly"
-data-search="poly track drifting racing"
-data-bg="https://i.postimg.cc/nztPtXsC/12.png">
+data-search="poly track drifting racing">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/download%20(1).jpeg" class="enlarge-image-border">
 </a>
 
 <a href="cookie.htm" class="image-link-border"
 data-id="cookie"
-data-search="cookie clicker idle"
-data-bg="https://i.postimg.cc/QtryrFB7/13.png">
+data-search="cookie clicker idle">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/download%20(2).jpeg" class="enlarge-image-border">
 
 </a>
 <a href="cross.htm" class="image-link-border"
 data-id="cross"
-data-search="crossy road arcade"
-data-bg="https://i.postimg.cc/76yWy5C7/14.png">
+data-search="crossy road arcade">
   <img src="https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/css.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="drift.htm" class="image-link-border"
 data-id="drift"
-data-search="drift boss racing"
-data-bg="https://i.postimg.cc/V6cVcJSn/15.png">
+data-search="drift boss racing">
   <img src="  https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/drift.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="tank.htm" class="image-link-border"
 data-id="tank"
-data-search="tank trouble multiplayer shooter"
-data-bg="https://i.postimg.cc/KzrscmLj/16.png">
+data-search="tank trouble multiplayer shooter">
   <img src=" https://uploads.onecompiler.io/445bmgf4z/445cc6tsh/tank.jpeg" class="enlarge-image-border">
 </a>
 
@@ -735,24 +618,23 @@ data-bg="https://i.postimg.cc/KzrscmLj/16.png">
    <a href="smash.htm" class="image-link-border"
            data-id="smash"
            data-search="smash karts racing multiplayer "
-           data-bg="https://uploads.onecompiler.io/4427p9zfv/4484h8c6z/Retro%20Bowl%20(5).png">
+          >
           <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/SMASH.png" class="enlarge-image-border">
         </a>
 
 <!--superhot -->
- <a href="superhot.htm" class="image-link-border"
+<a href="superhot.htm" class="image-link-border"
  data-id="superhot"
  data-search="superhot shooter fps"
- data-bg="https://i.postimg.cc/ZRFDYJ3N/18.png">
+>
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/hot.jpeg" class="enlarge-image-border">
-</a>
 </a>
 <!-- butlife -->
 
             <a href="bit.htm" class="image-link-border"
             data-id="bit"
             data-search="bitlife simulation life"
-            data-bg="https://i.postimg.cc/vBLS8G96/19.png">
+           >
   <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/bite.png" class="enlarge-image-border">
 </a>
 
@@ -760,13 +642,13 @@ data-bg="https://i.postimg.cc/KzrscmLj/16.png">
       <a href="college.htm" class="image-link-border"
       data-id="rbc"
       data-search="retro bowl college football"
-      data-bg="https://i.postimg.cc/76MQPq7n/20.png">
+     >
   <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/c.jpeg" class="enlarge-image-border">
 </a>
 
       <!-- slither-->
       <a href="slit.htm" class="image-link-border"
-      data-bg="https://i.postimg.cc/k4FhM78w/21.png"
+     
       data-search="slither.io snake multiplayer"
       data-id="slit">
   <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/s.jpeg" class="enlarge-image-border">
@@ -775,13 +657,11 @@ data-bg="https://i.postimg.cc/KzrscmLj/16.png">
 <!-- worldgusser-->
 <a href="world.htm" class="image-link-border"
 data-id="world"
-data-search="world guessr geography geoguessr"
-data-bg="https://i.postimg.cc/mDN6ZTMj/22.png">
+data-search="world guessr geography geoguessr">
   <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/w.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="ore.htm" class="image-link-border"
-data-bg="https://i.postimg.cc/B6cwZJD7/23.png"
 data-search="idle breakout clicker"
 data-id="ore">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/ire.jpeg" class="enlarge-image-border">
@@ -789,68 +669,58 @@ data-id="ore">
 
 <a href="mr.htm" class="image-link-border" 
 data-id="mr"
-data-search="mr mine idle mining"
-data-bg="https://i.postimg.cc/NjDnws6H/Retro-Bowl-(12).png">
+data-search="mr mine idle mining">
   <img src="https://i.postimg.cc/pVwHGZhg/df.png"
   class="enlarge-image-border">
 </a>
 
 <a href="grow.htm" class="image-link-border"
 data-id="grow"
-data-search="growmi puzzle platformer"
-data-bg="https://i.postimg.cc/Jncd7RJd/24.png">
+data-search="growmi puzzle platformer">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/rwo.webp" class="enlarge-image-border">
 </a>
 
 <a href="agar.htm" class="image-link-border"
 data-id="agar"
-data-search="agar.io multiplayer blob"
-data-bg="https://i.postimg.cc/sX90f3SN/25.png">
+data-search="agar.io multiplayer blob">
   <img src="https://uploads.onecompiler.io/4427p9zfv/3xbzqzhtg/agar.jpg" class="enlarge-image-border">
 </a>
 
 <a href="back.htm" class="image-link-border"
 data-id="back"
-data-search="backrooms horror"
-data-bg="https://i.postimg.cc/9MtNXcTk/26.png">
+data-search="backrooms horror">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/ack.webp" class="enlarge-image-border">
 </a>
 
 <a href="ex.htm" class="image-link-border"
 data-id="ex"
-data-search="vex platformer"
-data-bg="https://i.postimg.cc/0QdH59m3/27.png">
+data-search="vex platformer">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/ultamite.jpeg" class="enlarge-image-border">
 </a>
 
 <a href="just.htm" class="image-link-border"
 data-id="just"
-data-search="just fall platformer"
-data-bg="https://i.postimg.cc/0jkXbhdZ/28.png">
+data-search="just fall platformer">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/jsut.jpeg" class="enlarge-image-border">
 </a>
 <a href="kour.htm" class="image-link-border"
 data-id="kour"
-data-search="kour.io parkour multiplayer"
-data-bg="https://i.postimg.cc/FzrC7wgW/29.png">
+data-search="kour.io parkour multiplayer">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/kour.jpeg" class="enlarge-image-border">
 </a>
 <a href="hunt.htm" class="image-link-border"
 data-id="hunt"
-data-search="drift hunters racing"
-data-bg="https://i.postimg.cc/L59QnGB0/30.png">
+data-search="drift hunters racing">
   <img src="https://uploads.onecompiler.io/4427p9zfv/446mx7tqd/drif.png" class="enlarge-image-border">
 </a>
 <a href="fnaf.htm" class="image-link-border"
 data-id="fnaf"
-data-search="fnaf five nights at freddys horror"
-data-bg="https://i.postimg.cc/7hHtfjMR/32.png">
+data-search="fnaf five nights at freddys horror">
   <img src="https://uploads.onecompiler.io/4427p9zfv/448fmdpjw/fnaf.avif" class="enlarge-image-border">
 </a>
 <a href="99.htm" class="image-link-border"
 data-id="99"
-data-search="99 balls arcade"
-data-bg="https://i.postimg.cc/hvDZfNbZ/31.png">
+data-search="99 balls arcade">
   <img src="https://uploads.onecompiler.io/4427p9zfv/448fmdpjw/99.png" class="enlarge-image-border">
 </a>
 
@@ -859,112 +729,10 @@ data-bg="https://i.postimg.cc/hvDZfNbZ/31.png">
 </div>
 </div>
 </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- SOCIAL PANEL -->
-    <section id="social" class="panel"  data-bg="linear-gradient(135deg, #071a3a 0%, #0d3d8a 45%, #2d8cff 100%)">
-      <div class="links-grid">
-     <a href="http://vortex1.surge.sh" class="link-card" target="_blank">
-      <div class="link-title">Vortex1</div>
-      <div class="link-sub">http://vortex1.surge.sh</div>
-    </a>
-    
- <a href="http://vortex2.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Vortex2</div>
-      <div class="link-sub">http://vortex2.surge.sh/</div>
-    </a>
-    <a href="http://vortex3.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Vortex3</div>
-      <div class="link-sub">http://vortex3.surge.sh/</div>
-    </a>
-
-   
-   
-   
- <a href="http://vortex4.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Vortex4</div>
-      <div class="link-sub">http://vortex4.surge.sh/</div>
-    </a>
-    
-      <a href="http://vortex5.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Vortex5</div>
-      <div class="link-sub">http://vortex5.surge.sh/</div>
-    </a>
-     <a href="http://vortex6.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Vortex6</div>
-      <div class="link-sub">http://vortex6.surge.sh/</div>
-    </a>
-     <a href="http://vortexblanchard.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">VorteXBlanchard</div>
-      <div class="link-sub">http://vortexblanchard.surge.sh/</div>
-    </a>
-
-      <a href="http://qzip.surge.sh/" class="link-card" target="_blank">
-      <div class="link-title">Quarter Zip</div>
-      <div class="link-sub">http://qzip.surge.sh/</div>
-    </a>
-     
-    
 </div>
-    </section>
-
-<!-- updates -->
-<section id="links" class="panel" data-bg="linear-gradient(135deg, #2a1300 0%, #7a2f00 45%, #fb7522 100%)">
-  <div class="news-layout">
-    <div class="news-grid">
-      <a class="news-card-link" href="news-featured.html">
-      <article class="news-main">
-        <img src="block.png" alt="Placeholder news image">
-        <h2>VorteX Gets Blocked!</h2>
-        <p>Vortexgames gets blocked on thursday, causing hundreds to go without games.</p>
-        <ul>
-          <li>How to stay connected with Vortex.</li>
-          <li>What we are doing to protect your games.</li>
-          <li>How to keep Vortex safe.</li>
-        </ul>
-      </article>
-      </a>
-
-      <aside class="news-mid">
-        <a class="news-card-link" href="news-mid-1.html">
-        <article class="news-mini">
-          <img src="logo.png" alt="Placeholder news image">
-          <h3>New UI</h3>
-          <p>Vortex gets an updated user interface.</p>
-        </article>
-        </a>
-        <a class="news-card-link" href="help.html">
-        <article class="news-mini">
-          <h3>Join our Discord</h3>
-          <p>Vortex needs your help to add more games to the collection. Join our discord!</p>
-        </article>
-        </a>
-    
-      </aside>
-
-      <aside class="news-right">
-        <a class="news-card-link" href="news-mid-2.html">
-        <article class="news-right-card">
-          <img src="multi.png" alt="Placeholder news image">
-          <h3>Minecraft Multiplayer Updates</h3>
-        </article>
-        </a>
-     
-    </div>
-  </div>
-</section>
-
+</div>
+</div>
+  </section>
 </main>
 
 <script src="script.js"></script>

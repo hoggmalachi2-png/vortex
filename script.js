@@ -1,247 +1,9 @@
-/* =========================
-   BACKGROUND SYSTEM (Hybrid Images + Colors + Panels)
-   ========================= */
-
-const background = document.getElementById('background'); // <-- background container
-
-// Create two fade layers
-const bgLayerA = document.createElement('div'); 
-const bgLayerB = document.createElement('div');
-
-bgLayerA.className = 'bg-layer active';
-bgLayerB.className = 'bg-layer';
-
-background.appendChild(bgLayerA);
-background.appendChild(bgLayerB);
-
-let activeLayer = bgLayerA;
-let inactiveLayer = bgLayerB;
-
-// Smooth background change (image or color)
-function changeBackground(value) {
-  if (!value) return;
-
-  inactiveLayer.classList.add('active');
-  activeLayer.classList.remove('active');
-
-  // Detect if value is an image URL or CSS gradient
-  const isImage = value.startsWith('http') || value.match(/\.(jpg|jpeg|png|gif|avif)$/i);
-  const isGradient = /gradient\(/i.test(value);
-
-  if (isImage) {
-    inactiveLayer.style.backgroundImage = `url('${value}')`;
-    inactiveLayer.style.backgroundColor = '';
-  } else if (isGradient) {
-    inactiveLayer.style.backgroundImage = value;
-    inactiveLayer.style.backgroundColor = '';
-  } else {
-    inactiveLayer.style.backgroundImage = '';
-    inactiveLayer.style.backgroundColor = value;
-  }
-
-  // Swap layers
-  const temp = activeLayer;
-  activeLayer = inactiveLayer;
-  inactiveLayer = temp;
-}
-
-/* =========================
-   PANEL NAVIGATION
-   ========================= */
-
-const navLinks = document.querySelectorAll('.top-nav a');
-const panelTrack = document.querySelector('.panel-track');
-const topNav = document.querySelector('.top-nav');
-const cornerLogo = document.querySelector('.corner-logo');
-const navIndicator = document.createElement('div');
-navIndicator.className = 'nav-gloss-indicator';
-if (topNav) topNav.prepend(navIndicator);
-
-function moveNavIndicator(target) {
-  if (!topNav || !target) return;
-  const navRect = topNav.getBoundingClientRect();
-  const linkRect = target.getBoundingClientRect();
-  const x = linkRect.left - navRect.left;
-
-  navIndicator.style.width = `${linkRect.width}px`;
-  navIndicator.style.transform = `translateX(${x}px)`;
-}
-
-function alignCornerLogoToNav() {
-  if (!topNav || !cornerLogo) return;
-  const navRect = topNav.getBoundingClientRect();
-  const logoHeight = cornerLogo.getBoundingClientRect().height;
-  const y = navRect.top + (navRect.height - logoHeight) / 2;
-  cornerLogo.style.top = `${Math.max(0, y)}px`;
-}
-
-navLinks.forEach((link, index) => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-
-    panelTrack.style.transform = `translateX(-${index * 100}vw)`;
-    navLinks.forEach(a => a.classList.remove('active'));
-    link.classList.add('active');
-    moveNavIndicator(link);
-
-    const panel = document.querySelector(link.getAttribute('href'));
-    if (!panel) return;
-
-    if (panel.id === 'home') {
-      // Home: default to first Recently Played tile
-      const recentTile = document.querySelector('.container-3 [data-bg]');
-      if (recentTile) changeBackground(recentTile.dataset.bg);
-    } else if (panel.dataset.bg) {
-      // Non-home panels: solid color
-      changeBackground(panel.dataset.bg);
-    }
-  });
-});
-
-panelTrack.style.transform = 'translateX(0vw)'; // start at Home
-const activeNav = document.querySelector('.top-nav a.active') || navLinks[0];
-if (activeNav) {
-  requestAnimationFrame(() => {
-    moveNavIndicator(activeNav);
-    alignCornerLogoToNav();
-  });
-}
-window.addEventListener('resize', () => {
-  const current = document.querySelector('.top-nav a.active');
-  if (current) moveNavIndicator(current);
-  alignCornerLogoToNav();
-});
-if (cornerLogo) {
-  cornerLogo.addEventListener('load', alignCornerLogoToNav);
-}
-
-/* =========================
-   INITIAL HOME BACKGROUND (after Recent Played renders)
-   ========================= */
-
-function setInitialHomeBG() {
-  const recentTile = document.querySelector('.container-3 [data-bg]');
-  if (recentTile) changeBackground(recentTile.dataset.bg);
-}
-
-
-/* =========================
-   HOME TILE HOVER
-   ========================= */
-
-document.addEventListener('mouseover', e => {
-  const tile = e.target.closest('[data-bg]');
-  if (!tile) return;
-  const activeNavHref = document.querySelector('.top-nav a.active')?.getAttribute('href');
-  const isHomeTile = !!tile.closest('#home');
-  if (activeNavHref === '#home' && isHomeTile) {
-    changeBackground(tile.dataset.bg);
-  }
-});
-
-/* =========================
-   RECENTLY PLAYED SYSTEM
-   ========================= */
-
-document.addEventListener('DOMContentLoaded', () => {
-  const recentRow = document.querySelector('.container-3');
-  const placeholders = Array.from(
-    document.querySelectorAll('#placeholders [data-id]')
-  );
-  const placeholderIdMap = {
-    'game-1': 'geo',
-    'game-2': 'level',
-    'game-3': 'bit',
-    'game-4': 'blast',
-    'game-5': 'retro'
-  };
-
-  let lastPlayed = JSON.parse(localStorage.getItem('lastPlayed')) || [];
-
-  function normalizeGameId(id) {
-    return placeholderIdMap[id] || id;
-  }
-
-  function dedupeRecent(list) {
-    const seen = new Set();
-    const unique = [];
-    for (let i = list.length - 1; i >= 0; i--) {
-      const id = normalizeGameId(list[i]);
-      if (!id || seen.has(id)) continue;
-      seen.add(id);
-      unique.push(id);
-    }
-    return unique.reverse();
-  }
-
-  function renderRecent() {
-    recentRow.innerHTML = '';
-
-    lastPlayed = dedupeRecent(lastPlayed).slice(-5);
-    localStorage.setItem('lastPlayed', JSON.stringify(lastPlayed));
-
-    lastPlayed.slice().reverse().forEach(id => {
-      const tile = document.querySelector(`[data-id="${id}"]`);
-      if (tile) recentRow.appendChild(tile.cloneNode(true));
-    });
-
-    const used = new Set(
-      Array.from(recentRow.querySelectorAll('[data-id]')).map(el => normalizeGameId(el.dataset.id))
-    );
-
-    for (let i = 0; i < placeholders.length && recentRow.children.length < 5; i++) {
-      const id = placeholders[i].dataset.id;
-      const canonicalId = normalizeGameId(id);
-      if (!canonicalId || used.has(canonicalId)) continue;
-      used.add(canonicalId);
-      recentRow.appendChild(placeholders[i].cloneNode(true));
-    }
-
-    setInitialHomeBG();
-  }
-
-  renderRecent();
-
-  document.addEventListener('click', e => {
-    const tile = e.target.closest('[data-id]');
-    if (!tile) return;
-
-    const id = normalizeGameId(tile.dataset.id);
-    if (!id) return;
-
-    lastPlayed = lastPlayed.filter(g => g !== id);
-    lastPlayed.push(id);
-    lastPlayed = lastPlayed.slice(-5);
-
-    localStorage.setItem('lastPlayed', JSON.stringify(lastPlayed));
-    setTimeout(renderRecent, 200);
-  });
-});
-
-/* =========================
-   CLOCK
-   ========================= */
-
-function updateClock() {
-  const clock = document.getElementById('clock');
-  if (!clock) return;
-
-  const now = new Date();
-  let h = now.getHours();
-  let m = now.getMinutes();
-  const ampm = h >= 12 ? 'PM' : 'AM';
-
-  h = h % 12 || 12;
-  m = m < 10 ? '0' + m : m;
-
-  clock.textContent = `${h}:${m} ${ampm}`;
-}
-
-setInterval(updateClock, 1000);
-updateClock();
-
 const installPromptKey = 'pwaInstalled_v2';
 const firstVisitOverlaySeenKey = 'firstVisitOverlaySeen_v1';
+const recentStorageKey = 'lastPlayed_v3';
+const recentStorageLegacyKey = 'lastPlayed';
+const gamesBackgroundColorStorageKey = 'vortexGamesBackgroundColor';
+const accentColorStorageKey = 'vortexAccentColor';
 
 function isLikelyInstalled() {
   const isLocalPreviewHost =
@@ -266,17 +28,29 @@ window.addEventListener('appinstalled', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('updateOverlay');
-  if (!overlay) return;
+  const root = document.documentElement;
+  const isHexColor = value => /^#[0-9a-f]{6}$/i.test(value || '');
 
-  // sessionStorage resets when tab is closed
-  const hasShownThisSession = sessionStorage.getItem('overlayShown');
+  const hexToRgb = value => {
+    const hex = value.replace('#', '');
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    return `${r}, ${g}, ${b}`;
+  };
 
-  if (!hasShownThisSession) {
-    overlay.style.display = 'flex';
-    sessionStorage.setItem('overlayShown', 'true');
-  } else {
-    overlay.style.display = 'none';
+  // Backward compatibility: if old key exists, use it as games background.
+  const savedGamesBg =
+    localStorage.getItem(gamesBackgroundColorStorageKey) ||
+    localStorage.getItem('vortexBackgroundColor');
+  if (isHexColor(savedGamesBg)) {
+    root.style.setProperty('--games-bg-color', savedGamesBg);
+  }
+
+  const savedAccent = localStorage.getItem(accentColorStorageKey);
+  if (isHexColor(savedAccent)) {
+    root.style.setProperty('--accent-color', savedAccent);
+    root.style.setProperty('--accent-rgb', hexToRgb(savedAccent));
   }
 });
 
@@ -308,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   localStorage.setItem(firstVisitOverlaySeenKey, 'true');
-
   overlay.style.display = 'flex';
   overlay.setAttribute('aria-hidden', 'false');
 
@@ -338,13 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
         installVideo.play().catch(() => {});
       }
     });
+
     tryPlayInstallVideo().then(started => {
       if (!started) {
         const startOnInteraction = () => {
           tryPlayInstallVideo().then(ok => {
-            if (ok) {
-              overlay.removeEventListener('pointerdown', startOnInteraction);
-            }
+            if (ok) overlay.removeEventListener('pointerdown', startOnInteraction);
           });
         };
         overlay.addEventListener('pointerdown', startOnInteraction);
@@ -364,110 +136,275 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* =========================
-   GAME SEARCH
-   ========================= */
-
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('gameSearch');
-  if (!input) return;
-
   const count = document.getElementById('gameCount');
-  const filterButtons = Array.from(document.querySelectorAll('#games .game-filter-btn'));
-  const gameGrid = document.querySelector('#games .container-3');
-  const tiles = Array.from(
-    document.querySelectorAll('#games a.image-link-border, #games a.image-link-border1, #games a.image-link-border2')
+  const searchResults = document.getElementById('searchResults');
+  const recentRow = document.getElementById('recentlyPlayed');
+  const recentPrev = document.getElementById('recentPrev');
+  const recentNext = document.getElementById('recentNext');
+  const allGamesSource = document.getElementById('allGamesSource');
+
+  if (!input || !allGamesSource || !searchResults) return;
+
+  const allTiles = Array.from(
+    allGamesSource.querySelectorAll('a.image-link-border, a.image-link-border1, a.image-link-border2')
   );
-  const appIds = new Set(['chat', 'form', 'silk']);
-  const newIds = new Set([
-    '', '', '', '', '', '', '', '',
-    'baby', 'baldi', 'blast', 'block', 'bubble', 'cattle', 'csgo', 'dragon',
-    'egg', 'es2', 'fire', 'fnaf2', 'fnafe', 'fork', 'fort', 'hill', 'house',
-    'indian', 'lego', 'level', 'little', 'mario2', 'miner', 'mk3', 'mortal',
-    'pac', 'plane', 'ragdoll', 'russian', 'slope', 'slow', 'smashbros',
-    'sonic', 'solar', 'solitare', 'soinc', 'south', 'ssf', 'subway', 'tank',
-    'tennis', 'tetris', 'top', 'tower', 'tunnel', 'ultamite', 'uno', 'wordle',
-    'world', 'yellow', 'smash', 'fnaf'
-  ]);
-  const shooterKeywords = ['shooter', 'fps', 'gun', 'counter', 'csgo', 'sniper', 'bullet', 'doom', 'cod', 'superhot', 'force'];
-  const carKeywords = ['car', 'drive', 'drift', 'racing', 'race', 'truck', 'slope', 'subway', 'fortzone', 'road'];
-  const sportsKeywords = ['sports', 'football', 'soccer', 'baseball', 'basketball', 'tennis', 'madden', 'mlb', 'bowl', 'fifa'];
-  const horrorKeywords = ['horror', 'fnaf', 'granny', 'backrooms', 'baldi', 'freddys', 'scary', 'night'];
-  let selectedFilter = 'all';
 
-  function getCategory(tile) {
-    const id = (tile.dataset.id || '').toLowerCase();
-    if (tile.dataset.category) return tile.dataset.category.toLowerCase();
-    if (appIds.has(id)) return 'apps';
-    if (newIds.has(id)) return 'new';
-    return 'games';
+  function tileId(tile) {
+    return (tile.dataset.id || tile.getAttribute('href') || '').toLowerCase();
   }
 
-  function updateSearch() {
-    const q = input.value.trim().toLowerCase();
-    let shown = 0;
+  function getSearchHaystack(tile) {
+    return [
+      tile.dataset.search,
+      tile.dataset.title,
+      tile.dataset.gameTitle,
+      tile.dataset.id,
+      tile.textContent
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
+  }
 
-    tiles.forEach(tile => {
-      const hay = [
-        tile.dataset.search,
-        tile.dataset.title,
-        tile.dataset.id,
-        tile.textContent
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
+  let activeResultIndex = -1;
+  const recentPageSize = 5;
+  let recentPageIndex = 0;
+  let recentOrderedIds = [];
+  let recentPageCount = 1;
 
-      const textMatch = !q || hay.includes(q);
-      const category = getCategory(tile);
-      const hasKeyword = keywords => keywords.some(keyword => hay.includes(keyword));
-      const filterMatch =
-        selectedFilter === 'all' ||
-        (selectedFilter === 'apps' && category === 'apps') ||
-        (selectedFilter === 'new' && category === 'new') ||
-        (selectedFilter === 'games' && category !== 'apps') ||
-        (selectedFilter === 'shooter' && hasKeyword(shooterKeywords)) ||
-        (selectedFilter === 'car' && hasKeyword(carKeywords)) ||
-        (selectedFilter === 'sports' && hasKeyword(sportsKeywords)) ||
-        (selectedFilter === 'horror' && hasKeyword(horrorKeywords));
+  function setSearchOpen(isOpen) {
+    document.body.classList.toggle('search-open', isOpen);
+  }
 
-      const match = textMatch && filterMatch;
-      tile.style.display = match ? '' : 'none';
-      if (match) shown++;
-    });
+  function getTileLabel(tile) {
+    return tile.dataset.gameTitle || tile.dataset.title || tile.dataset.id || tile.getAttribute('href') || 'Game';
+  }
 
-    if (count) {
-      count.textContent = `Showing ${shown} Games`;
+  function scoreTile(tile, query) {
+    if (!query) return 1;
+    const hay = getSearchHaystack(tile);
+    const label = getTileLabel(tile).toLowerCase();
+    if (label.startsWith(query)) return 3;
+    if (label.includes(query)) return 2;
+    if (hay.includes(query)) return 1;
+    return 0;
+  }
+
+  function hideSearchResults() {
+    activeResultIndex = -1;
+    searchResults.classList.remove('open');
+    searchResults.innerHTML = '';
+    setSearchOpen(false);
+  }
+
+  function renderSearchResults() {
+    const query = input.value.trim().toLowerCase();
+    const ranked = allTiles
+      .map(tile => ({ tile, score: scoreTile(tile, query) }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    const topMatches = ranked.slice(0, 5).map(item => item.tile);
+    searchResults.innerHTML = '';
+    activeResultIndex = -1;
+
+    if (!topMatches.length) {
+      if (count) count.textContent = 'No games found';
+      hideSearchResults();
+      return;
     }
+
+    topMatches.forEach((tile, index) => {
+      const card = tile.cloneNode(true);
+      card.classList.add('search-card-link');
+      card.dataset.resultIndex = String(index);
+      searchResults.appendChild(card);
+    });
+
+    searchResults.classList.add('open');
+    setSearchOpen(true);
+    if (count) count.textContent = `Found ${topMatches.length} Games/Apps`;
   }
 
-  input.addEventListener('input', updateSearch);
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      selectedFilter = btn.dataset.filter || 'all';
-      filterButtons.forEach(other => other.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (!gameGrid) {
-        updateSearch();
-        return;
+  function readRecent() {
+    const parseList = key => {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(key) || '[]');
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
       }
+    };
 
-      gameGrid.classList.add('filter-transition');
-      setTimeout(() => {
-        updateSearch();
-        requestAnimationFrame(() => {
-          gameGrid.classList.remove('filter-transition');
-        });
-      }, 90);
+    const primary = parseList(recentStorageKey);
+    const legacy = parseList(recentStorageLegacyKey);
+
+    // Merge while preserving order and removing duplicates.
+    const merged = [];
+    [...legacy, ...primary].forEach(id => {
+      if (!id || merged.includes(id)) return;
+      merged.push(id);
     });
+
+    return merged;
+  }
+
+  function writeRecent(list) {
+    const trimmed = list.slice(-10);
+    localStorage.setItem(recentStorageKey, JSON.stringify(trimmed));
+    localStorage.setItem(recentStorageLegacyKey, JSON.stringify(trimmed));
+  }
+
+  function pushRecent(id) {
+    if (!id) return;
+    const current = readRecent().filter(item => item !== id);
+    current.push(id);
+    writeRecent(current);
+  }
+
+  function pushRecentFromTile(tile) {
+    if (!tile) return;
+    pushRecent(tileId(tile));
+    renderRecent();
+  }
+
+  function cloneRecentTile(sourceTile) {
+    const clone = sourceTile.cloneNode(true);
+    clone.removeAttribute('id');
+    return clone;
+  }
+
+  function renderRecentPage() {
+    if (!recentRow) return;
+
+    if (recentPageIndex > recentPageCount - 1) recentPageIndex = recentPageCount - 1;
+    if (recentPageIndex < 0) recentPageIndex = 0;
+    recentRow.style.transform = `translateX(-${recentPageIndex * 100}%)`;
+    if (recentPrev) recentPrev.disabled = recentPageIndex === 0 || recentPageCount <= 1;
+    if (recentNext) recentNext.disabled = recentPageIndex >= recentPageCount - 1 || recentPageCount <= 1;
+  }
+
+  function renderRecent() {
+    if (!recentRow) return;
+    const sourceIds = allTiles.map(tile => tileId(tile)).filter(Boolean);
+    const recentSet = [];
+
+    readRecent().forEach(id => {
+      if (id && !recentSet.includes(id) && sourceIds.includes(id)) recentSet.push(id);
+    });
+
+    for (const id of sourceIds) {
+      if (recentSet.length >= 10) break;
+      if (!recentSet.includes(id)) recentSet.push(id);
+    }
+
+    recentOrderedIds = recentSet.slice(-10).reverse();
+    writeRecent(recentSet);
+    recentRow.innerHTML = '';
+
+    recentPageCount = Math.max(1, Math.ceil(recentOrderedIds.length / recentPageSize));
+    for (let page = 0; page < recentPageCount; page++) {
+      const pageEl = document.createElement('div');
+      pageEl.className = 'recent-page';
+      const start = page * recentPageSize;
+      const pageIds = recentOrderedIds.slice(start, start + recentPageSize);
+
+      pageIds.forEach(id => {
+        const tile = allTiles.find(item => tileId(item) === id);
+        if (tile) pageEl.appendChild(cloneRecentTile(tile));
+      });
+
+      recentRow.appendChild(pageEl);
+    }
+
+    renderRecentPage();
+  }
+
+  document.addEventListener('click', e => {
+    const tile = e.target.closest('#recentlyPlayed a.image-link-border, #recentlyPlayed a.image-link-border1, #recentlyPlayed a.image-link-border2');
+    if (!tile) return;
+    pushRecent(tileId(tile));
   });
-  updateSearch();
+
+  input.addEventListener('focus', renderSearchResults);
+  input.addEventListener('input', renderSearchResults);
+  input.addEventListener('keydown', e => {
+    const items = Array.from(searchResults.querySelectorAll('.search-card-link'));
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeResultIndex = Math.min(items.length - 1, activeResultIndex + 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeResultIndex = Math.max(0, activeResultIndex - 1);
+    } else if (e.key === 'Enter') {
+      if (activeResultIndex >= 0 && items[activeResultIndex]) {
+        e.preventDefault();
+        pushRecentFromTile(items[activeResultIndex]);
+        window.location.href = items[activeResultIndex].getAttribute('href') || '#';
+      } else if (items[0]) {
+        e.preventDefault();
+        pushRecentFromTile(items[0]);
+        window.location.href = items[0].getAttribute('href') || '#';
+      }
+      return;
+    } else if (e.key === 'Escape') {
+      hideSearchResults();
+      input.blur();
+      return;
+    } else {
+      return;
+    }
+
+    items.forEach(item => item.classList.remove('active'));
+    if (items[activeResultIndex]) {
+      items[activeResultIndex].classList.add('active');
+      items[activeResultIndex].scrollIntoView({ block: 'nearest' });
+    }
+  });
+
+  searchResults.addEventListener('pointerdown', e => {
+    const tile = e.target.closest('.search-card-link');
+    if (!tile) return;
+    pushRecent(tileId(tile));
+  });
+
+  document.addEventListener('pointerdown', e => {
+    const insideSearch = e.target.closest('.search-container');
+    if (!insideSearch) hideSearchResults();
+  });
+
+  if (recentPrev) {
+    recentPrev.addEventListener('click', () => {
+      recentPageIndex -= 1;
+      renderRecentPage();
+    });
+  }
+
+  if (recentNext) {
+    recentNext.addEventListener('click', () => {
+      recentPageIndex += 1;
+      renderRecentPage();
+    });
+  }
+
+  renderRecent();
+  if (count) count.textContent = 'Press / or click search to find games';
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault();
+      input.focus();
+      input.select();
+    }
+  });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const tiles = Array.from(
-    document.querySelectorAll('#games .container-3 a.image-link-border, #games .container-3 a.image-link-border1, #games .container-3 a.image-link-border2')
+    document.querySelectorAll('#allGamesSource a.image-link-border, #allGamesSource a.image-link-border1, #allGamesSource a.image-link-border2')
   );
   if (!tiles.length) return;
 
@@ -522,17 +459,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 });
 
-function closeUpdateOverlay() {
-  const overlay = document.getElementById('updateOverlay');
-  if (!overlay) return;
-
-  overlay.style.opacity = '0';
-  setTimeout(() => {
-    overlay.style.display = 'none';
-  }, 350);
-}
-
-// Keep card visuals consistent between browser zoom levels (e.g. 100% and 110%).
 (() => {
   const baselineDpr = window.devicePixelRatio || 1;
   const baselineInnerWidth = window.innerWidth || 1;
@@ -541,7 +467,6 @@ function closeUpdateOverlay() {
     const currentDpr = window.devicePixelRatio || baselineDpr;
     const currentInnerWidth = Math.max(1, window.innerWidth || baselineInnerWidth);
 
-    // Some ChromeOS zoom paths don't update DPR reliably; use viewport-width ratio as fallback.
     const dprZoomFactor = currentDpr / baselineDpr;
     const viewportZoomFactor = baselineInnerWidth / currentInnerWidth;
     const dprDelta = Math.abs(dprZoomFactor - 1);
@@ -556,5 +481,22 @@ function closeUpdateOverlay() {
   window.addEventListener('resize', applyCardZoomCompensation);
   if (window.visualViewport) {
     window.visualViewport.addEventListener('resize', applyCardZoomCompensation);
+  }
+})();
+
+// Lock the UI to a single design canvas and scale it uniformly across devices.
+(() => {
+  function applyFixedCanvasScale() {
+    const root = document.documentElement;
+    const appWidth = parseFloat(getComputedStyle(root).getPropertyValue('--app-width')) || 1440;
+    const appHeight = parseFloat(getComputedStyle(root).getPropertyValue('--app-height')) || 900;
+    const scale = Math.min(window.innerWidth / appWidth, window.innerHeight / appHeight);
+    root.style.setProperty('--app-scale', Math.max(0.1, scale).toFixed(4));
+  }
+
+  applyFixedCanvasScale();
+  window.addEventListener('resize', applyFixedCanvasScale);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', applyFixedCanvasScale);
   }
 })();
