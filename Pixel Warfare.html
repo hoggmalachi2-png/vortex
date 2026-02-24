@@ -197,8 +197,8 @@ unzipWebpFromExternalBins(binParts).then(blobUrls => {
     }
 
     window.addEventListener("load", function () {
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("ServiceWorker.js");
+      if ("serviceWorkerDisabled" in navigator) {
+        navigator.__disabledServiceWorkerRegister("ServiceWorker.js");
       }
     });
 

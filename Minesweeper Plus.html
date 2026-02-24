@@ -178,7 +178,7 @@ const engine = new Engine(GODOT_CONFIG);
 	});
 
 	if (missing.length !== 0) {
-		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorkerDisabled' in navigator) {
 			let serviceWorkerRegistrationPromise;
 			try {
 				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
@@ -192,7 +192,7 @@ const engine = new Engine(GODOT_CONFIG);
 						return Promise.reject(new Error('Service worker already exists.'));
 					}
 					return registration;
-				}).then(() => engine.installServiceWorker()),
+				}).then(() => engine.serviceWorkerDisabledHook()),
 				// For some reason, `getRegistration()` can stall
 				new Promise((resolve) => {
 					setTimeout(() => resolve(), 2000);

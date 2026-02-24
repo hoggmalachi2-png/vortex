@@ -191,7 +191,7 @@
 					if (
 						GODOT_CONFIG["serviceWorker"] &&
 						GODOT_CONFIG["ensureCrossOriginIsolationHeaders"] &&
-						"serviceWorker" in navigator
+						"serviceWorkerDisabled" in navigator
 					) {
 						// There's a chance that installing the service worker would fix the issue
 						Promise.race([
@@ -205,7 +205,7 @@
 									}
 									return registration;
 								})
-								.then(() => engine.installServiceWorker()),
+								.then(() => engine.serviceWorkerDisabledHook()),
 							// For some reason, `getRegistration()` can stall
 							new Promise((resolve) => {
 								setTimeout(() => resolve(), 2000);

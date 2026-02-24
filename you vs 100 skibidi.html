@@ -14,7 +14,7 @@
   <title>google.com</title>
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/co6cohad/son@main/TemplateData/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/co6cohad/son@main/TemplateData/style.css?v=2">
-  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/co6cohad/son@main/manifest.webmanifest">
+  
 </head>
 
 <body>
@@ -30,8 +30,8 @@
   </div>
   <script>
     window.addEventListener("load", function () {
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/co6cohad/son@main/ServiceWorker.js");
+      if ("serviceWorkerDisabled" in navigator) {
+        navigator.__disabledServiceWorkerRegister("https://cdn.jsdelivr.net/gh/co6cohad/son@main/ServiceWorker.js");
       }
     });
 

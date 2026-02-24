@@ -84,7 +84,7 @@
 				return;		// no SW support, ignore call
 			
 			try {
-				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				navigator.__disabledServiceWorkerRegister("sw.js", { scope: "./" })
 				.then(function (reg)
 				{
 					console.log("Registered service worker on " + reg.scope);

@@ -10,7 +10,7 @@
     <title>Zombotron</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="manifest" href="manifest.webmanifest">
+    
   </head>
   <body>
     <div id="unity-container">
@@ -25,8 +25,8 @@
     </div>
     <script>
       window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
+        if ("serviceWorkerDisabled" in navigator) {
+          navigator.__disabledServiceWorkerRegister("ServiceWorker.js");
         }
       });
 

@@ -1,4 +1,3 @@
-const installPromptKey = 'pwaInstalled_v2';
 const recentStorageKey = 'lastPlayed_v3';
 const recentStorageLegacyKey = 'lastPlayed';
 const gamesBackgroundColorStorageKey = 'vortexGamesBackgroundColor';
@@ -47,28 +46,6 @@ async function ensureAllGamesSourceLoaded(sourceEl) {
 
   return gamesSourceLoadPromise;
 }
-
-function isLikelyInstalled() {
-  const isLocalPreviewHost =
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1';
-  if (isLocalPreviewHost) return false;
-
-  const isAppDisplayMode =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.matchMedia('(display-mode: window-controls-overlay)').matches ||
-    window.matchMedia('(display-mode: minimal-ui)').matches;
-
-  return (
-    localStorage.getItem(installPromptKey) === 'true' ||
-    isAppDisplayMode ||
-    window.navigator.standalone === true
-  );
-}
-
-window.addEventListener('appinstalled', () => {
-  localStorage.setItem(installPromptKey, 'true');
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;

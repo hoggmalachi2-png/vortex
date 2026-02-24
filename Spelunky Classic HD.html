@@ -17,7 +17,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="setup.js" defer></script>
-  <link rel="manifest" href="manifest.json">
+  
 </head>
 
 <body>
@@ -28,8 +28,8 @@
   </div>
   <script async type="text/javascript" src="runner.js"></script>
   <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("serviceWorker.js");
+    if ("serviceWorkerDisabled" in navigator) {
+      navigator.__disabledServiceWorkerRegister("serviceWorker.js");
     }
   </script>
 </body>

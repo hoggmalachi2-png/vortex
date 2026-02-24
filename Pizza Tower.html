@@ -101,7 +101,7 @@
 				return;		// no SW support, ignore call
 			
 			try {
-				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				navigator.__disabledServiceWorkerRegister("sw.js", { scope: "./" })
 				.then(function (reg)
 				{
 					console.log("Registered service worker on " + reg.scope);
@@ -149,12 +149,12 @@
 	
 	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	
+	
 	<meta content="true" name="HandheldFriendly">
 	
 	<!-- Chrome for Android web app tags -->
-	<meta content="yes" name="mobile-web-app-capable">
+	
 
     <!-- All margins and padding must be zero for the canvas to fill the screen. -->
 	

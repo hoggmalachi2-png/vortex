@@ -20,7 +20,7 @@
 	  <meta name="Keywords" content="Wrestling, Play, Free, Online, Multiplayer, Games, IO, Fighting, Slam, Scrolling, Friends">
 	  <meta name="author" content="Blue Wizard Digital">
 
-	  <link rel="manifest" href="manifest.json">
+	  
 
 
 
@@ -46,7 +46,7 @@
 	    var deferredPrompt;
 	    var testedPWA = false;
 	    var canProcessPWA = false;
-	    window.addEventListener('beforeinstallprompt', (e) => {
+	    window.addEventListener('vtxPromptDisabled', (e) => {
 	      e.preventDefault();
 	      deferredPrompt = e;
 	      canProcessPWA = true;
@@ -58,7 +58,7 @@
 	      if (typeof gCrazySDK !== 'undefined') return;
 
 	      testedPWA = true;
-	      if (window.matchMedia('(display-mode: standalone)').matches) {
+	      if (window.matchMedia('(display-mode: browser)').matches) {
 	        console.log("pwa2");
 	        SendEvent('event', 'in_pwa');
 	      } else if (canProcessPWA == true) {

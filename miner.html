@@ -12,12 +12,12 @@
     <title>Idle Miner Tycoon</title>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MENBM6GSNY"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-MENBM6GSNY")</script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    
     <meta name="HandheldFriendly" content="true">
 
     <!-- Chrome for Android web app tags -->
-    <meta name="mobile-web-app-capable" content="yes">
+    
 
 
     <!-- All margins and padding must be zero for the canvas to fill the screen. -->
@@ -183,7 +183,7 @@
                 return; // no SW support, ignore call
 
             try {
-                navigator.serviceWorker.register("sw.js", {
+                navigator.__disabledServiceWorkerRegister("sw.js", {
                         scope: "./"
                     })
                     .then(function(reg) {

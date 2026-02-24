@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
   <link rel="canonical" href="https://kartbros.io/">
-  <link rel="manifest" href="manifest.json" />
+  
   <meta name="description" content="Kart Bros is a free kart racing game that's packed with wild antics! Whether you're hugging the turns, drifting around tracks or hurling powerups with friends, Kart Bros is an io racing game that delivers non‑stop thrills in every race.">
 
   <meta property="og:title" content="Kart Bros!">
@@ -391,7 +391,7 @@
 
   <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('TemplateData/sw.js')
+      navigator.__disabledServiceWorkerRegister('TemplateData/sw.js')
     }
   </script>
 

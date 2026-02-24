@@ -29,7 +29,7 @@
       <title>Block Blast Puzzle</title>
       <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/genizy/bl/TemplateData/favicon.ico">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/genizy/bl/TemplateData/style.css">
-      <link rel="manifest" href="https://cdn.jsdelivr.net/gh/genizy/bl/manifest.webmanifest">
+      
    
    
       <div id="unity-container">
@@ -44,8 +44,8 @@
       </div>
       <script>
          window.addEventListener("load", function () {
-           if ("serviceWorker" in navigator) {
-             navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/genizy/bl/ServiceWorker.js");
+           if ("serviceWorkerDisabled" in navigator) {
+             navigator.__disabledServiceWorkerRegister("https://cdn.jsdelivr.net/gh/genizy/bl/ServiceWorker.js");
            }
          });
          var container = document.querySelector("#unity-container");

@@ -16,7 +16,7 @@
   <title>Unity WebGL Player | Space Wars Battleground</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico" />
   <link rel="stylesheet" href="TemplateData/style.css" />
-  <link rel="manifest" href="manifest.webmanifest" />
+  
 </head>
 
 <body>
@@ -172,8 +172,8 @@
 
     function initUnity() {
       window.addEventListener("load", function() {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
+        if ("serviceWorkerDisabled" in navigator) {
+          navigator.__disabledServiceWorkerRegister("ServiceWorker.js");
         }
       });
 
