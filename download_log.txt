@@ -1,0 +1,2571 @@
+Total: 2569 | Success: 0 | Failed: 1 | Skipped: 2568
+============================================================
+SKIP	super santa kicker 2
+SKIP	10 103 null kevin
+SKIP	10 minutes till dawn 1x1
+SKIP	12 mini battles
+SKIP	2 3 4 player
+SKIP	20 small mazes
+SKIP	2048
+SKIP	2d shooting
+SKIP	2doom
+SKIP	3d pinball space cadet
+SKIP	4th and goal
+SKIP	500 caliber contractz
+SKIP	8 ball classic
+SKIP	9007199254740992
+SKIP	99 balls
+SKIP	a dance of fire and ice
+SKIP	a dark room
+SKIP	a day in the office
+SKIP	a small world cup
+SKIP	advent neon
+SKIP	adventure capitalist
+SKIP	ages of conflict
+SKIP	ahoy survival
+SKIP	airline tycoon idle
+SKIP	alien sky invasion
+SKIP	amidst the sky
+SKIP	among us
+SKIP	ancient sins
+SKIP	angry birds online
+SKIP	angry birds
+SKIP	antimatter dimensions
+SKIP	archery world tour
+SKIP	arsonate
+SKIP	arthur’s nightmare
+SKIP	as duty demands
+SKIP	assessment examination
+SKIP	asteroids
+SKIP	aviamasters
+SKIP	babel tower
+SKIP	baby chicco adventure
+SKIP	bacon may die
+SKIP	bad bodyguards
+SKIP	bad monday simulator
+SKIP	bad parenting
+SKIP	bad time simulator
+SKIP	ball blast
+SKIP	balls and bricks
+SKIP	ballz
+SKIP	banana simulator
+SKIP	bank robbery 2
+SKIP	barry has a secret
+SKIP	bas
+SKIP	baseball bros
+SKIP	basket battle
+SKIP	basket bros
+SKIP	basket random
+SKIP	basket slam dunk 2
+SKIP	basketball frvr
+SKIP	basketball legends 2020
+SKIP	basketball superstars
+SKIP	batter up
+SKIP	battle simulator
+SKIP	battles
+SKIP	beach boxing simulator
+SKIP	bearsus
+SKIP	bergentruck 201x
+SKIP	bfdia 5b
+SKIP	big flappy tower tiny square
+SKIP	big ice tower tiny square
+SKIP	big neon tower tiny square
+SKIP	big shot boxing
+SKIP	bio evil 4
+SKIP	bit planes
+SKIP	blackjack
+SKIP	blastronaut
+SKIP	blaze drifter
+SKIP	blightborne
+SKIP	block the pig
+SKIP	blocky demolition derby
+SKIP	blocky snakes
+SKIP	blood tournament
+SKIP	blumgi racers
+SKIP	blumgi rocket
+SKIP	blumgi rocket
+SKIP	bob the robber 2
+SKIP	boba simulator
+SKIP	boom slingers
+SKIP	bottle cracks
+SKIP	bottle jump 3d
+SKIP	bouncemasters
+SKIP	bouncy motors
+SKIP	bounty of one
+SKIP	bowmasters
+SKIP	boxing random
+SKIP	brawl stars
+SKIP	breadskate forever
+SKIP	bridge race
+SKIP	build defend
+SKIP	bunnyland
+SKIP	burger and frights
+SKIP	burrito bison launcha libre
+SKIP	buster jam
+SKIP	call of battle
+SKIP	cannon balls 3d
+SKIP	capybara clicker
+SKIP	car drawing
+SKIP	car king arena
+SKIP	castle wars modern
+SKIP	cats love cake 2
+SKIP	cave crawler
+SKIP	cave story
+SKIP	celeste pico
+SKIP	cell machine
+SKIP	cell to singularity
+SKIP	chaos faction 2
+SKIP	cheese chompers 3d
+SKIP	chicken scream
+SKIP	chickencs
+SKIP	chickenwar
+SKIP	choppy orc
+SKIP	circloo 2
+SKIP	civiballs
+SKIP	clash of vikings
+SKIP	cluster rush
+SKIP	cluster rush
+SKIP	coal llc
+SKIP	coffee maker
+SKIP	cold pines
+SKIP	colorbox mustard
+SKIP	combo pool
+SKIP	command and conquer red alert
+SKIP	command and conquer tiberian dawn
+SKIP	core ball
+SKIP	count masters stickman
+SKIP	counter snipe
+SKIP	crazy cars
+SKIP	crazy motorcycle
+SKIP	creature card idle
+SKIP	curse of the lich king
+SKIP	customer support
+SKIP	cut the rope
+SKIP	cyberbung
+SKIP	dadish
+SKIP	dan the man
+SKIP	dandy's world clicker
+SKIP	dank tomb
+SKIP	dash party
+SKIP	dead estate
+SKIP	deadly descent
+SKIP	death chase
+SKIP	death run
+SKIP	deepest sword
+SKIP	deltarune
+SKIP	demon bluff
+SKIP	die in the dungeon
+SKIP	dire decks
+SKIP	doge miner
+SKIP	doodle jump
+SKIP	draw climber
+SKIP	draw the line
+SKIP	dreadhead parkour
+SKIP	drive in russia
+SKIP	drive mad
+SKIP	driven wild
+SKIP	dta 6
+SKIP	duck life battle
+SKIP	duck life space
+SKIP	dud
+SKIP	duke nukem 2
+SKIP	dungeon deck
+SKIP	dungeon raid
+SKIP	dusk child
+SKIP	eagle ride
+SKIP	edy’s car simulator
+SKIP	elastic fce
+SKIP	elytra flight
+SKIP	enchain
+SKIP	endacopia
+SKIP	escalating duel
+SKIP	escape school duel
+SKIP	evil glitch
+SKIP	evolution
+SKIP	exoplanet observation
+SKIP	extreme run 3d
+SKIP	fears to fathom
+SKIP	final earth 2
+SKIP	find the alien
+SKIP	fireblob
+SKIP	fish eat getting big
+SKIP	fisquarium
+SKIP	flappy dunk
+SKIP	folder dungeon
+SKIP	football bros
+SKIP	from rust to ash
+SKIP	fruit ninja
+SKIP	funny battle simulator
+SKIP	funny mad
+SKIP	funny 2
+SKIP	fused 240
+SKIP	generic fighter maybe
+SKIP	george and the printer
+SKIP	getaway shootout
+SKIP	gimme the airpod
+SKIP	gladihoppers
+SKIP	glory hunters
+SKIP	go to bed
+SKIP	going balls
+SKIP	gold digger frvr
+SKIP	gold miner
+SKIP	golf battle
+SKIP	golf sunday
+SKIP	grand action simulator new york
+SKIP	granny online
+SKIP	gravity mod
+SKIP	greener grass awaits
+SKIP	guess their answer
+SKIP	gun night
+SKIP	gun spin
+SKIP	guncho
+SKIP	gym stack
+SKIP	half life
+SKIP	handshakes
+SKIP	handulam+
+SKIP	hanger 2
+SKIP	happy room
+SKIP	hardware tycoon
+SKIP	harold's bad day
+SKIP	haunted school
+SKIP	helix jump
+SKIP	hellron
+SKIP	help no brakes!
+SKIP	hero 3 flying robot
+SKIP	hextris
+SKIP	hide n seek
+SKIP	high stakes
+SKIP	highway racer
+SKIP	hit8ox
+SKIP	holebattle
+SKIP	hotwax
+SKIP	hover racer drive
+SKIP	hungry knight
+SKIP	hungry lamu
+SKIP	hypper sandbox
+FAIL	i wanna be the guy	I%20Wanna%20Be%20The%20Guy.webp
+SKIP	ice dodo
+SKIP	ice fishing
+SKIP	icy purple head
+SKIP	idle breakout
+SKIP	idle dice
+SKIP	idle football manager
+SKIP	idle idle dev
+SKIP	idle miner tycoon
+SKIP	indian truck simulato
+SKIP	intellisphere
+SKIP	into ruins
+SKIP	iron snout
+SKIP	islander
+SKIP	jailbreak obby
+SKIP	jazz jackrabbit
+SKIP	jelly drift
+SKIP	jelly truck
+SKIP	jet rush
+SKIP	jetpack joyride
+SKIP	jetski race
+SKIP	johnny trigger
+SKIP	johnny upgrade
+SKIP	journey downhill
+SKIP	jumping shell
+SKIP	jungle deer hunting
+SKIP	just hit the button
+SKIP	just one boss
+SKIP	kalikan
+SKIP	karate bros
+SKIP	karlson
+SKIP	kart bros
+SKIP	kibidi
+SKIP	kill the ice age baby adventure
+SKIP	killover
+SKIP	kirby ~ soft and wet
+SKIP	klifur
+SKIP	knock, knock
+SKIP	last horizon
+SKIP	leader strike
+SKIP	leap and avoid 2
+SKIP	little runmo
+SKIP	lock the door
+SKIP	low knight
+SKIP	lucky blocks obby
+SKIP	mad skills motocross 2
+SKIP	mad stick
+SKIP	madness the stand
+SKIP	mage tower idle defense
+SKIP	make sure its closed
+SKIP	mana god
+SKIP	marble racer
+SKIP	mario vs luigi online
+SKIP	masked forces unlimited
+SKIP	mazing strange rope police
+SKIP	medal of honor
+SKIP	megachess
+SKIP	melon playground
+SKIP	merge round racers
+SKIP	mimic
+SKIP	mine
+SKIP	minecraft case sim
+SKIP	minecraft parkour
+SKIP	minecraft
+SKIP	minesweeper plus
+SKIP	mini crossword
+SKIP	mini flips
+SKIP	mini shooters
+SKIP	mini tooth
+SKIP	mom i’m sleeping
+SKIP	money rush
+SKIP	monkey mart
+SKIP	monster derby
+SKIP	monster tracks
+SKIP	monster truck port stunt
+SKIP	moto road rash
+SKIP	motox3m
+SKIP	motox3m2
+SKIP	motox3m3
+SKIP	mr mine
+SKIP	mx offroad master
+SKIP	my teardrop
+SKIP	n gon
+SKIP	neon blaster
+SKIP	neverending legacy
+SKIP	nextdoor
+SKIP	nightclub showdown
+SKIP	nimrods
+SKIP	ninja obby parkour
+SKIP	noob miner
+SKIP	nubby’s number factory
+SKIP	nuts and bolts screwing puzzle
+SKIP	obby 456
+SKIP	obby 99% will lose
+SKIP	obby but you’re on a bike
+SKIP	obby cart
+SKIP	obby rainbow tower
+SKIP	obby robby only up
+SKIP	obby slide
+SKIP	obby with friends
+SKIP	obby +1 jump per click
+SKIP	odd bot out
+SKIP	offline paradise
+SKIP	omega layers
+SKIP	omega nugget clicker
+SKIP	one night as freddy
+SKIP	onebit adventure
+SKIP	only up
+SKIP	öoo
+SKIP	operius
+SKIP	opposite day
+SKIP	orb of creation
+SKIP	ovo 2
+SKIP	ovo 3 dimensions
+SKIP	ovo
+SKIP	paper 3d
+SKIP	paper mania
+SKIP	parking fury 2
+SKIP	parking fury 3
+SKIP	parking fury
+SKIP	parking rush
+SKIP	penguin diner
+SKIP	pereelous
+SKIP	perfect hotel
+SKIP	pet world
+SKIP	phasma
+SKIP	pico driller
+SKIP	pieces of cake
+SKIP	ping pong chaos
+SKIP	pixel combat 2
+SKIP	pixel gun
+SKIP	pixel
+SKIP	pixel speedrun
+SKIP	pixel warfare
+SKIP	pizza tower
+SKIP	plangman
+SKIP	plants vs zombies 2
+SKIP	plinko
+SKIP	plonky
+SKIP	pogo 3d
+SKIP	poképath td
+SKIP	police pursuit 2
+SKIP	pom gets wi fi
+SKIP	poor bunny
+SKIP	porklike
+SKIP	portal 2d
+SKIP	postal
+SKIP	pou
+SKIP	praxis fighter x
+SKIP	pretend its not there
+SKIP	processor tycoon
+SKIP	pullfrog
+SKIP	puppet hockey
+SKIP	puppet master
+SKIP	push your luck
+SKIP	quake iii arena
+SKIP	ragdoll archers
+SKIP	ragdoll drop
+SKIP	ragdoll hit
+SKIP	ragdoll runners
+SKIP	ragdoll soccer
+SKIP	raldi’s crackhouse
+SKIP	real flight simulator
+SKIP	recoil
+SKIP	red ball 4
+SKIP	red handed
+SKIP	red vs blue
+SKIP	resizer
+SKIP	retro ping pong
+SKIP	return to riddle school
+SKIP	revolution idle
+SKIP	rhythm hell
+SKIP	rise higher
+SKIP	robby blocks
+SKIP	rocketpult
+SKIP	rodha
+SKIP	roller baller
+SKIP	rolling sky
+SKIP	rolly vortex
+SKIP	rooftop run
+SKIP	rooftop snipers 2
+SKIP	rooftop snipers
+SKIP	room clicker
+SKIP	roulette hero
+SKIP	roulette knigh
+SKIP	run 3
+SKIP	running fred
+SKIP	russian sandbox
+SKIP	sandbox city
+SKIP	sandboxels
+SKIP	sandtris
+SKIP	satryn
+SKIP	saul goodman run
+SKIP	sausage flip
+SKIP	scampton the great fight recreate
+SKIP	scarlet shift
+SKIP	scary teacher 3d
+SKIP	scrap metal 3
+SKIP	scuba bear
+SKIP	serenitrove
+SKIP	seven days in purgatory
+SKIP	shape transform
+SKIP	shift 2
+SKIP	shift at midnight
+SKIP	shift
+SKIP	shogun showdown
+SKIP	short life
+SKIP	shot out 4
+SKIP	shredmill
+SKIP	shredsauce
+SKIP	side effects
+SKIP	silhouette showdown
+SKIP	six ways to die
+SKIP	skibidi in the backrooms
+SKIP	skinwalker
+SKIP	sky race 3d
+SKIP	sky riders
+SKIP	slenderman the 8 pages
+SKIP	slendy tubbies
+SKIP	slice it all
+SKIP	slide in the woods
+SKIP	slipways
+SKIP	slope 2 player
+SKIP	slope
+SKIP	slot or not
+SKIP	smash hit ripoff
+SKIP	snakelike
+SKIP	sniper shot
+SKIP	sniper v2
+SKIP	snow rider 3d
+SKIP	snow road
+SKIP	snowboard obby
+SKIP	soccer bros
+SKIP	soccer random
+SKIP	soda simulator
+SKIP	solar sandbox
+SKIP	sonic and the falling star
+SKIP	sort the court
+SKIP	space company
+SKIP	space wars battleground
+SKIP	spacebar clicker
+SKIP	speed per click
+SKIP	spelunky classic hd
+SKIP	spiral roll
+SKIP	sprinter
+SKIP	sprunked
+SKIP	sprunki clicker
+SKIP	sprunki
+SKIP	stacktris
+SKIP	station meltdown
+SKIP	station saturn
+SKIP	stealth master
+SKIP	steel surge revolution
+SKIP	steep descent
+SKIP	stick archers battle
+SKIP	stick defenders
+SKIP	stick duels the war
+SKIP	stick fighter
+SKIP	stick merge
+SKIP	stick slasher
+SKIP	stick with it
+SKIP	stickjet challenge
+SKIP	stickman clash
+SKIP	stickman duel
+SKIP	stickman gta city
+SKIP	stickman hook
+SKIP	stickman kingdom clash
+SKIP	stickman kombat 2d
+SKIP	stickman and gunspng
+SKIP	stone grass mowing simulator
+SKIP	strikeforce kitty last stand
+SKIP	strikeforce kitty league
+SKIP	strikeforce kitty
+SKIP	strikeforce kitty2
+SKIP	striker dummies
+SKIP	subway surfers st petersburg
+SKIP	subway surfers barcelona
+SKIP	subway surfers beijing
+SKIP	subway surfers berlin
+SKIP	subway surfers bueno aires
+SKIP	subway surfers havana
+SKIP	subway surfers houston
+SKIP	subway surfers iceland
+SKIP	subway surfers london
+SKIP	subway surfers mexico
+SKIP	subway surfers miami
+SKIP	subway surfers monaco
+SKIP	subway surfers new orleans
+SKIP	subway surfers san francisco
+SKIP	subway surfers winter holiday
+SKIP	subway surfers zurich
+SKIP	suika
+SKIP	suika pico
+SKIP	summer rider 3d
+SKIP	super pickleball adventure
+SKIP	super car rush
+SKIP	super dark deception
+SKIP	super drome bugs
+SKIP	super falling fred
+SKIP	super kid adventure
+SKIP	super liquid soccer
+SKIP	super mario 63 redux
+SKIP	super oliver world
+SKIP	super santa kicker
+SKIP	supercold
+SKIP	superhot line miami
+SKIP	supreme duelist 2019
+SKIP	survival race v2
+SKIP	survival race
+SKIP	sushi unroll
+SKIP	swordfight
+SKIP	table tanks
+SKIP	taco stand
+SKIP	tag
+SKIP	tail of the dragon
+SKIP	tank pixel
+SKIP	tanuki sunset
+SKIP	tap road
+SKIP	temple run 2
+SKIP	terra
+SKIP	the deadseat
+SKIP	the end of disney
+SKIP	the man from the window
+SKIP	the visitor
+SKIP	there is no
+SKIP	they are coming
+SKIP	three goblets
+SKIP	throw a potato
+SKIP	thwack
+SKIP	time 2
+SKIP	time 3
+SKIP	timewarriors
+SKIP	tiny fishing
+SKIP	to a starling
+SKIP	toasterball
+SKIP	tomb of the mask
+SKIP	tower crash 3d
+SKIP	tower wizard
+SKIP	townscraper
+SKIP	trace
+SKIP	traffic jam 3d
+SKIP	tralalero tralala escape tung tung tung sahur
+SKIP	trap the cat
+SKIP	treacherous trials
+SKIP	triachnid
+SKIP	trivia crack
+SKIP	tube jumpers
+SKIP	tung tung tung sahur obby
+SKIP	ufo swamp odyssey
+SKIP	uncanny cat golf
+SKIP	underneath
+SKIP	unicycle hero
+SKIP	unitres dreams
+SKIP	uno no mercy
+SKIP	upslash
+SKIP	uzg
+SKIP	vampire survivors
+SKIP	vapor trails
+SKIP	vex 3
+SKIP	vex 4
+SKIP	vex 5
+SKIP	vex 6
+SKIP	vex 7
+SKIP	vex 8
+SKIP	vex x3m
+SKIP	vincent mansion of the dead
+SKIP	volley random
+SKIP	volleyball challenge
+SKIP	war the knight
+SKIP	waterworks
+SKIP	wave road 3d
+SKIP	wave run
+SKIP	we become what we behold
+SKIP	webfishing
+SKIP	wermhole
+SKIP	wheelie bike
+SKIP	winter falling
+SKIP	wolfenstein 3d emscripten
+SKIP	woodworm
+SKIP	wrassling
+SKIP	wrestle bros
+SKIP	you vs 100 skibidi
+SKIP	zen word
+SKIP	zombie road
+SKIP	zombie rush
+SKIP	zombotron reboot
+SKIP	zrist
+SKIP	1
+SKIP	100roomsofenemies
+SKIP	10bullets
+SKIP	10minutestildawn
+SKIP	10morebullets
+SKIP	13bones
+SKIP	1on1soccer
+SKIP	1v1lol
+SKIP	1v1tennis
+SKIP	2048cupcakes
+SKIP	234playergame
+SKIP	3dash
+SKIP	3dasheditor
+SKIP	3pandas
+SKIP	3pandasbrazil
+SKIP	3pandasfantasy
+SKIP	3pandasjapan
+SKIP	3pandasnight
+SKIP	3slices2
+SKIP	40xescape
+SKIP	60secondsburgerrun
+SKIP	60secondssantarun
+SKIP	64in1nes
+SKIP	8ballpool
+SKIP	99nightsitf
+SKIP	adofai
+SKIP	adventurecapatalist
+SKIP	awesomepirates
+SKIP	b3313
+SKIP	bfdibranches
+SKIP	bmx2
+SKIP	btd1
+SKIP	big time butter baron
+SKIP	cartoonnetworktabletennisultimatetournament
+SKIP	celiasstupidromhack
+SKIP	crystalcastles
+SKIP	dknescollection
+SKIP	dragonballzthelegacyofgoku
+SKIP	dragonquestix
+SKIP	dragonxclient
+SKIP	eaglercrafttech
+SKIP	eaglercraft alpha 126 offline
+SKIP	eaglercraft beta 1.3 offline
+SKIP	eaglercraft beta 13 offline
+SKIP	eaglercraft indev offline(1)
+SKIP	eaglercraft indev offline(2)
+SKIP	eaglercraft indev offline
+SKIP	eaglercraftl 19 v0 7 0 offline signed(1)
+SKIP	eaglercraftl 19 v0 7 0 offline signed
+SKIP	eaglercraftx 188u29
+SKIP	eaglercraftx188(u29)
+SKIP	eaglercraftz 1112(1)
+SKIP	eaglercraftz 1112
+SKIP	ff3
+SKIP	ffsonic1
+SKIP	ffsonic2
+SKIP	ffsonic3
+SKIP	ffsonic4
+SKIP	ffsonic5
+SKIP	ffsonic61
+SKIP	ffsonic62
+SKIP	fifa07
+SKIP	fifa10
+SKIP	fifa11
+SKIP	fifa2000(1)
+SKIP	fifa99
+SKIP	fifainternationalsoccer
+SKIP	fifaroadtoworldcup98
+SKIP	fifasoccer06
+SKIP	fifasoccer95
+SKIP	fifasoccer96
+SKIP	fifasoccer97
+SKIP	fifastreet2
+SKIP	fnaf3
+SKIP	fnaf4
+SKIP	gxclient
+SKIP	gettothetopalthoughthereisnotop
+SKIP	goldensunthelostage
+SKIP	haroldsbadday
+SKIP	helios offline (1)
+SKIP	hinohomo
+SKIP	highspeed
+SKIP	jump
+SKIP	kengriffeyjrpresentsmajorleaguebaseball
+SKIP	lse
+SKIP	learntofly3debug
+SKIP	legacyofgoku
+SKIP	marioismissingdoneright
+SKIP	marvelsuperheroesarcade
+SKIP	marvelvscapcomps1
+SKIP	marvelvsstreetfighter
+SKIP	metalsonichyperdrive
+SKIP	minceraft i notmine v6(1)
+SKIP	minceraft i notmine v6
+SKIP	nbahangtime
+SKIP	nbajam
+SKIP	nautilusos(1)
+SKIP	nautilusos
+SKIP	newsupermarioworld2aroundtheworld
+SKIP	nicktoonsfreezeframefrenzy
+SKIP	orangeroulette
+SKIP	öoo
+SKIP	papermariodse
+SKIP	papermariopracticehack
+SKIP	pokeambrosia
+SKIP	pokefusion3
+SKIP	pokeheartgoldgenerations
+SKIP	pokethetaemeraldex
+SKIP	pokemonemeraldrouge
+SKIP	pokemonrocketedition
+SKIP	pokémonstunningsteel
+SKIP	singlefile
+SKIP	sm64land
+SKIP	ssf2arcade
+SKIP	ssf2tarcade
+SKIP	segasonicthehedgehog
+SKIP	snowbrosgenesis
+SKIP	sonic1scorerush
+SKIP	sonic1thesuperchallenges
+SKIP	sonic2scorerush
+SKIP	sonicclassics
+SKIP	sonichellfiresaga
+SKIP	sovereignoftheskys
+SKIP	spongebobpowerkartgrandprix
+SKIP	sportsheadsicehockey
+SKIP	streetfighter1arcade
+SKIP	streetfighter2arcade
+SKIP	streetfighter2cearcade
+SKIP	streetfighter2hfarcade
+SKIP	supermarioworldthe secretofthe7goldenstatues
+SKIP	superpunchouten
+SKIP	taikonotatsujin
+SKIP	theloneranger
+SKIP	thesunforthevampire
+SKIP	tuff client offline wasm(1)
+SKIP	tuff client offline wasm
+SKIP	ultimatecardrivingsimulator
+SKIP	vssmb
+SKIP	xmenchildrenoftheatomarcade
+SKIP	xmenvsstreetfighter
+SKIP	xevious
+SKIP	yoshisstrangequest
+SKIP	zetaclient
+SKIP	abandoned3
+SKIP	absolutemadness
+SKIP	acecombat2
+SKIP	acecombat3
+SKIP	acegangstertaxi
+SKIP	achievementunlocked
+SKIP	achievmentunlocked
+SKIP	achievmentunlocked2
+SKIP	achievmentunlocked3
+SKIP	achillies
+SKIP	achillies2
+SKIP	adatewithdeath
+SKIP	adifferentsnowgrave
+SKIP	advancewars
+SKIP	advancewars2
+SKIP	aflac
+SKIP	agariolite
+SKIP	ageofwar
+SKIP	ageofwar2
+SKIP	agesofempire
+SKIP	akoopasrevenge
+SKIP	akoopasrevenge2
+SKIP	akumanorgaiden
+SKIP	alienhominid
+SKIP	alienhominidgba
+SKIP	alientransporter
+SKIP	alienvspredator
+SKIP	allbossesin1
+SKIP	allocation
+SKIP	amaze
+SKIP	amigopancho
+SKIP	amigopancho2
+SKIP	amigopancho3
+SKIP	amigopancho4
+SKIP	amigopancho5
+SKIP	amigopancho6
+SKIP	amigopancho7
+SKIP	amorphous
+SKIP	anemonesfall
+SKIP	angry birdsspace
+SKIP	angrybirds space
+SKIP	angrybirdsshowdown
+SKIP	animalcrossingwildworld
+SKIP	anotherworld
+SKIP	apotris
+SKIP	appleshooter
+SKIP	appleworm
+SKIP	aquaparkio
+SKIP	arceuslegend
+SKIP	archimedesclient
+SKIP	armormayhem2
+SKIP	ascent
+SKIP	assesmentexaminationque
+SKIP	asteroidsalt
+SKIP	astraclient
+SKIP	astrawasm
+SKIP	astynax
+SKIP	atariadventure
+SKIP	attackhole
+SKIP	avalanche
+SKIP	aviamastersbuggy
+SKIP	awesomeplanes
+SKIP	awesometanks
+SKIP	awesometanks2
+SKIP	axbattler
+SKIP	b3313v102
+SKIP	babykaizo
+SKIP	babysniperinvietnam
+SKIP	backrooms
+SKIP	backrooms2d
+SKIP	backyardbaseball
+SKIP	backyardbaseball09
+SKIP	backyardbaseball10
+SKIP	backyardfootball
+SKIP	backyardsoccer
+SKIP	badicecream
+SKIP	badicecream2
+SKIP	badicecream3
+SKIP	badpiggies
+SKIP	badtimesim
+SKIP	balatrogba
+SKIP	baldidecomp
+SKIP	baldisbasics
+SKIP	baldisbasicsremaster
+SKIP	baldisfunnewschoolultimate
+SKIP	ballsandbricksgood
+SKIP	banbuds
+SKIP	banditgunslingers
+SKIP	banjokazooie
+SKIP	banjotooie
+SKIP	bankbreakout2
+SKIP	basketballlegends(1)
+SKIP	basketballlegends
+SKIP	basketballstars
+SKIP	basketrandomgood
+SKIP	battlekarts
+SKIP	battlesim
+SKIP	battlezone
+SKIP	bazookaboy
+SKIP	bballlegend
+SKIP	beachboxingsim
+SKIP	beamrider
+SKIP	bearbarians
+SKIP	bejeweledtwistflash
+SKIP	ben10alienforce
+SKIP	ben10omniverse
+SKIP	ben10protector
+SKIP	ben10racing
+SKIP	ben10ultimatealien
+SKIP	bendrowned
+SKIP	bigshotboxing2
+SKIP	bigtowertinysquare
+SKIP	bigtowertinysquare2
+SKIP	bigtowertinysquare2good
+SKIP	bindingofisaccsheeptime
+SKIP	bitlife
+SKIP	bitlifeencrypted
+SKIP	blackjackbattle
+SKIP	blackjackhhhh
+SKIP	blackknight
+SKIP	blackout
+SKIP	blacksmithlab
+SKIP	bleachvsnaruto
+SKIP	blobsstory2
+SKIP	blockblast
+SKIP	blockblastv2
+SKIP	blockcraftparkour
+SKIP	blockcraftshooter
+SKIP	blockpost
+SKIP	blood
+SKIP	bloodmoney
+SKIP	bloons
+SKIP	bloons2
+SKIP	bloonstd1
+SKIP	bloonstd2
+SKIP	bloonstd3
+SKIP	bloonstd4
+SKIP	bloonstd5
+SKIP	bloonstd6scratch
+SKIP	bloonspp1
+SKIP	bloonspp2
+SKIP	bloonspp3
+SKIP	bloonspp4
+SKIP	bloonspp5
+SKIP	bloxorz
+SKIP	bntts
+SKIP	bobtherobber
+SKIP	bobtherobber5
+SKIP	bollybeat
+SKIP	bomberman
+SKIP	bomberman2
+SKIP	bombermanhero
+SKIP	bombermanworld
+SKIP	bottleflip3d
+SKIP	bounceback
+SKIP	bouncybasketball
+SKIP	bowlalt
+SKIP	bowmaster
+SKIP	boxhead2playrooms
+SKIP	boxheadnightmare
+SKIP	boxinglive 2
+SKIP	boxinglive2
+SKIP	breadskate
+SKIP	btd5
+SKIP	btts
+SKIP	btts2
+SKIP	bubbleshooter
+SKIP	bubbleshooterpirate
+SKIP	bubbletanks
+SKIP	bubbletanks2
+SKIP	bubbletanks3
+SKIP	bubbletanksarenas
+SKIP	bubbletankstd
+SKIP	bubsy
+SKIP	buckshotroulette
+SKIP	buildnowgg
+SKIP	bulletforce
+SKIP	bunzobunny
+SKIP	burgertime
+SKIP	burritobison
+SKIP	burritobison2
+SKIP	burritobisonrevenge
+SKIP	bushidoblade
+SKIP	cactusmccoy
+SKIP	cactusmccoy2(1)
+SKIP	cactusmccoy2
+SKIP	camilla
+SKIP	candybox1
+SKIP	cannonfodder
+SKIP	captainlang
+SKIP	captchaware
+SKIP	carcrash3
+SKIP	careatscar2deluxe
+SKIP	carmods
+SKIP	carstuntsdriving
+SKIP	castaway
+SKIP	castlebloodline
+SKIP	castlecircleofmoon
+SKIP	castlevania
+SKIP	castlevania2
+SKIP	castlevania3
+SKIP	castlevaniaariaofsorrow
+SKIP	castlevaniadawnofsorrow
+SKIP	castlevanianes
+SKIP	catmario
+SKIP	catmariogood
+SKIP	celeste
+SKIP	celeste2
+SKIP	cellardoor
+SKIP	chainofmemories
+SKIP	checkers
+SKIP	cheeseisthereason
+SKIP	cheshireinachatroom
+SKIP	chessclassic
+SKIP	chibiknight
+SKIP	chipschallenge
+SKIP	chronotrigger
+SKIP	chuzzle
+SKIP	civiballs2
+SKIP	clashnslash
+SKIP	clashofvikings
+SKIP	classof09
+SKIP	claymore
+SKIP	clayuncraft
+SKIP	cleanupio
+SKIP	clearvision
+SKIP	clearvision2
+SKIP	clearvision3
+SKIP	clearvision4
+SKIP	clearvision5
+SKIP	clmadnessambulation
+SKIP	clover
+SKIP	clubbytheseal
+SKIP	clusterrush
+SKIP	coalllcdemo
+SKIP	codblackopp
+SKIP	coddefiance
+SKIP	codenamegordon
+SKIP	codeorgbutoffline
+SKIP	codercraft
+SKIP	codmodernwarfare
+SKIP	codworldatwar
+SKIP	colorburst3d
+SKIP	colormatch
+SKIP	colorwatersort3d
+SKIP	commandandconquer
+SKIP	commanderkeen4
+SKIP	commanderkeen5
+SKIP	commanderkeen6
+SKIP	confrontingurself
+SKIP	confrontingyourself
+SKIP	conkersbadfurday
+SKIP	contra
+SKIP	contra3
+SKIP	cookie clicker
+SKIP	cookieclicker
+SKIP	cookieclickergood
+SKIP	cookieclickermodmenu
+SKIP	cookingmama
+SKIP	cookingmama2
+SKIP	cookingmama3
+SKIP	coryinthehouse
+SKIP	cotlk
+SKIP	coverorange
+SKIP	coverorange2
+SKIP	coverorangejourneygangsters
+SKIP	coverorangejourneyknights
+SKIP	coverorangejourneypirates
+SKIP	coverorangejourneyspace
+SKIP	coverorangeplayerspack
+SKIP	coverorangeplayerspack2
+SKIP	coverorangeplayerspack3
+SKIP	crankit!
+SKIP	crankit
+SKIP	crash2
+SKIP	crash3
+SKIP	crashbandicoot (1)
+SKIP	crashbandicoot
+SKIP	crashbandicoot2
+SKIP	crashteamracing
+SKIP	crazycattle3d
+SKIP	crazychicken3d
+SKIP	crazyfrogracer
+SKIP	crazypenguincatapult
+SKIP	crazyplanelanding
+SKIP	crazytaxigba
+SKIP	creeperworld2
+SKIP	creepyinternetstories
+SKIP	creepynightfunkin
+SKIP	crimsonmadness
+SKIP	crossyroad
+SKIP	crunchball3000
+SKIP	cs1.6
+SKIP	cs6
+SKIP	csds
+SKIP	csgoclicker
+SKIP	ctgpnitro
+SKIP	curveball(1)
+SKIP	curveball
+SKIP	cuttheropetimetravel
+SKIP	cybersensation
+SKIP	dadgame
+SKIP	dadnme
+SKIP	daggerfall
+SKIP	dandysworldclicker
+SKIP	dasharena
+SKIP	dashio
+SKIP	dborigins
+SKIP	dborigins2
+SKIP	dbsniper
+SKIP	dbzattacksaiyans
+SKIP	dbzdevolution
+SKIP	dbzsuperwarriorssonic
+SKIP	dbzwarriors2
+SKIP	deadair
+SKIP	deadfrontieroutbreak
+SKIP	deadfrontieroutbreak2
+SKIP	deadplate
+SKIP	deadseat
+SKIP	deadzed
+SKIP	deadzed2
+SKIP	deblob2
+SKIP	decision
+SKIP	decision2
+SKIP	decision3
+SKIP	decisionmedieval
+SKIP	deepersleep
+SKIP	deepsleep
+SKIP	defendyourcastle
+SKIP	defendyournuts
+SKIP	defendyournuts2
+SKIP	deltatraveler
+SKIP	dementium
+SKIP	demolitionderbycrashracing
+SKIP	demonblade
+SKIP	diablo
+SKIP	diamondhollow
+SKIP	diamondhollow2
+SKIP	diddykong
+SKIP	digdeep
+SKIP	digdug
+SKIP	digdug2
+SKIP	digdug26
+SKIP	digtochina
+SKIP	dimensionalincident
+SKIP	dinodudes
+SKIP	doblox
+SKIP	dogeminer2
+SKIP	dokidokiliteratureclub
+SKIP	domeromantik
+SKIP	donkeykong
+SKIP	donkeykong64
+SKIP	donkeykongcountry
+SKIP	donkeykongcountry2
+SKIP	donkeykongcountry3
+SKIP	donkeykongnes
+SKIP	dontescape
+SKIP	dontescape2
+SKIP	dontescape3
+SKIP	doodlejumpgoober
+SKIP	doom2
+SKIP	doom2d
+SKIP	doom2ddos
+SKIP	doom2dos
+SKIP	doom3pack
+SKIP	doom64
+SKIP	doomdos
+SKIP	doomemscripten
+SKIP	doomps
+SKIP	doompsalt
+SKIP	doomzio
+SKIP	doorscastle
+SKIP	doswasmx
+SKIP	doubledribble
+SKIP	douchebaglife
+SKIP	douchebagworkout2
+SKIP	downthemountain
+SKIP	dragonballadvance
+SKIP	drawntolife
+SKIP	drawntolife2
+SKIP	dreader
+SKIP	driftboss
+SKIP	drifthuntersmerge
+SKIP	driftsimulator
+SKIP	driverussia
+SKIP	drmario
+SKIP	drweedgaster
+SKIP	dubstep
+SKIP	duckhunt
+SKIP	ducklfe5
+SKIP	ducklife
+SKIP	ducklife2
+SKIP	ducklife3
+SKIP	ducklife4
+SKIP	ducklingsio
+SKIP	ducktales
+SKIP	ducktales2
+SKIP	dukenukem3d
+SKIP	dumpling
+SKIP	dunebuggy
+SKIP	dungeonsanddegenerategamblers
+SKIP	dunkshot
+SKIP	dyingdreams
+SKIP	dynamiteheaddy
+SKIP	eaglercraft152
+SKIP	eaglercraftlite
+SKIP	eaglercraftmagic
+SKIP	eaglercraftnebula
+SKIP	eaglercraftshadow
+SKIP	eaglercraftsky
+SKIP	eaglerforge
+SKIP	eaglerultimate
+SKIP	earntodie
+SKIP	earntodie2
+SKIP	earthbound
+SKIP	earthbound3
+SKIP	earthboundsnes
+SKIP	earthtaken
+SKIP	earthtaken2
+SKIP	earthtaken3
+SKIP	earthwormgg
+SKIP	earthwormjim (1)
+SKIP	earthwormjim
+SKIP	earthwormjim2 (1)
+SKIP	earthwormjim2
+SKIP	edelweiss
+SKIP	effinghail
+SKIP	effingmachines
+SKIP	effingworms
+SKIP	effingzombies
+SKIP	eggycar
+SKIP	elasticface
+SKIP	electricman2
+SKIP	elevatoraction
+SKIP	emujs
+SKIP	endlesswar4
+SKIP	endlesswar5
+SKIP	endlesswar5wow
+SKIP	endlesswar7
+SKIP	enduro
+SKIP	epicbattlefantasy5
+SKIP	escaperoad 2
+SKIP	escaperoad
+SKIP	etrianoddyssey
+SKIP	excitebike64
+SKIP	exitpath
+SKIP	exoobservation
+SKIP	exploremodpack
+SKIP	factoryballs
+SKIP	factoryballs2
+SKIP	factoryballs3
+SKIP	factoryballs4
+SKIP	fairytalevsonepiece
+SKIP	fallguys
+SKIP	famidash
+SKIP	famidash1.2.8
+SKIP	famidashalbum1.2.8
+SKIP	famidashbsides1.2.8
+SKIP	famidashcsides1.2.8
+SKIP	famidashdsides1.2.8
+SKIP	familyguycorrupted
+SKIP	fancypantsadventure
+SKIP	fancypantsadventure2
+SKIP	fancypantsadventure3
+SKIP	fancysnowboarding
+SKIP	fashionbattle
+SKIP	fattygenius
+SKIP	fearassessment
+SKIP	feedthevoid
+SKIP	feedus
+SKIP	feedus2
+SKIP	feedus3
+SKIP	feedus4
+SKIP	feedus5
+SKIP	ff6
+SKIP	ffmysticquest
+SKIP	fifa2000
+SKIP	finalfantasy
+SKIP	finalfantasy2nes
+SKIP	finalfantasy3nes
+SKIP	finalfantasyii
+SKIP	finalfantasyvi
+SKIP	finalfantasyvii
+SKIP	finalfantasyviid2
+SKIP	finalfantasyviid3
+SKIP	finalfantasyviitheothertetrr
+SKIP	finalfantasytactics
+SKIP	finalninja
+SKIP	fireboyandwatergirl
+SKIP	fireboyandwatergirl2
+SKIP	fireboyandwatergirl3
+SKIP	fireboyandwatergirl5
+SKIP	fireboyandwatergirl6
+SKIP	fireemblem
+SKIP	fivenightsatbaldisredone
+SKIP	fivenightsatepsteins
+SKIP	fivenightsatshrekshotel
+SKIP	flappybird
+SKIP	flashsonic
+SKIP	floodrunner
+SKIP	floodrunner2
+SKIP	floodrunner4
+SKIP	fluidism
+SKIP	fnac1
+SKIP	fnac2
+SKIP	fnaf3remastered
+SKIP	fnaf4halloween
+SKIP	fnafanimatronics
+SKIP	fnafps
+SKIP	fnafshooter
+SKIP	fnafsl
+SKIP	fnafucn
+SKIP	fnafworldd
+SKIP	fnaw
+SKIP	fnftwiddlefinger
+SKIP	fnfagoti
+SKIP	fnfakage
+SKIP	fnfanimation
+SKIP	fnfannie
+SKIP	fnfbelowdepths
+SKIP	fnfbfdi26
+SKIP	fnfblackbetrayal
+SKIP	fnfbside
+SKIP	fnfcamelliarudeblaster
+SKIP	fnfcandycarrier
+SKIP	fnfchara
+SKIP	fnfclassified
+SKIP	fnfcorrosion
+SKIP	fnfcory
+SKIP	fnfcrunchin
+SKIP	fnfdeciever
+SKIP	fnfdesolation
+SKIP	fnfdocumic.txtv3
+SKIP	fnfdokitakeoverplus
+SKIP	fnfdropandroll
+SKIP	fnfdsides
+SKIP	fnfdustin
+SKIP	fnffleetway
+SKIP	fnfflippedout
+SKIP	fnffnaf1
+SKIP	fnffnaf2
+SKIP	fnffnaf3
+SKIP	fnfgamebreakerbundle
+SKIP	fnfgfmode
+SKIP	fnfgoldenapple
+SKIP	fnfhank
+SKIP	fnfheartbreakhavoc
+SKIP	fnfherobrine
+SKIP	fnfhex
+SKIP	fnfholiday
+SKIP	fnfhorkglorpgloop
+SKIP	fnfhotline
+SKIP	fnfhypnoslullaby
+SKIP	fnfimposter3
+SKIP	fnfimposterv4
+SKIP	fnfindiecross
+SKIP	fnfinfernalbout
+SKIP	fnfinfiniteirida
+SKIP	fnfironlung
+SKIP	fnfmadnesspoop
+SKIP	fnfmaginagematches
+SKIP	fnfmariomadnessdside
+SKIP	fnfmarioport
+SKIP	fnfmcmadness
+SKIP	fnfmidfight
+SKIP	fnfmiku
+SKIP	fnfmobmod
+SKIP	fnfneo
+SKIP	fnfpiggyfield
+SKIP	fnfplutoshi
+SKIP	fnfpokepastaperdition
+SKIP	fnfporifera
+SKIP	fnfqt
+SKIP	fnfretrospecter
+SKIP	fnfrevmixed
+SKIP	fnfrewrite
+SKIP	fnfrottensmoothie
+SKIP	fnfselfpaced
+SKIP	fnfshaggy4keys
+SKIP	fnfshaggyxmatt
+SKIP	fnfshucks v2
+SKIP	fnfsky
+SKIP	fnfsoft
+SKIP	fnfsonicexe
+SKIP	fnfsonicexe4
+SKIP	fnfstarlightmayhem
+SKIP	fnftailsgetstrolled
+SKIP	fnftricky
+SKIP	fnfundertale
+SKIP	fnfvoid
+SKIP	fnfvstabi
+SKIP	fnfwednesday infedility
+SKIP	fnfwhitty
+SKIP	fnfzardy
+SKIP	focus
+SKIP	footballlegends
+SKIP	forknsausage
+SKIP	fortzone
+SKIP	fpa4p1
+SKIP	fpa4p2
+SKIP	freegemas
+SKIP	freerider
+SKIP	freerider2
+SKIP	freerider3
+SKIP	fridaynightfunkin
+SKIP	funkinmix
+SKIP	funnybattle
+SKIP	funnybattle2
+SKIP	funnyshooter22
+SKIP	fzero
+SKIP	fzerox
+SKIP	gachaverse
+SKIP	galaga
+SKIP	gameandwatchcollection
+SKIP	gangstabean
+SKIP	gangstabean2
+SKIP	gangsterbros
+SKIP	garcello
+SKIP	garfcaughtinact
+SKIP	gdlite
+SKIP	gdsubzero
+SKIP	gdwaveover100mb
+SKIP	generalchaos
+SKIP	geometrydashscratch
+SKIP	geometryvibes
+SKIP	getontop
+SKIP	getyoked
+SKIP	ggshinobi
+SKIP	ggshinobi2
+SKIP	ghosttrick
+SKIP	gimmietheairpod
+SKIP	gladdihoppers
+SKIP	glfighters
+SKIP	glover
+SKIP	goalsouthafrica
+SKIP	gobble
+SKIP	goldenaxe
+SKIP	goldenaxe2
+SKIP	goldenaxe3
+SKIP	goldeneye007
+SKIP	goldensun
+SKIP	goldensunnds
+SKIP	golforbit
+SKIP	goodbigtowertinysquare
+SKIP	goodbigtowertinysquare2
+SKIP	goodboygalaxy
+SKIP	goodmonkeymart
+SKIP	googlebaseball
+SKIP	googledino
+SKIP	gorescriptclassic
+SKIP	grandactionsimulator ny
+SKIP	granddad
+SKIP	grandtheftautoadvance
+SKIP	granny2
+SKIP	granny22
+SKIP	granny3
+SKIP	grannycreepy
+SKIP	grannynightmare
+SKIP	grannyy
+SKIP	granturismo
+SKIP	granturismo2
+SKIP	gravity
+SKIP	grey box testing
+SKIP	grimacebirthday
+SKIP	grindcraft
+SKIP	grn
+SKIP	growagarden
+SKIP	growdenio
+SKIP	growmi
+SKIP	growyourgarden
+SKIP	gta
+SKIP	gta2
+SKIP	gta22
+SKIP	gta2alt
+SKIP	gtaalty
+SKIP	gtachina
+SKIP	gtamods
+SKIP	gunblood
+SKIP	gunknight
+SKIP	gunmayhem
+SKIP	gunmayhem2
+SKIP	gunmayhem2goof
+SKIP	gunmayhemredux
+SKIP	gunsmoke
+SKIP	gunstarheroes
+SKIP	gyromite
+SKIP	hacx
+SKIP	hajimeippo
+SKIP	halocombatdevolved
+SKIP	handsofwar (1)
+SKIP	handsofwar(1)
+SKIP	handsofwar(2)
+SKIP	handsofwar
+SKIP	handulum
+SKIP	hanger
+SKIP	happywheels
+SKIP	harmonyofdissonance
+SKIP	harvestio
+SKIP	harvestmoon
+SKIP	harvestmoon64
+SKIP	hauntthehouse
+SKIP	heartandsoul
+SKIP	heartandsoul1.2.1
+SKIP	hei$t
+SKIP	heretic
+SKIP	herobrinereborn
+SKIP	highwaytraffic3d
+SKIP	hillclimbracinglite
+SKIP	hipsterkickball
+SKIP	hitsinglereal
+SKIP	hitstunfly
+SKIP	hl2doom
+SKIP	hobo
+SKIP	hobo2
+SKIP	hobo3
+SKIP	hobo4
+SKIP	hobo5
+SKIP	hobo6
+SKIP	hobo7
+SKIP	hobovszombies
+SKIP	holeio
+SKIP	hollowknight
+SKIP	homesheephome
+SKIP	horrormickeymouse
+SKIP	hotdogbush
+SKIP	houseofhazards
+SKIP	huggywuggypixel
+SKIP	humanexpenditureprogram
+SKIP	icantbelievegoogleflaggedmeforthenameofthefilelol
+SKIP	ice age baby
+SKIP	idleminorzamnshes12
+SKIP	impossiblequiz (1)
+SKIP	impossiblequiz
+SKIP	impossiblequiz2
+SKIP	inclementemerald
+SKIP	indiantrucksimiulator
+SKIP	infinitecraft
+SKIP	inkgame
+SKIP	innkeeper
+SKIP	insidestory
+SKIP	interactivebuddy
+SKIP	intospace
+SKIP	intospace2
+SKIP	intospace3
+SKIP	intothedeepweb
+SKIP	intrusion
+SKIP	iqball
+SKIP	ironsoldier
+SKIP	irori
+SKIP	itgetssolonelyhere
+SKIP	iwbtg
+SKIP	jacksmith
+SKIP	jacksmithencryptedorsmthn
+SKIP	jailbreakobbbobob
+SKIP	jamesbondjr
+SKIP	jazzjackrabbit2
+SKIP	jefflings
+SKIP	jellydadhero
+SKIP	jellytruckgood
+SKIP	jetforcegemini
+SKIP	jetskiracing
+SKIP	jmocraft
+SKIP	jojobaps1
+SKIP	journeyarcade
+SKIP	joustarcade
+SKIP	jsvecx
+SKIP	jumbomario
+SKIP	jurassicpark
+SKIP	justfalllol
+SKIP	justinclient
+SKIP	kaizomarioworld
+SKIP	kapi
+SKIP	keroseneclient
+SKIP	killerinstinct
+SKIP	kimjonguntilepuzzle
+SKIP	kingdomheartsdays
+SKIP	kingdomheartsrecoded
+SKIP	kingdomheartsrecodedalt
+SKIP	kirby64
+SKIP	kirbyandtheamzingmirror
+SKIP	kirbycanvascurse
+SKIP	kirbysadventure
+SKIP	kirbysdreamland
+SKIP	kirbysdreamland3
+SKIP	kirbysqueaksquad
+SKIP	kirbysuperstar
+SKIP	kirbysuperstarultra
+SKIP	kittencannon
+SKIP	knifehit
+SKIP	knightmaretower
+SKIP	konkrio
+SKIP	koopasrevenge
+SKIP	kourio
+SKIP	ks2teams
+SKIP	laceysflashgames
+SKIP	lambdaclient
+SKIP	lastfirered
+SKIP	laststand2
+SKIP	learntofly
+SKIP	learntofly2
+SKIP	learntofly3
+SKIP	learntoflyidle
+SKIP	learntoflyidlehack
+SKIP	legobatman
+SKIP	legobatman2superheroes
+SKIP	legoindianajones
+SKIP	legoindianajones2
+SKIP	legoninjago
+SKIP	legostarwars
+SKIP	legostarwars2gba
+SKIP	legostarwarsgba
+SKIP	lemmings
+SKIP	letitconsume
+SKIP	letsgoeevee
+SKIP	letsgopikachu
+SKIP	leveldevil
+SKIP	leverwarriors
+SKIP	lightitup
+SKIP	lilrunmo
+SKIP	linerider
+SKIP	linktothepast
+SKIP	littlealchemy2
+SKIP	loderunner
+SKIP	lonewolf
+SKIP	losangelesshark
+SKIP	loz1
+SKIP	lozlinkawakening
+SKIP	lozminishcap
+SKIP	lozoracleofseasons
+SKIP	lozphantomhourglass
+SKIP	lozspirittracks
+SKIP	lummm
+SKIP	madalinstuntcars
+SKIP	madalinstuntcarsgood
+SKIP	madalinstuntcarsmultiplayerfixed
+SKIP	madden93
+SKIP	madden94
+SKIP	madden95
+SKIP	madden96
+SKIP	madden99
+SKIP	maddenfootball
+SKIP	maddenfootball64
+SKIP	maddennfl
+SKIP	maddennfl2000
+SKIP	maddennfl2001
+SKIP	maddennfl2002
+SKIP	maddy98
+SKIP	madness retaliation
+SKIP	madnessaccelerant
+SKIP	madnesscombatdefense
+SKIP	madnesscombatnexus
+SKIP	madnessgemini
+SKIP	madnesshydraulic
+SKIP	madnessinteractive
+SKIP	madnessoffcolor
+SKIP	madnesspremediation
+SKIP	madnessretaliation
+SKIP	madnesss2010
+SKIP	madnessstand
+SKIP	madstuntcars2
+SKIP	magictiles3
+SKIP	majorasmask
+SKIP	mami
+SKIP	marbleracer(1)
+SKIP	mari0
+SKIP	mario3
+SKIP	mario64webgl
+SKIP	marioandluigisuperstarsaga
+SKIP	mariobuilder64(1)
+SKIP	mariobuilder64
+SKIP	mariocombat
+SKIP	mariogolf
+SKIP	mariokart64
+SKIP	mariokartds
+SKIP	mariokartsupercircuit
+SKIP	mariolostlevels
+SKIP	mariomadness
+SKIP	mariomakersnes
+SKIP	mariominusrabbids
+SKIP	mariopaint
+SKIP	marioparty
+SKIP	marioparty2
+SKIP	marioparty3
+SKIP	mariopartyds
+SKIP	mariosmysterymeat
+SKIP	mariotennis
+SKIP	marvelvsstreetfighterjp
+SKIP	mastermindworldconquerer
+SKIP	matrixrampage
+SKIP	mattv2
+SKIP	maxpayne
+SKIP	mcfpsfbhd
+SKIP	mcraerally
+SKIP	meatboy
+SKIP	meatboyflash
+SKIP	medievalshark
+SKIP	medievil
+SKIP	megacd
+SKIP	megaclient
+SKIP	megaman
+SKIP	megaman2
+SKIP	megaman2gba
+SKIP	megaman3
+SKIP	megaman4
+SKIP	megaman5
+SKIP	megaman6
+SKIP	megaman7
+SKIP	megaman8
+SKIP	megamanbattlechipchallenge
+SKIP	megamanbn5tc
+SKIP	megamanbn5tp
+SKIP	megamanbn6cf
+SKIP	megamanbn6cg
+SKIP	megamanlegends
+SKIP	megamanlegends2
+SKIP	megamanx
+SKIP	megamanx2
+SKIP	megamanx3
+SKIP	megamanx4
+SKIP	megamanzero
+SKIP	megamanzx
+SKIP	megaminer
+SKIP	meowuwu
+SKIP	metalgear
+SKIP	metalgearsolid
+SKIP	metalgearsolidps
+SKIP	metalslug
+SKIP	metalslug2
+SKIP	metalslugadvance
+SKIP	metalslugmission1
+SKIP	metalslugmission2
+SKIP	metroid
+SKIP	metroid2
+SKIP	metroidfusion
+SKIP	metroidprimehunters
+SKIP	metroidzeromission
+SKIP	miamishark
+SKIP	microlife
+SKIP	micromages
+SKIP	mightyknight
+SKIP	mightyknight2
+SKIP	mindscape
+SKIP	mindwave
+SKIP	minecraft1 8 8
+SKIP	minhero
+SKIP	minimart
+SKIP	miraginewar
+SKIP	misslecommand
+SKIP	mk4ampedup
+SKIP	mktrilogyps1
+SKIP	mmbn3b
+SKIP	mmbn3w
+SKIP	mmbn4bm
+SKIP	mmbn4rs
+SKIP	mmsf2zxn
+SKIP	mmsf2zxs
+SKIP	mmsf3ba
+SKIP	mmsf3rj
+SKIP	mmsfd
+SKIP	mmsfl
+SKIP	mmsfp
+SKIP	mmwilywars
+SKIP	mobcontrolhtml5
+SKIP	mobiusrevolution
+SKIP	momoscrushers
+SKIP	monkeymartenc
+SKIP	monsterswing
+SKIP	monstertruckcurfew
+SKIP	moonemeraldextremerandomizer
+SKIP	mortalkombat
+SKIP	mortalkombat2
+SKIP	mortalkombat2a
+SKIP	mortalkombat3
+SKIP	mortalkombat3a
+SKIP	mortalkombat4
+SKIP	mortalkombata
+SKIP	mortalkombatadvance
+SKIP	mortkom4
+SKIP	motherload
+SKIP	motox3mm
+SKIP	motox3mpoolparty
+SKIP	motox3mspookyland
+SKIP	motox3mwinter
+SKIP	mountainbikeracer
+SKIP	mrracer
+SKIP	mspacman(1)
+SKIP	mspacman
+SKIP	multitask
+SKIP	mutilate a doll
+SKIP	mvpbaseball
+SKIP	myfriendpedro
+SKIP	myfriendpedroarena
+SKIP	narc
+SKIP	naturalselection
+SKIP	nbajamte
+SKIP	nbalive2000
+SKIP	nbalive2003
+SKIP	nblox
+SKIP	neonrider
+SKIP	nesworldchampion
+SKIP	netattack
+SKIP	newgroundsrumble
+SKIP	newsupermariobros
+SKIP	newyorkshark
+SKIP	nflblitz
+SKIP	nfscarbonowncity
+SKIP	nfsmostwanted
+SKIP	nfsporcheunleashed
+SKIP	nfsunderground
+SKIP	nfsunderground2
+SKIP	ngon(1)
+SKIP	nhl2002
+SKIP	nhl98
+SKIP	nhlhitz2003
+SKIP	nickelodeonsuperbrawl2
+SKIP	nightcatsurvival
+SKIP	nightfire
+SKIP	nightshade
+SKIP	ninjabrawl
+SKIP	ninjaobbyparkor
+SKIP	nintendogslab
+SKIP	nintendoworldcup
+SKIP	nitclient
+SKIP	nitromemustdie
+SKIP	nomoregameasdsadfagfggdfs
+SKIP	notyourpawn
+SKIP	novaclient
+SKIP	nplus
+SKIP	nullkevin
+SKIP	nzp
+SKIP	obbybike
+SKIP	obeythegame
+SKIP	ocarinaoftime
+SKIP	oddfuture
+SKIP	omnipresent
+SKIP	onepiece
+SKIP	onepiecefighting
+SKIP	oneshotold
+SKIP	opposumcountry
+SKIP	ordinarysonicromhack
+SKIP	oregontrail
+SKIP	ormmimastickwithclsoitcanberememberedoyeahclalienhominid
+SKIP	ortalkombat4
+SKIP	osu
+SKIP	ourpleguy
+SKIP	ovodimensions
+SKIP	ovofixed
+SKIP	pacman
+SKIP	pacmana
+SKIP	pacmansuperfast
+SKIP	pacmanworld3
+SKIP	pacmanworldg
+SKIP	pacmanworldpsx
+SKIP	papabakeria
+SKIP	papadonut
+SKIP	papalouienighthunt2
+SKIP	papalouiewhenburgersattack
+SKIP	papalouiewhenpizzasattack
+SKIP	papalouiewhensundaesattack
+SKIP	papapizzagood
+SKIP	papapizzagoody
+SKIP	papapizzamamamia
+SKIP	papasburgeriiiaaaaa
+SKIP	papascheeseria
+SKIP	papascupcakeria
+SKIP	papasfreezeria
+SKIP	papashotdoggeria
+SKIP	papaspancakeria
+SKIP	papaspastaria
+SKIP	papasscooperia
+SKIP	papassushiria
+SKIP	papastacomia
+SKIP	papaswingeria
+SKIP	paperio
+SKIP	papermario
+SKIP	papermariopromode
+SKIP	papermariottyd
+SKIP	parappatherapper
+SKIP	parappatherapperalt
+SKIP	partnersintime
+SKIP	peacekeeper
+SKIP	peggle
+SKIP	penaltykicks
+SKIP	penguinpass
+SKIP	pepsiman
+SKIP	pepsimanalt
+SKIP	perfectdark
+SKIP	persona
+SKIP	persona2
+SKIP	persona2alt
+SKIP	personaalt
+SKIP	phantasystar
+SKIP	phantasystar2
+SKIP	phantasystar3
+SKIP	phantasystar4
+SKIP	pheonixjusticeforall
+SKIP	pheonixrightaceattorny
+SKIP	pheonixtrialsandyear
+SKIP	pibbyapocalypse
+SKIP	piclient
+SKIP	pico8
+SKIP	pico8edu
+SKIP	picohot
+SKIP	picolife
+SKIP	piconightpunkin
+SKIP	picosschool
+SKIP	picovsbeardx
+SKIP	pikwip
+SKIP	pinkbike
+SKIP	pint
+SKIP	pitfall
+SKIP	pitof100trials
+SKIP	pixelbattlegroundsio
+SKIP	pixelclient
+SKIP	pixelquestlostidols
+SKIP	pizzapapa
+SKIP	plantsvszombiesnds
+SKIP	plazmaburst
+SKIP	pokeallin
+SKIP	pokebattlefact
+SKIP	pokeblack
+SKIP	pokeblack2.html
+SKIP	pokeblack2alt
+SKIP	pokeblackalt
+SKIP	pokeblazeblack2redux
+SKIP	pokeblue
+SKIP	pokeclassic
+SKIP	pokecrown
+SKIP	pokecrystaladvanceredux
+SKIP	pokecrystalclear
+SKIP	pokediamond
+SKIP	pokedreamstone
+SKIP	pokeeliteredux
+SKIP	pokeelysiuma
+SKIP	pokeelysiumb
+SKIP	pokeemeraldenhanced
+SKIP	pokeemeraldexceeded
+SKIP	pokeemeraldhorizons
+SKIP	pokeemeraldimperium
+SKIP	pokeemeraldrandom
+SKIP	pokeemeraldrogue
+SKIP	pokeemeraldz
+SKIP	pokefiregold
+SKIP	pokeflora
+SKIP	pokefrlgplus
+SKIP	pokefuseddimension
+SKIP	pokegaia
+SKIP	pokegoldenshield
+SKIP	pokegschronicles
+SKIP	pokeheartgold
+SKIP	pokelightplatinum
+SKIP	pokeliquidcrysta
+SKIP	pokemegamoemon
+SKIP	pokemonamnesia
+SKIP	pokemonclover
+SKIP	pokemoncrystal
+SKIP	pokemonemerald
+SKIP	pokemonemeraldcrest
+SKIP	pokemonemeraldimperium
+SKIP	pokemonemeraldkaizo
+SKIP	pokemonemeraldmini
+SKIP	pokemonemeraldseaglass
+SKIP	pokemonenergizedemerald
+SKIP	pokemonevolvedsfdgsdfs
+SKIP	pokemonfirered
+SKIP	pokemonfireredandleafgreenplusedition
+SKIP	pokemonfireredrandomized
+SKIP	pokemongold
+SKIP	pokemonkaizoironfirered
+SKIP	pokemonlazarus
+SKIP	pokemonleafgreen
+SKIP	pokemonmodernemerald
+SKIP	pokemonmysterydungeon
+SKIP	pokemonperfectemerald5.5
+SKIP	pokemonquetzal
+SKIP	pokemonroaringred
+SKIP	pokemonruby
+SKIP	pokemonsapphire
+SKIP	pokemonshinsigma
+SKIP	pokemonsilver
+SKIP	pokemonslgreen
+SKIP	pokemonsmred
+SKIP	pokemonsnap
+SKIP	pokemonstadium
+SKIP	pokemontowerdefense
+SKIP	pokemonultimatefusion
+SKIP	pokemonunbound
+SKIP	pokemonvolume1
+SKIP	pokemonvolume2
+SKIP	pokemonvolume3
+SKIP	pokemonvolume4
+SKIP	pokemoonemerald
+SKIP	pokemysteryexplorersofsky
+SKIP	pokenameless
+SKIP	pokeodyssey
+SKIP	pokepasta
+SKIP	pokepath
+SKIP	pokepearl
+SKIP	pokeperfectfirered
+SKIP	pokepisces
+SKIP	pokeplatinum
+SKIP	pokeplatinumrandomized
+SKIP	pokerechargedpink
+SKIP	pokerechargedyellow
+SKIP	pokerecordkeepers
+SKIP	pokered
+SKIP	pokerenegadeplat
+SKIP	pokerocketedition
+SKIP	pokerowe
+SKIP	pokeruby
+SKIP	pokerunandbun
+SKIP	pokescorchedsilver
+SKIP	pokesoulsilver
+SKIP	pokethepit
+SKIP	poketoomanytypes2
+SKIP	poketourmaline
+SKIP	pokeultraviolet
+SKIP	pokeunovaemerald
+SKIP	pokevega
+SKIP	pokevoltwhite2redux
+SKIP	pokevoyager
+SKIP	pokewhite
+SKIP	pokewhite2
+SKIP	pokewhite2alt
+SKIP	pokeyellow
+SKIP	polishedcrystal
+SKIP	polytrackbutnotflagged(1)
+SKIP	polytrackbutnotflagged
+SKIP	pomgetsinternet
+SKIP	popeyepapi
+SKIP	portal
+SKIP	portaldefenderstd
+SKIP	portaldefendersfastbreak
+SKIP	portalflash
+SKIP	porter
+SKIP	possessquest
+SKIP	potatomanseeksthetroof
+SKIP	pou(1)
+SKIP	powerslave
+SKIP	prebronzeage
+SKIP	precisionclient
+SKIP	precivilationbronzeage
+SKIP	prehistoricshark
+SKIP	primary
+SKIP	prismarine
+SKIP	prismclient
+SKIP	professorlaytonandthecuriousvillage
+SKIP	puckman
+SKIP	pumpkinrun
+SKIP	punchout
+SKIP	punchthetrump
+SKIP	puyopuyofever
+SKIP	pvz
+SKIP	pvz2
+SKIP	pvz2gardenless
+SKIP	pyrotoad
+SKIP	qbert
+SKIP	quake2
+SKIP	quake3
+SKIP	quake64
+SKIP	quickieworld
+SKIP	qwop
+SKIP	racemaster3d
+SKIP	racingarena
+SKIP	radicalred
+SKIP	radracer
+SKIP	raftwars
+SKIP	raftwars2
+SKIP	ragdoll
+SKIP	ragdollachivement
+SKIP	ragollhit
+SKIP	rainbowsix
+SKIP	rainbowsixalt
+SKIP	ravenbase
+SKIP	ray1
+SKIP	ray2
+SKIP	rayman
+SKIP	raze
+SKIP	raze2
+SKIP	raze3
+SKIP	re3
+SKIP	reachthecore
+SKIP	rebornclient
+SKIP	rebuild
+SKIP	rebuild2
+SKIP	redalert
+SKIP	redball
+SKIP	redball2
+SKIP	redball3
+SKIP	redball4(1)
+SKIP	redball4vol2
+SKIP	redball4vol3
+SKIP	redtierunner
+SKIP	redvsblue2
+SKIP	redvsbluewar
+SKIP	reignofcentipede
+SKIP	renegades
+SKIP	resentclient
+SKIP	residentevil
+SKIP	residentevil2
+SKIP	residentevil2d1
+SKIP	residentevil2d2
+SKIP	resortempire
+SKIP	retrobowl
+SKIP	retrobowlcollege
+SKIP	retrohighway
+SKIP	returnman
+SKIP	returnman2
+SKIP	rewrite2
+SKIP	rhythmheaven
+SKIP	rhythymymheaven
+SKIP	ricochetkills2
+SKIP	riddle
+SKIP	riddlemiddleschool
+SKIP	riddleschool
+SKIP	riddleschool2
+SKIP	riddleschool3
+SKIP	riddleschool445544444$$444$444
+SKIP	riddletransfer
+SKIP	riddletransfer2
+SKIP	ridgeracer
+SKIP	ristar
+SKIP	roadfighter
+SKIP	roadoffury
+SKIP	roadofthedead
+SKIP	roadofthedead2
+SKIP	rocketjump
+SKIP	rocketknight2(1)
+SKIP	rocketknight2
+SKIP	rocketknightadventures
+SKIP	rocketleague
+SKIP	rocketsoccerderby
+SKIP	roguesoul
+SKIP	roguesoul2
+SKIP	rolypolymonster
+SKIP	rosegold
+SKIP	rotate
+SKIP	ruffle
+SKIP	run 2
+SKIP	run
+SKIP	run2
+SKIP	russiancardriver
+SKIP	sandsofthecoliseum
+SKIP	sandstone(1)
+SKIP	sandstone
+SKIP	santarun
+SKIP	santy
+SKIP	saszombieassault2
+SKIP	sayorisnotebook
+SKIP	scarletandviolet
+SKIP	scarymazegame
+SKIP	scrapyarddog
+SKIP	scratchoptions
+SKIP	scribblenauts
+SKIP	sd thewar
+SKIP	sdf
+SKIP	seamongrel
+SKIP	secretofmana
+SKIP	sega2gg
+SKIP	self
+SKIP	sentryfortress
+SKIP	serioussamadvance
+SKIP	servingupmadness
+SKIP	sfk
+SKIP	sfk2
+SKIP	sfklaststand
+SKIP	sfkleague
+SKIP	shadowcourier
+SKIP	shadowdancer
+SKIP	shadowdancersecret
+SKIP	shaggy (1)
+SKIP	shaggy
+SKIP	shc1
+SKIP	shc2
+SKIP	shc3
+SKIP	shift3
+SKIP	shinmegamitenseidevilsurvivor
+SKIP	shinobi
+SKIP	shinobi3
+SKIP	shinobirevenge
+SKIP	shoppingcarthero
+SKIP	shrek 2
+SKIP	shrubnaut
+SKIP	shwultimatem
+SKIP	sidepocket
+SKIP	sierra7
+SKIP	silenthill
+SKIP	silenthillalt
+SKIP	silkmelody
+SKIP	siloshowdow
+SKIP	silver
+SKIP	simpsonsarcade
+SKIP	skateit
+SKIP	skateordie
+SKIP	skibididibidygyattohiorizzingallovertheplacestillwatermangotheoryfemboydrool
+SKIP	skong
+SKIP	skyfactory
+SKIP	skywire
+SKIP	skywire2
+SKIP	slimelabratory
+SKIP	slitherio
+SKIP	slope3
+SKIP	slopeplus
+SKIP	slowroads
+SKIP	sm63redux
+SKIP	sm64hiddenstars
+SKIP	sm64lastimpact
+SKIP	sm64liminaldream
+SKIP	smadvance2
+SKIP	smadvance3
+SKIP	smashkarts
+SKIP	smashkartsworking
+SKIP	smashremix
+SKIP	smbc
+SKIP	smbcrossover
+SKIP	smbgameover
+SKIP	smc
+SKIP	smgds
+SKIP	snailbob
+SKIP	snailbob2
+SKIP	snailbob3
+SKIP	snailbob4space
+SKIP	snailbob5lovestory
+SKIP	snakeis
+SKIP	snowballio
+SKIP	snowbros(1)
+SKIP	snowbros
+SKIP	snowbrothers
+SKIP	snowdrift
+SKIP	snowrid
+SKIP	snowrideee
+SKIP	snowrider
+SKIP	snowridergoodygumdrops
+SKIP	snowriderrrr
+SKIP	soccerrandomgood
+SKIP	solarclient
+SKIP	solarsmash
+SKIP	solatrobo
+SKIP	solitaire
+SKIP	solstice
+SKIP	somari64
+SKIP	sonic1contemporary
+SKIP	sonic2pinkedition
+SKIP	sonic2timeandplace
+SKIP	sonic3andknuckles
+SKIP	sonic3andsally
+SKIP	sonic3complete
+SKIP	sonic3dblastdx
+SKIP	sonicadvance
+SKIP	sonicadvance2
+SKIP	sonicadvance2sp
+SKIP	sonicadvance3
+SKIP	sonicandashuro
+SKIP	sonicandfallingstar
+SKIP	sonicandknuckles
+SKIP	sonicbattle
+SKIP	sonicblast
+SKIP	soniccd
+SKIP	sonicchaos
+SKIP	sonicclassiccollection
+SKIP	sonicclassicheroes
+SKIP	soniccolors
+SKIP	sonicdeltaorigins
+SKIP	soniceexeog
+SKIP	sonicerazor
+SKIP	sonicgg
+SKIP	sonicjam
+SKIP	soniclabyrinth
+SKIP	sonicmegamix
+SKIP	sonicpocketadventure
+SKIP	sonicr
+SKIP	sonicralt
+SKIP	sonicrevert
+SKIP	sonicrush
+SKIP	sonicrushadventure
+SKIP	sonicscorchedquest
+SKIP	sonicspinball
+SKIP	sonicthehedgehog
+SKIP	sonicthehedgehog2
+SKIP	sonicthehedgehog3
+SKIP	sonny2
+SKIP	sotn
+SKIP	souljumper
+SKIP	soundboard
+SKIP	southparkn64
+SKIP	spaceinvade95
+SKIP	spaceinvaders
+SKIP	spaceiskey
+SKIP	spaceiskey2
+SKIP	spaceiskeyxmas
+SKIP	spacewaves
+SKIP	specialmission
+SKIP	speedstars
+SKIP	spewer
+SKIP	spiritsofhell
+SKIP	spyhunter
+SKIP	squidplayground
+SKIP	stackballio
+SKIP	stackydash
+SKIP	starfox
+SKIP	starfox64
+SKIP	starlike
+SKIP	starraiders
+SKIP	stateio
+SKIP	station141
+SKIP	steakandjake
+SKIP	stealbrainrot
+SKIP	stealbrainrotonline
+SKIP	stealthassassin
+SKIP	steelempire
+SKIP	stickmanstealingdiamond
+SKIP	stickminairship
+SKIP	stickminbreakingbank
+SKIP	stickminescapingprison
+SKIP	stickminfleecomplex
+SKIP	stickrpgcomplete
+SKIP	stickwar
+SKIP	stickwar2
+SKIP	stormthehouse
+SKIP	stormthehouse2
+SKIP	stormthehouse3
+SKIP	strangejournet
+SKIP	streangeropepolice
+SKIP	streetfighter2
+SKIP	streetfighter2turbo
+SKIP	streetfighteralpha3
+SKIP	streetfighterumuhsomething
+SKIP	streetofrage
+SKIP	streetofrage2
+SKIP	streetofrage3
+SKIP	strikeforceheroes
+SKIP	strikeforceheroes2
+SKIP	strikeforceheroes3
+SKIP	stylesavvy
+SKIP	subwaysurfersbuenosaires
+SKIP	subwaysurfersneworeleans
+SKIP	subwaysurferssanfrancisco (1)
+SKIP	subwaysurferssanfrancisco(1)
+SKIP	sugarsugar
+SKIP	sunandmoon
+SKIP	superbomberman
+SKIP	superbomberman2
+SKIP	superbomberman3
+SKIP	superbomberman4
+SKIP	superbomberman5
+SKIP	superc
+SKIP	supercastlevaniavi
+SKIP	superchibiknight
+SKIP	superdiagonalmario2
+SKIP	superdromebugs(1)
+SKIP	superfighters
+SKIP	superhouseofdeadninjas
+SKIP	superislandadventure
+SKIP	supermario
+SKIP	supermario63
+SKIP	supermario64
+SKIP	supermario64ds
+SKIP	supermarioallstars
+SKIP	supermariobros
+SKIP	supermariobros2
+SKIP	supermariobros2us
+SKIP	supermariobros3
+SKIP	supermariobros3real
+SKIP	supermariokart
+SKIP	supermarioland
+SKIP	supermarioland2
+SKIP	supermarioland2dx
+SKIP	supermariolanddx
+SKIP	supermariomon
+SKIP	supermariorpg
+SKIP	supermariostarroad
+SKIP	supermariostarroadretooled
+SKIP	supermarioworld
+SKIP	supermarioworld2
+SKIP	supermetroid
+SKIP	supermonkeyballjr
+SKIP	supernoahsark3d
+SKIP	superpunchout
+SKIP	superpuzzlefighter2turbo
+SKIP	superpuzzlefighter2turboalt
+SKIP	superscribblenauts
+SKIP	supersmashbros
+SKIP	supersmashflash
+SKIP	supersmashflash0.8
+SKIP	supersmashflash2
+SKIP	supersmashflash2butdifversion
+SKIP	superstreetfighter2turbojp
+SKIP	supertiltbros
+SKIP	supitdept
+SKIP	supremeduelist
+SKIP	survevio
+SKIP	survivorio
+SKIP	sushicat
+SKIP	sushicat2
+SKIP	swerve
+SKIP	switchblade
+SKIP	swordandshieldultimateplus
+SKIP	swordplay
+SKIP	swordsandsandals
+SKIP	swordsandsandals2
+SKIP	swordsandsouls
+SKIP	sydneyshark
+SKIP	tabi
+SKIP	tabletennisworldtour
+SKIP	tagc3
+SKIP	tagcm
+SKIP	taisei
+SKIP	takeover
+SKIP	tallio
+SKIP	tallmanrun
+SKIP	tankmayhem
+SKIP	tanukisunsetuhhhhhhhh
+SKIP	tapper
+SKIP	tastyplanet
+SKIP	tboilambeternal
+SKIP	tecmobowl
+SKIP	telephonetrouble
+SKIP	telocation
+SKIP	tempest2000
+SKIP	templeofboom
+SKIP	tempoverdose
+SKIP	teod
+SKIP	territorialio
+SKIP	territorywar
+SKIP	territorywar2
+SKIP	territorywar3
+SKIP	tetrisattack
+SKIP	tetrisgba
+SKIP	tetrisgrandmaster2
+SKIP	thanksforremindingmeihadtofixthis
+SKIP	theclassroom
+SKIP	theclassroom2
+SKIP	theclassroom3
+SKIP	thedeepestsleep
+SKIP	thedude
+SKIP	theenchantedcave2
+SKIP	theimpossiblegame
+SKIP	theincrediblemachine
+SKIP	thelaststand
+SKIP	thelaststandunioncity (1)
+SKIP	thelaststandunioncity
+SKIP	themaninthewindow
+SKIP	themepark
+SKIP	thepit
+SKIP	thereisnofile
+SKIP	thermomorph
+SKIP	thesodorrace
+SKIP	thisistheonlylevel
+SKIP	thisistheonlylevel2
+SKIP	thisistheonlyleveltoo
+SKIP	throwapotatoagain
+SKIP	tiberiandawn
+SKIP	tmnt
+SKIP	tmnt2arc
+SKIP	tmntarc
+SKIP	toejam&earl
+SKIP	toejam&earlpof
+SKIP	tombofthemass
+SKIP	tommorowandyesterday
+SKIP	tomodachicollection
+SKIP	tonyhawkskater2
+SKIP	tonyhawkskater4
+SKIP	tonyhawksunderground
+SKIP	toomanytypes
+SKIP	topspeedracing3d
+SKIP	tosstheturtle
+SKIP	totm
+SKIP	touhou
+SKIP	touhou2
+SKIP	touhou3
+SKIP	touhou4
+SKIP	touhou5
+SKIP	towerblocks
+SKIP	trechoroustrials
+SKIP	trechoroustrialspart2
+SKIP	tripleplay2000
+SKIP	trollfacequest1
+SKIP	trollfacequest10
+SKIP	trollfacequest11
+SKIP	trollfacequest12
+SKIP	trollfacequest13
+SKIP	trollfacequest2
+SKIP	trollfacequest3
+SKIP	trollfacequest4
+SKIP	trollfacequest5
+SKIP	trollfacequest6
+SKIP	trollfacequest7
+SKIP	trollfacequest8
+SKIP	trollfacequest9
+SKIP	tunnelrush
+SKIP	tunnelrushbetter
+SKIP	turbostars
+SKIP	turokdinosaurhunter
+SKIP	twinshot (1)
+SKIP	twinshot(1)
+SKIP	twinshot
+SKIP	twistedmetal
+SKIP	twistedmetal2
+SKIP	twoball3d
+SKIP	ucds
+SKIP	uckyblockobbyeuophratesriver
+SKIP	ufoswampoddysey
+SKIP	ultima
+SKIP	ultimateassassian2
+SKIP	ultimateassassian3
+SKIP	ultimatemortalkombat
+SKIP	ultimatemortalkombat3
+SKIP	ultrakill
+SKIP	umjammerlammy
+SKIP	umstickmangameidkiforgor
+SKIP	undertale gameboy(1)
+SKIP	undertale gameboy
+SKIP	undertalelb
+SKIP	undertaler
+SKIP	undertaleyellow
+SKIP	unfairmario
+SKIP	unfairmarioworkquestionmark
+SKIP	unfairundyne
+SKIP	untime
+SKIP	untitledgoosegame
+SKIP	upgradecomplete
+SKIP	upgradecomplete2
+SKIP	uwuclient
+SKIP	vanguard
+SKIP	vex
+SKIP	vex2
+SKIP	vex3xmas
+SKIP	vexchallenges
+SKIP	vexx3m2
+SKIP	villager
+SKIP	vollyballchallenge
+SKIP	vortex
+SKIP	vsagore
+SKIP	vsnonsense
+SKIP	vvvvvv(1)
+SKIP	vvvvvv
+SKIP	waluigitacostand
+SKIP	warfare1944
+SKIP	warioland4
+SKIP	wariowarediy
+SKIP	wariowareinc
+SKIP	waterpoolio
+SKIP	wavedash
+SKIP	waverace64
+SKIP	weltling
+SKIP	whackthetheif
+SKIP	whackyourboss
+SKIP	whackyourcomputer
+SKIP	wheely
+SKIP	wheely2
+SKIP	wheely3
+SKIP	wheely4
+SKIP	wheely5
+SKIP	wheely6
+SKIP	wheely7
+SKIP	wheely8
+SKIP	wilywars(1)
+SKIP	wilywars
+SKIP	windowsdoors
+SKIP	wipeout2097
+SKIP	wipeout2097alt
+SKIP	witchcrafttd
+SKIP	wolfenstein
+SKIP	wolfenstein3d
+SKIP	worldcup98
+SKIP	worldshardestgame
+SKIP	worldshardestgame2
+SKIP	worldshardestgame3
+SKIP	worldshardestgame4
+SKIP	wpnfire
+SKIP	wurstclient
+SKIP	wwfsmackdown2
+SKIP	xevent
+SKIP	xmenarcade
+SKIP	yanderesimulator
+SKIP	yarsrevenge
+SKIP	yohohoio
+SKIP	youarelucky
+SKIP	youvs100skibidi(1)
+SKIP	yumenikki
+SKIP	zdoom
+SKIP	zelda2thelegendoflink
+SKIP	zeldaminishcap
+SKIP	zoinkz
+SKIP	zombieexploder
+SKIP	zombiesatemyneighboors
+SKIP	zombopaclypse2
+SKIP	zombotron
+SKIP	zombotron2
+SKIP	zuma
+SKIP	zumashooter
+SKIP	flight
+SKIP	fort
+SKIP	nfs
+SKIP	retro
+SKIP	sand

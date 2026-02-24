@@ -1,9 +1,52 @@
 const installPromptKey = 'pwaInstalled_v2';
-const firstVisitOverlaySeenKey = 'firstVisitOverlaySeen_v1';
 const recentStorageKey = 'lastPlayed_v3';
 const recentStorageLegacyKey = 'lastPlayed';
 const gamesBackgroundColorStorageKey = 'vortexGamesBackgroundColor';
 const accentColorStorageKey = 'vortexAccentColor';
+const introLoadingSessionKey = 'vtxIntroLoadingShown_v1';
+const gamesCatalogPagePath = 'games.html';
+const gameTileSelector = 'a.image-link-border, a.image-link-border1, a.image-link-border2';
+
+let gamesSourceLoadPromise = null;
+
+function queryGameTiles(root) {
+  if (!root) return [];
+  return Array.from(root.querySelectorAll(gameTileSelector));
+}
+
+async function ensureAllGamesSourceLoaded(sourceEl) {
+  if (!sourceEl) return [];
+  if (gamesSourceLoadPromise) return gamesSourceLoadPromise;
+
+  gamesSourceLoadPromise = (async () => {
+    const fallbackTiles = queryGameTiles(sourceEl);
+
+    try {
+      const response = await fetch(gamesCatalogPagePath, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Failed to load ${gamesCatalogPagePath}`);
+
+      const html = await response.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const sourceContainer = doc.querySelector('.container-3');
+      const catalogTiles = queryGameTiles(sourceContainer);
+      if (!catalogTiles.length) return fallbackTiles;
+
+      const replacement = document.createElement('div');
+      replacement.className = 'container-3';
+      catalogTiles.forEach(tile => {
+        replacement.appendChild(tile.cloneNode(true));
+      });
+
+      sourceEl.innerHTML = '';
+      sourceEl.appendChild(replacement);
+      return queryGameTiles(sourceEl);
+    } catch {
+      return fallbackTiles;
+    }
+  })();
+
+  return gamesSourceLoadPromise;
+}
 
 function isLikelyInstalled() {
   const isLocalPreviewHost =
@@ -56,87 +99,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('firstVisitOverlay');
-  const dismiss = document.getElementById('firstVisitDismiss');
-  const installVideo = document.getElementById('firstVisitVideo');
-  const videoFallback = document.getElementById('firstVisitVideoFallback');
-  if (!overlay || !dismiss) return;
+  const loadingTrack = document.getElementById('firstVisitLoadingTrack');
+  const loadingFill = document.getElementById('firstVisitLoadingFill');
+  const loadingLabel = document.getElementById('firstVisitLoadingLabel');
+  if (!overlay || !loadingTrack || !loadingFill || !loadingLabel) return;
 
-  if (isLikelyInstalled()) {
+  let shouldShowLoading = true;
+  try {
+    shouldShowLoading = sessionStorage.getItem(introLoadingSessionKey) !== 'true';
+  } catch {
+    shouldShowLoading = true;
+  }
+
+  if (!shouldShowLoading) {
     overlay.style.display = 'none';
     overlay.setAttribute('aria-hidden', 'true');
     return;
   }
 
-  const isBrowserTabVisit = window.matchMedia('(display-mode: browser)').matches;
-  if (!isBrowserTabVisit) {
-    overlay.style.display = 'none';
-    overlay.setAttribute('aria-hidden', 'true');
-    return;
+  try {
+    sessionStorage.setItem(introLoadingSessionKey, 'true');
+  } catch {
+    // Ignore storage failures; loading screen will still function.
   }
 
-  const hasSeenFirstVisitOverlay = localStorage.getItem(firstVisitOverlaySeenKey) === 'true';
-  if (hasSeenFirstVisitOverlay) {
-    overlay.style.display = 'none';
-    overlay.setAttribute('aria-hidden', 'true');
-    return;
-  }
-
-  localStorage.setItem(firstVisitOverlaySeenKey, 'true');
   overlay.style.display = 'flex';
   overlay.setAttribute('aria-hidden', 'false');
-
-  async function tryPlayInstallVideo() {
-    if (!installVideo) return;
-    installVideo.muted = true;
-    installVideo.defaultMuted = true;
-    try {
-      await installVideo.play();
-      if (videoFallback) videoFallback.style.display = 'none';
-      return true;
-    } catch {
-      if (videoFallback) videoFallback.style.display = 'flex';
-      return false;
-    }
+  overlay.classList.remove('loading-complete');
+  try {
+    overlay.focus({ preventScroll: true });
+  } catch {
+    overlay.focus();
   }
 
-  if (installVideo) {
-    installVideo.addEventListener('error', () => {
-      if (videoFallback) videoFallback.style.display = 'flex';
-    });
-    installVideo.addEventListener('loadeddata', () => {
-      if (videoFallback) videoFallback.style.display = 'none';
-    });
-    installVideo.addEventListener('pause', () => {
-      if (overlay.style.display !== 'none') {
-        installVideo.play().catch(() => {});
-      }
-    });
+  let overlayClosed = false;
+  let loadingPercent = 0;
+  let loadingTargetPercent = 0;
+  let rafId = null;
+  const loadingStartedAt = Date.now();
+  const minimumVisibleMs = 420;
+  const hardStopMs = 2800;
 
-    tryPlayInstallVideo().then(started => {
-      if (!started) {
-        const startOnInteraction = () => {
-          tryPlayInstallVideo().then(ok => {
-            if (ok) overlay.removeEventListener('pointerdown', startOnInteraction);
-          });
-        };
-        overlay.addEventListener('pointerdown', startOnInteraction);
-      }
-    });
+  function renderLoadingProgress() {
+    loadingFill.style.width = `${loadingPercent.toFixed(2)}%`;
+    loadingTrack.setAttribute('aria-valuenow', String(Math.round(loadingPercent)));
+    loadingLabel.textContent = `Loading ${Math.round(loadingPercent)}%`;
+  }
+
+  function setLoadingTarget(nextPercent) {
+    if (!Number.isFinite(nextPercent)) return;
+    const clamped = Math.max(0, Math.min(100, nextPercent));
+    loadingTargetPercent = Math.max(loadingTargetPercent, clamped);
   }
 
   function closeOverlay() {
-    overlay.style.display = 'none';
+    if (overlayClosed) return;
+    overlayClosed = true;
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+    overlay.classList.add('loading-complete');
     overlay.setAttribute('aria-hidden', 'true');
-    if (installVideo) installVideo.pause();
+    window.setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 260);
   }
 
-  dismiss.addEventListener('click', closeOverlay);
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeOverlay();
-  });
+  function maybeFinish() {
+    if (overlayClosed) return;
+    const elapsed = Date.now() - loadingStartedAt;
+    if (elapsed < minimumVisibleMs) {
+      window.setTimeout(maybeFinish, minimumVisibleMs - elapsed);
+      return;
+    }
+    setLoadingTarget(100);
+  }
+
+  function tick() {
+    if (overlayClosed) return;
+
+    const elapsed = Date.now() - loadingStartedAt;
+    const syntheticTarget = Math.min(94, 8 + elapsed * 0.08);
+    setLoadingTarget(syntheticTarget);
+
+    if (elapsed >= hardStopMs) {
+      setLoadingTarget(100);
+    }
+
+    if (loadingPercent < loadingTargetPercent) {
+      const delta = loadingTargetPercent - loadingPercent;
+      const step = Math.max(0.45, Math.min(3.5, delta * 0.24));
+      loadingPercent = Math.min(loadingTargetPercent, loadingPercent + step);
+      renderLoadingProgress();
+    }
+
+    if (loadingPercent >= 100) {
+      closeOverlay();
+      return;
+    }
+
+    rafId = window.requestAnimationFrame(tick);
+  }
+
+  renderLoadingProgress();
+  setLoadingTarget(6);
+  rafId = window.requestAnimationFrame(tick);
+
+  if (document.readyState === 'complete') {
+    maybeFinish();
+  } else {
+    window.addEventListener('load', maybeFinish, { once: true });
+  }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const input = document.getElementById('gameSearch');
   const count = document.getElementById('gameCount');
   const searchResults = document.getElementById('searchResults');
@@ -146,10 +223,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const allGamesSource = document.getElementById('allGamesSource');
 
   if (!input || !allGamesSource || !searchResults) return;
+  if (count) count.textContent = 'Loading games...';
 
-  const allTiles = Array.from(
-    allGamesSource.querySelectorAll('a.image-link-border, a.image-link-border1, a.image-link-border2')
-  );
+  const allTiles = await ensureAllGamesSourceLoaded(allGamesSource);
+  if (!allTiles.length) {
+    if (count) count.textContent = 'No games found';
+    return;
+  }
 
   function tileId(tile) {
     return (tile.dataset.id || tile.getAttribute('href') || '').toLowerCase();
@@ -402,10 +482,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const tiles = Array.from(
-    document.querySelectorAll('#allGamesSource a.image-link-border, #allGamesSource a.image-link-border1, #allGamesSource a.image-link-border2')
-  );
+document.addEventListener('DOMContentLoaded', async () => {
+  const allGamesSource = document.getElementById('allGamesSource');
+  if (!allGamesSource) return;
+
+  await ensureAllGamesSourceLoaded(allGamesSource);
+  const tiles = queryGameTiles(allGamesSource);
   if (!tiles.length) return;
 
   const cacheKey = 'gameTitleCacheV1';
@@ -414,9 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setTileName(tile, name) {
     if (!name) return;
-    tile.dataset.gameTitle = name;
-    tile.title = name;
-    if (!tile.dataset.title) tile.dataset.title = name;
+    tile.dataset.title = name;
   }
 
   function localHtmPath(tile) {
@@ -460,28 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 (() => {
-  const baselineDpr = window.devicePixelRatio || 1;
-  const baselineInnerWidth = window.innerWidth || 1;
-
-  function applyCardZoomCompensation() {
-    const currentDpr = window.devicePixelRatio || baselineDpr;
-    const currentInnerWidth = Math.max(1, window.innerWidth || baselineInnerWidth);
-
-    const dprZoomFactor = currentDpr / baselineDpr;
-    const viewportZoomFactor = baselineInnerWidth / currentInnerWidth;
-    const dprDelta = Math.abs(dprZoomFactor - 1);
-    const viewportDelta = Math.abs(viewportZoomFactor - 1);
-    const zoomFactor = viewportDelta > dprDelta ? viewportZoomFactor : dprZoomFactor;
-
-    const compensation = Math.min(2, Math.max(0.5, 1 / zoomFactor));
-    document.documentElement.style.setProperty('--card-zoom-comp', compensation.toFixed(4));
-  }
-
-  applyCardZoomCompensation();
-  window.addEventListener('resize', applyCardZoomCompensation);
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', applyCardZoomCompensation);
-  }
+  // Keep card scale stable across devices/browsers.
+  document.documentElement.style.setProperty('--card-zoom-comp', '1');
 })();
 
 // Lock the UI to a single design canvas and scale it uniformly across devices.

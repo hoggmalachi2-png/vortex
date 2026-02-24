@@ -561,9 +561,144 @@ const GAME_ID_ALIASES = {
   mine: 'eagle',
   college: 'rbc'
 };
+const GAME_CATALOG_CACHE_KEY = 'vtxGameCatalogCacheV1';
+const GAME_CATALOG_SOURCE = 'games.html';
+let gameCatalogPromise = null;
+
+function safeDecodePath(value) {
+  if (!value) return '';
+  const raw = String(value).trim();
+  if (!raw) return '';
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
+function slugifyGameKey(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\.html?$/i, '')
+    .replace(/[_\s]+/g, '-')
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function basenameNoExt(value) {
+  if (!value) return '';
+  const cleaned = safeDecodePath(value).split('?')[0].split('#')[0];
+  const filename = cleaned.split('/').pop() || '';
+  return filename.replace(/\.[a-z0-9]+$/i, '').trim();
+}
+
+function tryReadCatalogCache() {
+  try {
+    const raw = sessionStorage.getItem(GAME_CATALOG_CACHE_KEY);
+    const parsed = JSON.parse(raw || '{}');
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeCatalogCache(records) {
+  try {
+    sessionStorage.setItem(GAME_CATALOG_CACHE_KEY, JSON.stringify(records || {}));
+  } catch {
+    // Ignore cache write failures (storage might be blocked).
+  }
+}
+
+function addGameRecord(records, key, record) {
+  const normalized = String(key || '').trim().toLowerCase();
+  if (!normalized) return;
+  if (!record || !record.href) return;
+  if (!records[normalized]) records[normalized] = record;
+}
+
+function parseCatalogHtml(html) {
+  const parsed = {};
+  if (!html) return parsed;
+
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const cards = doc.querySelectorAll('a.image-link-border, a.image-link-border1, a.image-link-border2');
+  cards.forEach(card => {
+    const rawHref = card.getAttribute('href') || '';
+    const rawImg = card.querySelector('img')?.getAttribute('src') || '';
+    if (!rawHref) return;
+
+    const href = safeDecodePath(rawHref);
+    const img = safeDecodePath(rawImg) || 'logo.png';
+    const title =
+      (card.dataset.gameTitle || card.dataset.title || card.querySelector('img')?.getAttribute('alt') || '').trim() ||
+      basenameNoExt(rawHref) ||
+      'Game';
+
+    const record = { img, href, name: title };
+    const dataId = String(card.dataset.id || '').trim().toLowerCase();
+    const hrefBase = basenameNoExt(rawHref).toLowerCase();
+    const dataIdSlug = slugifyGameKey(dataId);
+    const hrefSlug = slugifyGameKey(hrefBase);
+
+    addGameRecord(parsed, dataId, record);
+    addGameRecord(parsed, hrefBase, record);
+    addGameRecord(parsed, dataIdSlug, record);
+    addGameRecord(parsed, hrefSlug, record);
+  });
+
+  return parsed;
+}
+
+function mergeCatalogRecords(records) {
+  let merged = 0;
+  for (const [key, value] of Object.entries(records || {})) {
+    if (!key || !value || !value.href) continue;
+    if (!GAME_DATA[key]) {
+      GAME_DATA[key] = value;
+      merged += 1;
+    }
+  }
+  return merged;
+}
+
+function loadCatalogRecords() {
+  if (gameCatalogPromise) return gameCatalogPromise;
+
+  gameCatalogPromise = (async () => {
+    const cached = tryReadCatalogCache();
+    if (Object.keys(cached).length) {
+      mergeCatalogRecords(cached);
+      return cached;
+    }
+
+    const response = await fetch(GAME_CATALOG_SOURCE, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Failed to fetch ${GAME_CATALOG_SOURCE}`);
+    const html = await response.text();
+    const parsed = parseCatalogHtml(html);
+    mergeCatalogRecords(parsed);
+    if (Object.keys(parsed).length) writeCatalogCache(parsed);
+    return parsed;
+  })().catch(() => ({}));
+
+  return gameCatalogPromise;
+}
+
+function ensureOutlinedIconFont() {
+  if (document.querySelector('link[data-vtx-icons="1"]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0';
+  link.setAttribute('data-vtx-icons', '1');
+  document.head.appendChild(link);
+}
 
 // Main initialization function
 function initSidebar(currentGameId, iframeSrc) {
+  ensureOutlinedIconFont();
+
   // Create sidebar HTML
   const sidebarHTML = `
     <div class="sidebar">
@@ -575,20 +710,26 @@ function initSidebar(currentGameId, iframeSrc) {
 
       <nav class="nav-section">
         <a href="index.html" class="nav-item" title="Home" aria-label="Home">
-          <span class="material-symbols-rounded nav-icon">home</span>
+          <span class="material-symbols-outlined nav-icon">home</span>
         </a>
-        <a href="games.html" class="nav-item active" title="Games" aria-label="Games">
-          <span class="material-symbols-rounded nav-icon">newsstand</span>
+        <a href="games.html" class="nav-item" title="Games" aria-label="Games">
+          <span class="material-symbols-outlined nav-icon">newsstand</span>
+        </a>
+         <a href="multiview.html" class="nav-item" title="MultiView" aria-label="MultiView">
+          <span class="material-symbols-outlined nav-icon">grid_view</span>
         </a>
         <a href="notifications.html" class="nav-item" title="Notifications" aria-label="Notifications">
-          <span class="material-symbols-rounded nav-icon">notifications</span>
+          <span class="material-symbols-outlined nav-icon">notifications</span>
         </a>
         <a href="settings.html" class="nav-item" title="Settings" aria-label="Settings">
-          <span class="material-symbols-rounded nav-icon">settings</span>
+          <span class="material-symbols-outlined nav-icon">settings</span>
         </a>
       </nav>
 
       <div id="recently-played-container"></div>
+      <a href="https://forms.gle/u7oQ1HBnrdqtmXRc9" class="nav-item nav-item-report" title="Report" aria-label="Report">
+        <span class="material-symbols-outlined nav-icon">report</span>
+      </a>
     </div>
 
     <div class="content">
@@ -602,20 +743,22 @@ function initSidebar(currentGameId, iframeSrc) {
   // Initialize recently played
   const recentContainer = document.getElementById('recently-played-container');
   const normalizeId = value => String(value || '').trim().toLowerCase();
+  const imageExtensions = ['png', 'jpg', 'jpeg', 'webp', 'avif', 'gif'];
 
   function normalizeHrefPath(href) {
     if (!href) return '';
+    let rawFilename = '';
     try {
       const resolved = new URL(href, window.location.href);
-      return resolved.pathname.split('/').pop().toLowerCase();
+      rawFilename = resolved.pathname.split('/').pop() || '';
     } catch {
-      return String(href)
+      rawFilename = String(href)
         .split('?')[0]
         .split('#')[0]
         .split('/')
-        .pop()
-        .toLowerCase();
+        .pop() || '';
     }
+    return safeDecodePath(rawFilename).toLowerCase();
   }
 
   function findGameIdByHref(href) {
@@ -629,22 +772,32 @@ function initSidebar(currentGameId, iframeSrc) {
 
   function canonicalGameId(gameId, hrefHint) {
     const normalized = normalizeId(gameId);
-    if (!normalized) return '';
-    if (GAME_DATA[normalized]) return normalized;
+    const slug = slugifyGameKey(normalized);
+    if (!normalized && !slug) return '';
 
-    const aliased = GAME_ID_ALIASES[normalized];
+    if (normalized && GAME_DATA[normalized]) return normalized;
+    if (slug && GAME_DATA[slug]) return slug;
+
+    const aliased = GAME_ID_ALIASES[normalized] || GAME_ID_ALIASES[slug];
     if (aliased && GAME_DATA[aliased]) return aliased;
 
     const byHint = findGameIdByHref(hrefHint);
     if (byHint) return byHint;
 
-    const byHtm = findGameIdByHref(`${normalized}.htm`);
+    const byHtm = findGameIdByHref(`${normalized || slug}.htm`);
     if (byHtm) return byHtm;
 
-    const byHtml = findGameIdByHref(`${normalized}.html`);
+    const byHtml = findGameIdByHref(`${normalized || slug}.html`);
     if (byHtml) return byHtml;
 
-    return normalized;
+    if (slug) {
+      const bySlugHtm = findGameIdByHref(`${slug}.htm`);
+      if (bySlugHtm) return bySlugHtm;
+      const bySlugHtml = findGameIdByHref(`${slug}.html`);
+      if (bySlugHtml) return bySlugHtml;
+    }
+
+    return normalized || slug;
   }
 
   function parseRecentList(key) {
@@ -672,18 +825,67 @@ function initSidebar(currentGameId, iframeSrc) {
     const canonicalId = canonicalGameId(gameId);
     const known = GAME_DATA[canonicalId];
     if (known) return { gameId: canonicalId, game: known };
+    const readable = basenameNoExt(canonicalId).replace(/-/g, ' ').trim();
     return {
       gameId: canonicalId,
       game: {
         img: 'logo.png',
         href: canonicalId ? `${canonicalId}.htm` : 'index.html',
-        name: canonicalId || 'Game'
+        name: readable || canonicalId || 'Game'
       }
     };
   }
 
   let lastPlayed = readRecent();
-  const currentCanonicalGameId = canonicalGameId(currentGameId, iframeSrc);
+  let currentCanonicalGameId = canonicalGameId(currentGameId, iframeSrc);
+
+  function buildRecentImageCandidates(gameId, game) {
+    const candidates = [];
+    const addCandidate = value => {
+      const candidate = String(value || '').trim();
+      if (!candidate) return;
+      if (!candidates.includes(candidate)) candidates.push(candidate);
+    };
+
+    addCandidate(game?.img);
+
+    const baseNames = new Set();
+    const normalizedId = normalizeId(gameId).replace(/\.html?$/i, '');
+    const hrefBase = basenameNoExt(game?.href || '');
+    const label = String(game?.name || '').trim();
+
+    if (hrefBase) baseNames.add(hrefBase);
+    if (normalizedId) {
+      baseNames.add(normalizedId);
+      baseNames.add(normalizedId.replace(/-/g, ' '));
+    }
+    if (label) baseNames.add(label);
+
+    baseNames.forEach(base => {
+      imageExtensions.forEach(ext => {
+        addCandidate(`${base}.${ext}`);
+        addCandidate(encodeURI(`${base}.${ext}`));
+      });
+    });
+
+    addCandidate('logo.png');
+    return candidates;
+  }
+
+  function applyImageFallback(img, candidates) {
+    if (!img || !Array.isArray(candidates) || !candidates.length) return;
+    let index = 0;
+    const loadNext = () => {
+      if (index >= candidates.length) {
+        img.onerror = null;
+        return;
+      }
+      img.src = candidates[index];
+      index += 1;
+    };
+    img.onerror = loadNext;
+    loadNext();
+  }
 
   function dedupeRecent(list) {
     const seen = new Set();
@@ -718,7 +920,10 @@ function initSidebar(currentGameId, iframeSrc) {
         const tile = document.createElement('a');
         tile.className = 'recent-game-tile';
         tile.href = game.href;
-        tile.innerHTML = `<img src="${game.img}" alt="${game.name}">`;
+        const image = document.createElement('img');
+        image.alt = game.name || 'Game';
+        applyImageFallback(image, buildRecentImageCandidates(normalizedId, game));
+        tile.appendChild(image);
         
         tile.addEventListener('click', () => {
           trackGamePlay(normalizedId);
@@ -742,6 +947,12 @@ function initSidebar(currentGameId, iframeSrc) {
   // Track current game
   trackGamePlay(currentCanonicalGameId);
   renderRecentlyPlayed();
+
+  loadCatalogRecords().then(() => {
+    currentCanonicalGameId = canonicalGameId(currentGameId, iframeSrc);
+    trackGamePlay(currentCanonicalGameId);
+    renderRecentlyPlayed();
+  });
 }
 
 // Export for use in other files

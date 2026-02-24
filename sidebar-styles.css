@@ -6,9 +6,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --vtx-sidebar-icon-size: 52px;
+  --vtx-sidebar-pad-x: 10px;
+  --vtx-sidebar-glyph-size: 30px;
+  --vtx-sidebar-width: calc(var(--vtx-sidebar-icon-size) + (var(--vtx-sidebar-pad-x) * 2));
+}
+
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -22,19 +30,19 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 72px;
-  height: 100vh;
+  width: var(--vtx-sidebar-width);
+  height: 100dvh;
+  min-height: 100vh;
   background: #050505;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   z-index: 9999;
-  display: grid;
-  grid-auto-rows: min-content;
-  align-content: start;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 14px;
-  padding: 16px 8px;
-  overflow-y: auto;
+  padding: 16px var(--vtx-sidebar-pad-x);
+  overflow: hidden;
 }
 
 .sidebar-header {
@@ -44,8 +52,8 @@ body {
 }
 
 .xbox-logo {
-  width: 52px;
-  height: 52px;
+  width: var(--vtx-sidebar-icon-size);
+  height: var(--vtx-sidebar-icon-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,35 +75,48 @@ body {
 }
 
 .nav-item {
-  width: 52px;
-  height: 52px;
+  width: var(--vtx-sidebar-icon-size);
+  height: var(--vtx-sidebar-icon-size);
   border-radius: 12px;
-  border: 1px solid transparent;
+  border: none;
   background: transparent;
   color: rgba(211, 211, 211, 0.95);
   text-decoration: none;
+  outline: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .nav-item:hover {
   background: rgba(211, 211, 211, 0.18);
-  border-color: rgba(211, 211, 211, 0.4);
 }
 
 .nav-item.active {
   background: rgba(211, 211, 211, 0.28);
-  border-color: rgba(211, 211, 211, 0.5);
   color: #fff;
 }
 
 .nav-icon {
-  font-size: 30px;
-  line-height: 1;
-  color: inherit;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  width: var(--vtx-sidebar-glyph-size) !important;
+  height: var(--vtx-sidebar-glyph-size) !important;
+  font-size: var(--vtx-sidebar-glyph-size) !important;
+  line-height: var(--vtx-sidebar-glyph-size) !important;
+  font-family: "Material Symbols Outlined" !important;
+  font-feature-settings: "liga" 1, "clig" 1 !important;
+  -webkit-font-feature-settings: "liga" 1, "clig" 1 !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: inherit !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24 !important;
+}
+
+.nav-item-report {
+  margin-top: auto;
 }
 
 #recently-played-container {
@@ -109,8 +130,8 @@ body {
 }
 
 .recent-game-tile {
-  width: 52px;
-  height: 52px;
+  width: var(--vtx-sidebar-icon-size);
+  height: var(--vtx-sidebar-icon-size);
   border-radius: 10px;
   border: 1px solid transparent;
   overflow: hidden;
@@ -134,10 +155,12 @@ body {
 
 .content {
   position: fixed;
-  left: 72px;
+  left: var(--vtx-sidebar-width);
+  right: 0;
   top: 0;
-  width: calc(100% - 72px);
-  height: 100vh;
+  width: auto;
+  height: 100dvh;
+  min-height: 100vh;
   background: #000;
 }
 
@@ -149,7 +172,8 @@ body {
 }
 
 .sidebar::-webkit-scrollbar {
-  width: 6px;
+  width: 0;
+  height: 0;
 }
 
 .sidebar::-webkit-scrollbar-thumb {

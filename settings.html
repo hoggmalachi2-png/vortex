@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VorteX Settings</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
   <style>
     :root {
       --card-bg: #1f1f1f;
@@ -79,8 +80,8 @@
       flex-wrap: wrap;
     }
 
-    button,
-    a {
+    .actions button,
+    .actions a {
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       background: rgba(255, 255, 255, 0.08);
@@ -94,14 +95,38 @@
       justify-content: center;
     }
 
-    button:hover,
-    a:hover {
+    .actions button:hover,
+    .actions a:hover {
       background: rgba(255, 255, 255, 0.14);
     }
   </style>
   <link rel="stylesheet" href="page-sidebar.css">
 </head>
-<body>
+<body class="vtx-has-page-sidebar">
+  <aside class="vtx-page-sidebar" aria-label="Site navigation">
+    <a class="vtx-sidebar-logo-link" href="index.html" title="Home">
+      <img class="vtx-sidebar-logo" src="logo.png" alt="VorteX logo">
+    </a>
+    <a class="vtx-sidebar-link" href="index.html" title="Home" aria-label="Home">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a class="vtx-sidebar-link" href="games.html" title="Games" aria-label="Games">
+      <span class="material-symbols-outlined">newsstand</span>
+    </a>
+    <a class="vtx-sidebar-link" href="multiview.html" title="Grid View" aria-label="Grid View">
+      <span class="material-symbols-outlined">grid_view</span>
+    </a>
+    <a class="vtx-sidebar-link" href="notifications.html" title="Notifications" aria-label="Notifications">
+      <span class="material-symbols-outlined">notifications</span>
+    </a>
+    <a class="vtx-sidebar-link" href="settings.html" title="Settings" aria-label="Settings">
+      <span class="material-symbols-outlined">settings</span>
+    </a>
+    <a class="vtx-sidebar-link vtx-sidebar-link-report" href="https://forms.gle/u7oQ1HBnrdqtmXRc9" title="Report" aria-label="Report">
+      <span class="material-symbols-outlined">report</span>
+    </a>
+  </aside>
+
   <main class="settings-card">
     <h1>Settings</h1>
     <p class="hint">Set the games-area background and accent color (hovers + icons).</p>
@@ -181,7 +206,5 @@
       setHexLabel(accentHex, accentPicker.value);
     });
   </script>
-  <script src="page-sidebar.js"></script>
-  <script>window.addEventListener("DOMContentLoaded", function () { initPageSidebar("settings"); });</script>
 </body>
 </html>

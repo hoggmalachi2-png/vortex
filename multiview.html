@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GM1790KJK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4GM1790KJK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiView | VorteX</title>
+  <link rel="icon" type="images/png" href="logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="page-sidebar.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #050505;
+      color: #ffffff;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .multiview-shell {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: var(--vtx-page-sidebar-width);
+      min-width: 0;
+      min-height: 0;
+      background: #050505;
+    }
+
+    .multiview-controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(7, 7, 7, 0.78);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .multiview-controls label {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: nowrap;
+    }
+
+    .multiview-controls select {
+      height: 28px;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 0 8px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .multiview-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .pane {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000000;
+      overflow: hidden;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .pane.is-playing {
+      border-color: #ff8a00;
+      box-shadow: inset 0 0 0 1px rgba(255, 138, 0, 0.65);
+    }
+
+    .pane.loaded:hover {
+      border-color: #ff8a00;
+      box-shadow: inset 0 0 0 1px rgba(255, 138, 0, 0.65);
+    }
+
+    .pane iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #000000;
+    }
+
+    .pane-toolbar {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 46px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto auto;
+      gap: 8px;
+      align-items: center;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(7, 7, 7, 0.74);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: opacity 0.16s ease, transform 0.16s ease;
+    }
+
+    .pane-menu-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 4;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(7, 7, 7, 0.78);
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+    }
+
+    .pane-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.36);
+      color: #ffffff;
+    }
+
+    .pane-menu-btn .material-symbols-outlined {
+      font-size: 20px;
+      line-height: 1;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .pane-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      white-space: nowrap;
+    }
+
+    .pane-selected {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px 2px 2px;
+    }
+
+    .pane-selected-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .pane-selected-name {
+      min-width: 0;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pane-btn {
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .pane-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .pane-empty {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .pane.loaded .pane-empty {
+      display: none;
+    }
+
+    .pane.loaded:not(.controls-open) .pane-toolbar {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+    }
+
+    .pane.controls-open .pane-toolbar,
+    .pane:not(.loaded) .pane-toolbar {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .pane.controls-open .pane-menu-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .pane.is-playing .pane-menu-btn {
+      border-color: rgba(255, 138, 0, 0.75);
+      color: #ffb15f;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-toolbar {
+      top: 4px;
+      left: 4px;
+      right: 30px;
+      padding: 4px;
+      gap: 4px;
+      grid-template-columns: auto auto auto;
+      border-radius: 8px;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-menu-btn {
+      top: 4px;
+      right: 4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-menu-btn .material-symbols-outlined {
+      font-size: 15px;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-selected {
+      display: none;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-label {
+      font-size: 10px;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-btn {
+      height: 22px;
+      padding: 0 6px;
+      font-size: 10px;
+      border-radius: 6px;
+    }
+
+    .multiview-grid[data-density="compact"] .pane-empty {
+      font-size: 11px;
+      padding: 8px;
+    }
+
+    .picker-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .picker-overlay[hidden] {
+      display: none;
+    }
+
+    .picker-dialog {
+      width: min(1080px, calc(100vw - 80px));
+      max-height: min(86vh, 900px);
+      background: #0f1117;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto auto auto minmax(0, 1fr);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    .picker-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .picker-head h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .picker-close {
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .picker-tools {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .picker-search {
+      width: 100%;
+      height: 36px;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(0, 0, 0, 0.35);
+      color: #ffffff;
+      font-size: 13px;
+      padding: 0 12px;
+      outline: none;
+    }
+
+    .picker-search::placeholder {
+      color: rgba(255, 255, 255, 0.56);
+    }
+
+    .picker-search:focus {
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(0, 0, 0, 0.48);
+    }
+
+    .picker-empty {
+      padding: 12px 14px 0;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .picker-grid {
+      min-height: 0;
+      overflow: auto;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+      gap: 10px;
+      align-content: start;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .picker-item {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      padding: 6px;
+      display: grid;
+      gap: 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+    }
+
+    .picker-item:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .picker-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      display: block;
+    }
+
+    .picker-item-name {
+      font-size: 12px;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, 0.92);
+    }
+  </style>
+</head>
+<body>
+  <aside class="vtx-page-sidebar" aria-label="Site navigation">
+    <a class="vtx-sidebar-logo-link" href="index.html" title="Home">
+      <img class="vtx-sidebar-logo" src="logo.png" alt="VorteX logo">
+    </a>
+    <a class="vtx-sidebar-link" href="index.html" title="Home" aria-label="Home">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a class="vtx-sidebar-link" href="games.html" title="Game Library" aria-label="Game Library">
+      <span class="material-symbols-outlined">newsstand</span>
+    </a>
+    <a class="vtx-sidebar-link" href="multiview.html" title="Grid View" aria-label="Grid View">
+      <span class="material-symbols-outlined">grid_view</span>
+    </a>
+    <a class="vtx-sidebar-link" href="notifications.html" title="Notifications" aria-label="Notifications">
+      <span class="material-symbols-outlined">notifications</span>
+    </a>
+    <a class="vtx-sidebar-link" href="settings.html" title="Settings" aria-label="Settings">
+      <span class="material-symbols-outlined">settings</span>
+    </a>
+    <a class="vtx-sidebar-link vtx-sidebar-link-report" href="https://forms.gle/u7oQ1HBnrdqtmXRc9" title="Report" aria-label="Report">
+      <span class="material-symbols-outlined">report</span>
+    </a>
+  </aside>
+
+  <main class="multiview-shell" aria-label="Multi-view game panels">
+    <div class="multiview-controls" aria-label="Panel count controls">
+      <label for="panelCountSelect">Panels</label>
+      <select id="panelCountSelect">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="16">16</option>
+        <option value="64">64</option>
+      </select>
+    </div>
+    <section id="multiviewGrid" class="multiview-grid" data-density="normal"></section>
+  </main>
+
+  <div id="iconPicker" class="picker-overlay" hidden>
+    <section class="picker-dialog" role="dialog" aria-modal="true" aria-label="Choose a game">
+      <header class="picker-head">
+        <h2>Choose a game</h2>
+        <button id="pickerClose" class="picker-close" type="button">Close</button>
+      </header>
+      <div class="picker-tools">
+        <input id="pickerSearch" class="picker-search" type="search" placeholder="Search games by name" autocomplete="off" spellcheck="false" aria-label="Search games by name">
+      </div>
+      <div id="pickerEmpty" class="picker-empty" hidden>No games match your search.</div>
+      <div id="pickerGrid" class="picker-grid" aria-label="Game icons"></div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = "vortex_multiview_state_v4";
+      const LEGACY_STORAGE_KEY = "vortex_multiview_slots_v3";
+      const MAX_PANES = 64;
+      const PANEL_OPTIONS = [2, 3, 4, 6, 8, 16, 64];
+      const PANEL_COLUMNS = {
+        2: 2,
+        3: 3,
+        4: 2,
+        6: 3,
+        8: 4,
+        16: 4,
+        64: 8
+      };
+      const FOUR_PANE_LABELS = ["Top Left", "Top Right", "Bottom Left", "Bottom Right"];
+      const STOP_WORDS = new Set([
+        "game", "games", "racing", "shooter", "fps", "sports", "platformer", "horror", "multiplayer", "app", "store", "car", "io"
+      ]);
+
+      const multiviewShell = document.querySelector(".multiview-shell");
+      const multiviewGrid = document.getElementById("multiviewGrid");
+      const panelCountSelect = document.getElementById("panelCountSelect");
+      const pickerOverlay = document.getElementById("iconPicker");
+      const pickerGrid = document.getElementById("pickerGrid");
+      const pickerClose = document.getElementById("pickerClose");
+      const pickerSearch = document.getElementById("pickerSearch");
+      const pickerEmpty = document.getElementById("pickerEmpty");
+
+      let panes = [];
+      let currentPaneCount = 4;
+      let activePaneIndex = -1;
+      let playingPaneIndex = -1;
+      let pickerQuery = "";
+      let gameCatalog = [];
+      const slotState = Array.from({ length: MAX_PANES }, function () { return null; });
+
+      function normalizePaneCount(value) {
+        const parsed = Number(value);
+        if (PANEL_OPTIONS.includes(parsed)) return parsed;
+        return 4;
+      }
+
+      function paneLabel(index, paneCount) {
+        if (paneCount === 4) {
+          return FOUR_PANE_LABELS[index] || ("Pane " + (index + 1));
+        }
+        return "Pane " + (index + 1);
+      }
+
+      function densityForCount(count) {
+        return count >= 16 ? "compact" : "normal";
+      }
+
+      function updatePaneMenuIcon(pane) {
+        if (!pane) return;
+        const icon = pane.querySelector(".pane-menu-btn .material-symbols-outlined");
+        if (!icon) return;
+        icon.textContent = pane.classList.contains("controls-open") ? "close" : "menu";
+      }
+
+      function setPlayingPane(index) {
+        playingPaneIndex = index;
+        panes.forEach(function (pane, paneIndex) {
+          const isPlaying = paneIndex === index && pane.classList.contains("loaded");
+          pane.classList.toggle("is-playing", isPlaying);
+        });
+      }
+
+      function normalizeText(value) {
+        return String(value || "")
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function formatToken(token) {
+        if (!token) return "";
+        if (/^[a-z0-9]{1,3}$/i.test(token)) return token.toUpperCase();
+        return token.charAt(0).toUpperCase() + token.slice(1).toLowerCase();
+      }
+
+      function deriveName(search, href) {
+        const tokens = String(search || "").trim().split(/\s+/).filter(Boolean);
+        const chosen = [];
+
+        for (const token of tokens) {
+          const lower = token.toLowerCase();
+          if (STOP_WORDS.has(lower) && chosen.length > 0) break;
+          chosen.push(token);
+          if (chosen.length >= 4) break;
+        }
+
+        if (chosen.length) {
+          return chosen.map(formatToken).join(" ");
+        }
+
+        const base = String(href || "")
+          .split("?")[0]
+          .split("#")[0]
+          .split("/")
+          .pop()
+          .replace(/\.(htm|html)$/i, "")
+          .replace(/[-_]+/g, " ")
+          .trim();
+
+        if (!base) return "Unknown";
+        return base.split(/\s+/).map(formatToken).join(" ");
+      }
+
+      function toEmbedUrl(url) {
+        const raw = String(url || "").trim();
+        if (!raw) return "";
+        if (/^https?:\/\//i.test(raw)) return raw;
+        return raw.replace(/\.htm(?=(?:\?|#|$))/i, ".html");
+      }
+
+      function normalizeSavedSlot(slot) {
+        if (!slot || !slot.href) return null;
+        const normalizedHref = toEmbedUrl(slot.href);
+        const matching = gameCatalog.find(function (entry) {
+          return entry.href === normalizedHref;
+        });
+        if (matching) {
+          return {
+            name: matching.name,
+            href: matching.href,
+            icon: matching.icon || "logo.png"
+          };
+        }
+        return {
+          name: slot.name || deriveName("", normalizedHref),
+          href: normalizedHref,
+          icon: slot.icon || "logo.png"
+        };
+      }
+
+      function persistState() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          count: currentPaneCount,
+          slots: slotState
+        }));
+      }
+
+      function readSavedState() {
+        let savedCount = 4;
+        let savedSlots = null;
+
+        try {
+          const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          if (Array.isArray(parsed)) {
+            savedSlots = parsed;
+          } else if (parsed && typeof parsed === "object") {
+            savedCount = normalizePaneCount(parsed.count);
+            if (Array.isArray(parsed.slots)) {
+              savedSlots = parsed.slots;
+            }
+          }
+        } catch {
+          savedSlots = null;
+        }
+
+        if (!savedSlots) {
+          try {
+            const legacy = JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY) || "[]");
+            if (Array.isArray(legacy)) {
+              savedSlots = legacy;
+            }
+          } catch {
+            savedSlots = null;
+          }
+        }
+
+        if (Array.isArray(savedSlots)) {
+          const max = Math.min(savedSlots.length, MAX_PANES);
+          for (let i = 0; i < max; i += 1) {
+            slotState[i] = normalizeSavedSlot(savedSlots[i]);
+          }
+        }
+
+        return savedCount;
+      }
+
+      function createPane(index) {
+        const pane = document.createElement("section");
+        pane.className = "pane";
+        pane.dataset.slot = String(index);
+
+        const toolbar = document.createElement("div");
+        toolbar.className = "pane-toolbar";
+
+        const label = document.createElement("span");
+        label.className = "pane-label";
+        label.textContent = paneLabel(index, currentPaneCount);
+
+        const selected = document.createElement("div");
+        selected.className = "pane-selected";
+
+        const selectedIcon = document.createElement("img");
+        selectedIcon.className = "pane-selected-icon";
+        selectedIcon.src = "logo.png";
+        selectedIcon.alt = "Selected game icon";
+
+        const selectedName = document.createElement("span");
+        selectedName.className = "pane-selected-name";
+        selectedName.textContent = "No game selected";
+
+        const chooseBtn = document.createElement("button");
+        chooseBtn.className = "pane-btn";
+        chooseBtn.type = "button";
+        chooseBtn.dataset.action = "choose";
+        chooseBtn.textContent = "Choose";
+
+        const clearBtn = document.createElement("button");
+        clearBtn.className = "pane-btn";
+        clearBtn.type = "button";
+        clearBtn.dataset.action = "clear";
+        clearBtn.textContent = "Clear";
+
+        const menuBtn = document.createElement("button");
+        menuBtn.className = "pane-menu-btn";
+        menuBtn.type = "button";
+        menuBtn.title = "Pane options";
+        menuBtn.setAttribute("aria-label", "Pane options");
+        menuBtn.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+
+        selected.appendChild(selectedIcon);
+        selected.appendChild(selectedName);
+        toolbar.appendChild(label);
+        toolbar.appendChild(selected);
+        toolbar.appendChild(chooseBtn);
+        toolbar.appendChild(clearBtn);
+
+        const iframe = document.createElement("iframe");
+        iframe.title = paneLabel(index, currentPaneCount) + " game pane";
+        iframe.src = "about:blank";
+        iframe.setAttribute("allow", "autoplay; fullscreen");
+
+        const empty = document.createElement("div");
+        empty.className = "pane-empty";
+        empty.textContent = "Choose a game icon to load.";
+
+        pane.appendChild(toolbar);
+        pane.appendChild(menuBtn);
+        pane.appendChild(iframe);
+        pane.appendChild(empty);
+
+        chooseBtn.addEventListener("click", function () {
+          pane.classList.add("controls-open");
+          updatePaneMenuIcon(pane);
+          openPicker(index);
+        });
+
+        clearBtn.addEventListener("click", function () {
+          setPaneFromEntry(index, null, true);
+        });
+
+        menuBtn.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          pane.classList.toggle("controls-open");
+          updatePaneMenuIcon(pane);
+        });
+
+        pane.addEventListener("pointerdown", function (event) {
+          if (event.target.closest(".pane-btn") || event.target.closest(".pane-menu-btn")) return;
+          if (pane.classList.contains("loaded")) {
+            setPlayingPane(index);
+          }
+        });
+
+        pane.addEventListener("mouseenter", function () {
+          if (pane.classList.contains("loaded")) {
+            setPlayingPane(index);
+          }
+        });
+
+        iframe.addEventListener("pointerdown", function () {
+          if (pane.classList.contains("loaded")) {
+            setPlayingPane(index);
+          }
+        });
+
+        iframe.addEventListener("focus", function () {
+          if (pane.classList.contains("loaded")) {
+            setPlayingPane(index);
+          }
+        });
+
+        updatePaneMenuIcon(pane);
+
+        return pane;
+      }
+
+      function renderPaneGrid() {
+        panes = [];
+        multiviewGrid.innerHTML = "";
+
+        const useSpecialThreeLayout = currentPaneCount === 3;
+        const columns = useSpecialThreeLayout
+          ? 2
+          : (PANEL_COLUMNS[currentPaneCount] || Math.max(1, Math.ceil(Math.sqrt(currentPaneCount))));
+        const rows = useSpecialThreeLayout
+          ? 2
+          : Math.max(1, Math.ceil(currentPaneCount / columns));
+        multiviewGrid.style.gridTemplateColumns = "repeat(" + columns + ", minmax(0, 1fr))";
+        multiviewGrid.style.gridTemplateRows = "repeat(" + rows + ", minmax(0, 1fr))";
+        multiviewGrid.dataset.density = densityForCount(currentPaneCount);
+        multiviewShell.setAttribute("aria-label", currentPaneCount + " game multi-view panels");
+
+        for (let index = 0; index < currentPaneCount; index += 1) {
+          const pane = createPane(index);
+          panes.push(pane);
+          multiviewGrid.appendChild(pane);
+        }
+
+        if (useSpecialThreeLayout && panes.length === 3) {
+          panes[0].style.gridColumn = "1";
+          panes[0].style.gridRow = "1";
+          panes[1].style.gridColumn = "1";
+          panes[1].style.gridRow = "2";
+          panes[2].style.gridColumn = "2";
+          panes[2].style.gridRow = "1 / span 2";
+        } else {
+          panes.forEach(function (pane) {
+            pane.style.gridColumn = "";
+            pane.style.gridRow = "";
+          });
+        }
+
+        for (let index = 0; index < currentPaneCount; index += 1) {
+          setPaneFromEntry(index, slotState[index], false);
+        }
+
+        if (playingPaneIndex < 0 || playingPaneIndex >= currentPaneCount || !slotState[playingPaneIndex]) {
+          playingPaneIndex = -1;
+        }
+        setPlayingPane(playingPaneIndex);
+      }
+
+      function setPaneCount(nextCount, persist) {
+        const normalizedCount = normalizePaneCount(nextCount);
+        currentPaneCount = normalizedCount;
+        panelCountSelect.value = String(normalizedCount);
+        closePicker();
+        renderPaneGrid();
+        if (persist !== false) {
+          persistState();
+        }
+      }
+
+      function setPaneFromEntry(index, entry, persist) {
+        const normalizedEntry = entry && entry.href ? {
+          name: entry.name || "Unknown",
+          href: toEmbedUrl(entry.href),
+          icon: entry.icon || "logo.png"
+        } : null;
+        slotState[index] = normalizedEntry;
+
+        const pane = panes[index];
+        if (!pane) {
+          if (persist !== false) {
+            persistState();
+          }
+          return;
+        }
+
+        const iframe = pane.querySelector("iframe");
+        const empty = pane.querySelector(".pane-empty");
+        const selectedIcon = pane.querySelector(".pane-selected-icon");
+        const selectedName = pane.querySelector(".pane-selected-name");
+
+        if (!normalizedEntry) {
+          iframe.src = "about:blank";
+          pane.classList.remove("loaded");
+          pane.classList.remove("controls-open");
+          selectedIcon.src = "logo.png";
+          selectedName.textContent = "No game selected";
+          empty.textContent = "Choose a game icon to load.";
+          if (playingPaneIndex === index) {
+            setPlayingPane(-1);
+          }
+        } else {
+          iframe.src = normalizedEntry.href;
+          pane.classList.add("loaded");
+          pane.classList.remove("controls-open");
+          selectedIcon.src = normalizedEntry.icon;
+          selectedName.textContent = normalizedEntry.name;
+          empty.textContent = "Choose a game icon to load.";
+          if (persist !== false) {
+            setPlayingPane(index);
+          }
+        }
+        updatePaneMenuIcon(pane);
+
+        if (persist !== false) {
+          persistState();
+        }
+      }
+
+      function openPicker(index) {
+        if (index < 0 || index >= currentPaneCount) return;
+        activePaneIndex = index;
+        pickerOverlay.hidden = false;
+        pickerQuery = "";
+        pickerSearch.value = "";
+        renderPicker();
+        requestAnimationFrame(function () {
+          pickerSearch.focus();
+        });
+      }
+
+      function closePicker() {
+        activePaneIndex = -1;
+        pickerOverlay.hidden = true;
+      }
+
+      function renderPicker() {
+        pickerGrid.innerHTML = "";
+        const query = normalizeText(pickerQuery);
+        const filtered = query
+          ? gameCatalog.filter(function (entry) {
+            return entry.normalized.includes(query);
+          })
+          : gameCatalog;
+
+        pickerEmpty.hidden = filtered.length !== 0;
+
+        filtered.forEach(function (entry) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "picker-item";
+          button.title = entry.name;
+          button.innerHTML =
+            '<img src="' + (entry.icon || 'logo.png') + '" alt="' + entry.name.replace(/"/g, "") + '">' +
+            '<span class="picker-item-name">' + entry.name + '</span>';
+
+          button.addEventListener("click", function () {
+            if (activePaneIndex < 0) return;
+            setPaneFromEntry(activePaneIndex, entry, true);
+            closePicker();
+          });
+
+          pickerGrid.appendChild(button);
+        });
+      }
+
+      async function buildCatalog() {
+        const fallback = [
+          { name: "Gran Turismo", href: "gran.html", icon: "logo.png", search: "gran turismo" },
+          { name: "FNAF", href: "fnaf.html", icon: "logo.png", search: "fnaf" },
+          { name: "Minecraft", href: "mine.html", icon: "logo.png", search: "minecraft" },
+          { name: "Slope", href: "slope.html", icon: "logo.png", search: "slope" }
+        ];
+        const fallbackCatalog = fallback.map(function (entry) {
+          return {
+            name: entry.name,
+            href: entry.href,
+            icon: entry.icon,
+            normalized: normalizeText(entry.name + " " + entry.search + " " + entry.href)
+          };
+        });
+
+        try {
+          const response = await fetch("index.html", { cache: "no-store" });
+          if (!response.ok) throw new Error("catalog load failed");
+
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const links = Array.from(doc.querySelectorAll("#allGamesSource a.image-link-border[href]"));
+
+          const mapped = links.map(function (link) {
+            const hrefRaw = link.getAttribute("href") || "";
+            const href = toEmbedUrl(hrefRaw);
+            const search = link.getAttribute("data-search") || "";
+            const name = deriveName(search, hrefRaw);
+            const img = link.querySelector("img");
+            const icon = img ? (img.getAttribute("src") || "") : "";
+            return {
+              name: name,
+              href: href,
+              icon: icon,
+              normalized: normalizeText(name + " " + search + " " + hrefRaw)
+            };
+          }).filter(function (entry) {
+            return entry.href && /\.(htm|html)(\?|#|$)/i.test(entry.href);
+          });
+
+          const deduped = [];
+          const seen = new Set();
+          mapped.forEach(function (entry) {
+            const key = entry.href.toLowerCase();
+            if (seen.has(key)) return;
+            seen.add(key);
+            deduped.push(entry);
+          });
+
+          gameCatalog = deduped.length ? deduped : fallbackCatalog;
+        } catch {
+          gameCatalog = fallbackCatalog;
+        }
+
+        renderPicker();
+      }
+
+      pickerClose.addEventListener("click", closePicker);
+
+      panelCountSelect.addEventListener("change", function () {
+        setPaneCount(panelCountSelect.value, true);
+      });
+
+      pickerSearch.addEventListener("input", function () {
+        pickerQuery = pickerSearch.value || "";
+        renderPicker();
+      });
+
+      pickerOverlay.addEventListener("click", function (event) {
+        if (event.target === pickerOverlay) {
+          closePicker();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !pickerOverlay.hidden) {
+          closePicker();
+        }
+      });
+
+      buildCatalog().then(function () {
+        const savedCount = readSavedState();
+        setPaneCount(savedCount, false);
+      });
+    })();
+  </script>
+</body>
+</html>

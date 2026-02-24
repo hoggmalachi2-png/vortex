@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <title>VorteX Games</title>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet" href="page-sidebar.css">
 
 <style>
@@ -44,6 +44,7 @@
     display: grid;
     grid-template-columns: 210px minmax(0, 1fr);
     gap: 14px;
+    align-items: start;
   }
 
   .games-filter-panel {
@@ -55,6 +56,8 @@
     grid-auto-rows: min-content;
     gap: 8px;
     align-content: start;
+    align-self: start;
+    height: fit-content;
   }
 
   .games-filter-title {
@@ -152,14 +155,20 @@
   <a class="vtx-sidebar-link" href="index.html" title="Home" aria-label="Home">
     <span class="material-symbols-outlined">home</span>
   </a>
-  <a class="vtx-sidebar-link active" href="games.html" title="Games" aria-label="Games">
+  <a class="vtx-sidebar-link" href="games.html" title="Games" aria-label="Games">
     <span class="material-symbols-outlined">newsstand</span>
+  </a>
+  <a class="vtx-sidebar-link" href="multiview.html" title="Grid View" aria-label="Grid View">
+    <span class="material-symbols-outlined">grid_view</span>
   </a>
   <a class="vtx-sidebar-link" href="notifications.html" title="Notifications" aria-label="Notifications">
     <span class="material-symbols-outlined">notifications</span>
   </a>
   <a class="vtx-sidebar-link" href="settings.html" title="Settings" aria-label="Settings">
     <span class="material-symbols-outlined">settings</span>
+  </a>
+  <a class="vtx-sidebar-link vtx-sidebar-link-report" href="https://forms.gle/u7oQ1HBnrdqtmXRc9" title="Report" aria-label="Report">
+    <span class="material-symbols-outlined">report</span>
   </a>
 </aside>
 
